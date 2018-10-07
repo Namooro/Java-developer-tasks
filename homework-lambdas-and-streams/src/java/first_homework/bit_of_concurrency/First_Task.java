@@ -2,7 +2,7 @@ package first_homework.bit_of_concurrency;
 
 import first_homework.bit_of_concurrency.beans.SomeBusinessTaskImplementation;
 
-public class App {
+public class First_Task {
 
     public static void main(String... args) {
 

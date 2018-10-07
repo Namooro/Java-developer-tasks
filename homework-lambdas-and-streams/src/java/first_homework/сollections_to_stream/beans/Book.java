@@ -1,11 +1,11 @@
-package first_homework.сollections_to_stream;
+package first_homework.сollections_to_stream.beans;
 
 import java.util.List;
 
 public class Book {
-    String title;
-    List<Author> authors;
-    int numberOfPages;
+    private String title;
+    private List<Author> authors;
+    private int numberOfPages;
 
     @Override
     public String toString() {

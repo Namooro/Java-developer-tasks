@@ -1,12 +1,12 @@
-package first_homework.сollections_to_stream;
+package first_homework.сollections_to_stream.beans;
 
 import java.util.List;
 
 public class Author {
 
-    String name;
-    short age;
-    List<Book> books;
+    private String name;
+    private short age;
+    private List<Book> books;
 
     @Override
     public String toString() {

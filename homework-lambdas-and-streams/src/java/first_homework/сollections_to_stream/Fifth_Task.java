@@ -1,15 +1,18 @@
 package first_homework.сollections_to_stream;
 
+import first_homework.сollections_to_stream.beans.Author;
+import first_homework.сollections_to_stream.beans.Book;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class App {
+public class Fifth_Task {
     public static void main(String... args) {
         collectionsToStream();
     }
 
     //1.5 task
-    public static void collectionsToStream() {
+    private static void collectionsToStream() {
         Author firstAuthor = new Author("Tolstoy", (short) 50);
         Author secondAuthor = new Author("Ilf", (short) 30);
         Author thirdAuthor = new Author("Petrov", (short) 33);
