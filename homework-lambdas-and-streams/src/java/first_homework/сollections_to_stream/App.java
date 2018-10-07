@@ -1,4 +1,4 @@
-package com.epam.homework;
+package first_homework.сollections_to_stream;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -6,10 +6,6 @@ import java.util.stream.Collectors;
 public class App {
     public static void main(String... args) {
         collectionsToStream();
-    }
-
-    public static void bitOfConcurrency() {
-
     }
 
     //1.5 task
@@ -36,31 +32,31 @@ public class App {
         fourthBook.setAuthors(Collections.singletonList(fourthAuthor));
         Book[] books = {firstBook, secondBook, thirdBook, fourthBook};
 
-        //5.2.I
+        //5.2.1
         System.out.println(Arrays.stream(books)
                 .allMatch(book -> book.getNumberOfPages() > 200)); // or anyMatch
-        //5.2.II
+        //5.2.2
         System.out.println(Arrays.stream(books)
                 .min(Comparator.comparing(Book::getNumberOfPages)) //or max
                 .get().getTitle());
-        //5.2.III
+        //5.2.3
         Arrays.stream(books)
                 .filter(book -> book.getAuthors().size() == 1)
                 .forEach(System.out::println);
-        //5.2.IV
+        //5.2.4
         Arrays.stream(books)
                 .sorted(Comparator.comparing(Book::getTitle)) //or Book::getNumberOfPages
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
-        //5.2.V
+        //5.2.5
         Arrays.stream(books)
                 .map(Book::getTitle) //getting list of titles
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
-        //5.2.VI
+        //5.2.6
         Arrays.stream(books)
                 .forEach(System.out::println);
-        //5.2.VII
+        //5.2.7
         Arrays.stream(books)
                 .map(Book::getAuthors)
                 .distinct()

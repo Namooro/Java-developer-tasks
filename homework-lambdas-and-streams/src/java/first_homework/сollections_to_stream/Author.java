@@ -1,4 +1,4 @@
-package com.epam.homework;
+package first_homework.сollections_to_stream;
 
 import java.util.List;
 
