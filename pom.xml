@@ -8,12 +8,6 @@
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
-    <description>Homework for java mentoring</description>
-    <properties>
-        <java.version>1.10</java.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-    </properties>
     <dependencies/>
     <build/>
 </project>

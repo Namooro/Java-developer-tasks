@@ -6,16 +6,13 @@ public class First_Task {
 
     public static void main(String... args) {
 
-        Runnable task = new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    new SomeBusinessTaskImplementation().someLogic();
-                    Thread.sleep(1000);
-                    System.out.println("Time checking");
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Runnable task = () -> {
+            try {
+                new SomeBusinessTaskImplementation().someLogic();
+                Thread.sleep(1000);
+                System.out.println("Time checking");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         };
 
