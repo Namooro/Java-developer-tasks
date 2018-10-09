@@ -11,10 +11,10 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 
-public class Third_task {
+public class Third_Task {
     public static void main(String[] args) {
 
-        Predicate<Integer> isAdult = Third_task::moreThan21;
+        Predicate<Integer> isAdult = Third_Task::moreThan21;
 
         Consumer<Integer> pesonNameConsumer = age -> System.out.println("Adult ages: " + age);
 
