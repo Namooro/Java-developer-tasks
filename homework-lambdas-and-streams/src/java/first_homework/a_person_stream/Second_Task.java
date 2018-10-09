@@ -19,7 +19,7 @@ public class Second_Task {
                 .forEach(System.out::println);
     }
 
-    private static List<Person> getListOfPersons() {
+    public static List<Person> getListOfPersons() {
         return Arrays.asList(
                 new Person("firstPerson", 13),
                 new Person("secondPerson", 21),
