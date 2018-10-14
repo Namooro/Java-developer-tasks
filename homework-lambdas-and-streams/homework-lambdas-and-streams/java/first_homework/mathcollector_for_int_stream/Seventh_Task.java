@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 
 public class Seventh_Task {
     public static void main(String[] args) {
-        Stream randomStream = Stream.iterate(1, i -> i + ThreadLocalRandom.current()
+        Stream<Integer> randomStream = Stream.iterate(1, i -> i + ThreadLocalRandom.current()
                 .nextInt(1, 50))
                 .parallel()
                 .unordered()
