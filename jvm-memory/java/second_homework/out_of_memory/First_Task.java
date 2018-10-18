@@ -1,5 +1,6 @@
 package second_homework.out_of_memory;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +20,8 @@ public class First_Task {
             while (true) {
                 Class aClass = classLoader.loadClass("second_homework.out_of_memory.First_Task");
                 try {
-                    strangeList.add(aClass.newInstance());
-                } catch (InstantiationException | IllegalAccessException e) {
+                    strangeList.add(aClass.getDeclaredConstructor().newInstance());
+                } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
                     e.printStackTrace();
                 }
                 //  System.out.println("aClass.getName() = " + aClass.getName());
