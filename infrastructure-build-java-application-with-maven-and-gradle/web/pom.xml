@@ -19,7 +19,34 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.10</java.version>
     </properties>
-
+    <profiles>
+        <profile>
+            <id>Dev</id>
+            <properties>
+                <build.profile>Dev</build.profile>
+            </properties>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>web/resources/properties/dev</directory>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+        <profile>
+            <id>Prod</id>
+            <properties>
+                <build.profile>Prod</build.profile>
+            </properties>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>web/resources/properties/prod</directory>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+    </profiles>
     <dependencies>
         <dependency>
             <groupId>java-maven-gradle</groupId>
