@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>java-maven-gradle</groupId>
-    <artifactId>whole</artifactId>
+    <artifactId>infrastructure-build-java-application-with-maven-and-gradle</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>my-project</name>
