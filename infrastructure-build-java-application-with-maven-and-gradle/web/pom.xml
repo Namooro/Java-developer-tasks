@@ -101,7 +101,7 @@
                             <outputDirectory>${basedir}/target/extra-resources</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>src/non-packaged-resources</directory>
+                                    <directory>resources/properties</directory>
                                     <filtering>true</filtering>
                                 </resource>
                             </resources>
