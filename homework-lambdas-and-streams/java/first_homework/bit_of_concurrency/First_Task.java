@@ -3,21 +3,29 @@ package first_homework.bit_of_concurrency;
 import first_homework.bit_of_concurrency.beans.SomeBusinessTaskImplementation;
 
 public class First_Task {
-
+    /**
+     * This task shows different instance of Runnable interface
+     * with different behaviour
+     */
     public static void main(String... args) {
 
         Runnable task = () -> {
+            new SomeBusinessTaskImplementation().someLogic();
+            System.out.println("Time checking");
+
+        };
+        Runnable differentTask = () -> {
             try {
-                new SomeBusinessTaskImplementation().someLogic();
-                Thread.sleep(1000);
-                System.out.println("Time checking");
+                new SomeBusinessTaskImplementation().someOtherLogic();
+                Thread.sleep(500);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.out.println("Interrupted!");
             }
         };
-
-        executeTask(task);
-        executeTask(task);
+        for (int i = 0; i < 5; i++) {
+            executeTask(task);
+            executeTask(differentTask);
+        }
     }
 
     private static void executeTask(Runnable threadLogic) {

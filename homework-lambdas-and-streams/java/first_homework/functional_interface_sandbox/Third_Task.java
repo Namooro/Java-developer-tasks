@@ -12,6 +12,9 @@ import java.util.function.Supplier;
 
 
 public class Third_Task {
+    /**
+     * This task implements functional interfaces and one custom one
+     * */
     public static void main(String[] args) {
 
         Predicate<Integer> isAdult = Third_Task::moreThan21;
@@ -32,9 +35,21 @@ public class Third_Task {
                 .map(Person::getAge)
                 .filter(isAdult)
                 .forEach(pesonNameConsumer);
+
+        Inverse<String> inverse = (x) -> new StringBuilder(x).reverse().toString();
+        System.out.println(inverse.run("Hello"));
     }
 
     private static boolean moreThan21(Integer age) {
         return age > 21;
+    }
+
+    @FunctionalInterface
+    interface Inverse<R> {
+        String run(String input);
+
+        default String run() {
+            return "";
+        }
     }
 }

@@ -3,15 +3,23 @@ package first_homework.сollections_to_stream;
 import first_homework.сollections_to_stream.beans.Author;
 import first_homework.сollections_to_stream.beans.Book;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.util.Arrays.asList;
+import static java.util.Arrays.stream;
+import static java.util.Comparator.comparing;
+
 public class Fifth_Task {
-    public static void main(String... args) {
-        collectionsToStream();
+    public static void main(String[] args) {
+        System.out.printf("123");
     }
 
-    //1.5 task
+    /**
+     * This task shows functional of streams
+     * */
     private static void collectionsToStream() {
         Author firstAuthor = new Author("Tolstoy", (short) 50);
         Author secondAuthor = new Author("Ilf", (short) 30);
@@ -24,62 +32,73 @@ public class Fifth_Task {
         Book fourthBook = new Book("Dog's heart", 400);
 
         firstAuthor.setBooks(Collections.singletonList(firstBook));
-        secondAuthor.setBooks(Arrays.asList(secondBook, thirdBook));
-        thirdAuthor.setBooks(Arrays.asList(secondBook, thirdBook));
+        secondAuthor.setBooks(asList(secondBook, thirdBook));
+        thirdAuthor.setBooks(asList(secondBook, thirdBook));
         fourthAuthor.setBooks(Collections.singletonList(fourthBook));
         Author[] authors = {firstAuthor, secondAuthor, thirdAuthor, fourthAuthor};
 
         firstBook.setAuthors(Collections.singletonList(firstAuthor));
-        secondBook.setAuthors(Arrays.asList(secondAuthor, thirdAuthor));
-        thirdBook.setAuthors(Arrays.asList(secondAuthor, thirdAuthor));
+        secondBook.setAuthors(asList(secondAuthor, thirdAuthor));
+        thirdBook.setAuthors(asList(secondAuthor, thirdAuthor));
         fourthBook.setAuthors(Collections.singletonList(fourthAuthor));
         Book[] books = {firstBook, secondBook, thirdBook, fourthBook};
 
         //5.2.1
-        System.out.println(Arrays.stream(books)
+        System.out.println("Print some/all books with more than 200 pages:");
+        System.out.println(stream(books)
                 .allMatch(book -> book.getNumberOfPages() > 200)); // or anyMatch
         //5.2.2
-        System.out.println(Arrays.stream(books)
-                .min(Comparator.comparing(Book::getNumberOfPages)) //or max
+        System.out.println("Find books with min(max) number of pages:");
+        System.out.println(stream(books)
+                .min(comparing(Book::getNumberOfPages)) //or max
                 .get().getTitle());
         //5.2.3
-        Arrays.stream(books)
+        System.out.println("Print books with only single author");
+        stream(books)
                 .filter(book -> book.getAuthors().size() == 1)
                 .forEach(System.out::println);
         //5.2.4
-        Arrays.stream(books)
-                .sorted(Comparator.comparing(Book::getTitle)) //or Book::getNumberOfPages
+        System.out.println("Sort book by Title(number of pages)");
+        stream(books)
+                .sorted(comparing(Book::getTitle)) //or Book::getNumberOfPages
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
         //5.2.5
-        Arrays.stream(books)
+        System.out.println("Getting list of titles");
+        stream(books)
                 .map(Book::getTitle) //getting list of titles
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
         //5.2.6
-        Arrays.stream(books)
+        System.out.println("Print all books titles");
+        stream(books)
+                .map(Book::getTitle)
                 .forEach(System.out::println);
         //5.2.7
-        Arrays.stream(books)
+        System.out.println("Retrieve distinct list of all authors");
+        stream(books)
                 .map(Book::getAuthors)
                 .distinct()
                 .collect(ArrayList::new, List::addAll, List::addAll)
                 .forEach(System.out::println);
         //5.3
-        Arrays.stream(books)
+        System.out.println("Peek into stream while printing authors names");
+        stream(books)
                 .map(Book::getAuthors)
                 .peek(System.out::println)
                 .collect(Collectors.toList());
-       //5.4
-        Arrays.stream(books).parallel()
+        //5.4
+        System.out.println("Usage of parallel stream");
+        stream(books).parallel()
                 .filter(book -> book.getAuthors().size() == 1)
                 .forEach(System.out::println);
         //5.6
-        Arrays.stream(authors)
+        System.out.println("Usage of optional type");
+        stream(authors)
                 .filter(author -> ("Petrov").equals(author.getName()))
                 .map(Author::getBooks)
                 .map(bookList -> bookList.stream()
-                        .max(Comparator.comparing(Book::getNumberOfPages)))
+                        .max(comparing(Book::getNumberOfPages)))
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
     }

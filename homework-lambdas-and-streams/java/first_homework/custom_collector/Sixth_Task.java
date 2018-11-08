@@ -11,6 +11,9 @@ import java.util.function.Supplier;
 import java.util.stream.Collector;
 
 public class Sixth_Task {
+    /**
+     * This task implements custom collector class
+     */
     public static void main(String[] args) {
         System.out.println(getListOfPersons().stream()
                 .parallel()
@@ -19,7 +22,7 @@ public class Sixth_Task {
     }
 
 
-    private static class studentCollector implements Collector<Student, List<Student>, String> {
+    public static class studentCollector implements Collector<Student, List<Student>, String> {
 
         @Override
         public Supplier<List<Student>> supplier() {
@@ -36,7 +39,6 @@ public class Sixth_Task {
                 student.setDaysBeforeBirthday(student.daysBeforeBirthday());
                 studentList.add(student);
             };
-
         }
 
         @Override

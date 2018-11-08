@@ -13,6 +13,10 @@ import java.util.stream.Collector;
 import java.util.stream.Stream;
 
 public class Seventh_Task {
+    /**
+     * This task calculate statistics of huge amount of randomized numbers
+     * via custom MathCollector class
+     */
     public static void main(String[] args) {
         Stream<Integer> randomStream = Stream.iterate(1, i -> i + ThreadLocalRandom.current()
                 .nextInt(1, 50))
@@ -23,7 +27,7 @@ public class Seventh_Task {
 
     }
 
-    private static class MathCollector implements Collector<Integer, Statistics, Statistics> {
+    public static class MathCollector implements Collector<Integer, Statistics, Statistics> {
 
         @Override
         public Supplier<Statistics> supplier() {

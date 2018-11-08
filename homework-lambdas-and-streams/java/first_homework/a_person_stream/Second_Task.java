@@ -19,6 +19,9 @@ public class Second_Task {
                 .forEach(System.out::println);
     }
 
+    /**
+     * @return returns a list of new createdPersons
+     */
     public static List<Person> getListOfPersons() {
         return Arrays.asList(
                 new Person("firstPerson", 13),
