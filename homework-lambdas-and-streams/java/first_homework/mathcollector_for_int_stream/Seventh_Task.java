@@ -18,11 +18,10 @@ public class Seventh_Task {
      * via custom MathCollector class
      */
     public static void main(String[] args) {
-        Stream<Integer> randomStream = Stream.iterate(1, i -> i + ThreadLocalRandom.current()
+        Stream<Integer> randomStream = Stream.iterate(1, i -> i <= 500000, i -> i + ThreadLocalRandom.current()
                 .nextInt(1, 50))
                 .parallel()
-                .unordered()
-                .limit(500000);
+                .unordered();
         System.out.println(randomStream.collect(new MathCollector()));
 
     }

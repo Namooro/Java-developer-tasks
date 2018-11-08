@@ -20,7 +20,7 @@ public class Eight_Task {
         tree.getAllValues().forEach(System.out::println);
         System.out.println("EvenValues:");
         tree.getEvenValues().forEach(System.out::println);
-        System.out.printf("Does tree contains number 13? : ");
+        System.out.printf("Does tree contains number 13: ");
         System.out.println(tree.isContains13());
     }
 }
