@@ -40,7 +40,7 @@ public class Statistics {
         return count;
     }
 
-    public void updateCount() {
+    public synchronized void updateCount() {
         this.count += 1;
     }
 

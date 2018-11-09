@@ -18,9 +18,10 @@ public class Seventh_Task {
      * via custom MathCollector class
      */
     public static void main(String[] args) {
-        Stream<Integer> randomStream = Stream.iterate(1, i -> i <= 500000, i -> i + ThreadLocalRandom.current()
+        Stream<Integer> randomStream = Stream.iterate(1, i -> i + ThreadLocalRandom.current()
                 .nextInt(1, 50))
                 .parallel()
+                .limit(50000)
                 .unordered();
         System.out.println(randomStream.collect(new MathCollector()));
 
@@ -41,23 +42,30 @@ public class Seventh_Task {
                 newStats.setMax(Math.max(number, newStats.getMax()));
                 newStats.setMin(Math.min(number, newStats.getMin()));
                 newStats.setSum(newStats.getSum() + number);
-                newStats.setAverage(newStats.getSum() / newStats.getCount());
+                newStats.setAverage(newStats.getSum() / (double) newStats.getCount());
             };
         }
 
         @Override
         public BinaryOperator<Statistics> combiner() {
-            return (statistics, statistics2) -> statistics;
+            return (statistics, statistics2) -> {
+                statistics.setCount(statistics.getCount() + statistics2.getCount());
+                statistics.setMax(Math.max(statistics.getMax(), statistics2.getMax()));
+                statistics.setMin(Math.min(statistics.getMin(), statistics2.getMin()));
+                statistics.setSum(statistics.getSum() + statistics2.getSum());
+                statistics.setAverage(statistics.getSum() / (double) statistics.getCount());
+                return statistics;
+            };
         }
 
         @Override
         public Function<Statistics, Statistics> finisher() {
-            return statistics -> statistics;
+            return Function.identity();
         }
 
         @Override
         public Set<Characteristics> characteristics() {
-            return EnumSet.of(Characteristics.CONCURRENT, Characteristics.UNORDERED);
+            return EnumSet.of(Characteristics.IDENTITY_FINISH, Characteristics.CONCURRENT);
         }
 
     }
