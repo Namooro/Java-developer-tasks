@@ -10,6 +10,9 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Class loading test.
+ */
 public class ClassloaderTest {
 
     private JarClassLoader jarClassLoader;
