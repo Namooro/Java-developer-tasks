@@ -18,11 +18,11 @@ public class Sixth_Task {
         System.out.println(getListOfPersons().stream()
                 .parallel()
                 .unordered()
-                .collect(new studentCollector()));
+                .collect(new StudentCollector()));
     }
 
 
-    public static class studentCollector implements Collector<Student, List<Student>, String> {
+    public static class StudentCollector implements Collector<Student, List<Student>, String> {
 
         @Override
         public Supplier<List<Student>> supplier() {

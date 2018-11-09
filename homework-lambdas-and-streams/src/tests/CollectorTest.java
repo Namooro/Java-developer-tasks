@@ -17,7 +17,7 @@ public class CollectorTest {
         List<Student> studentList = Collections.singletonList(
                 new Student("SecondTestStudent", 25, LocalDate.now(), 3));
         assertEquals(studentList.stream()
-                .collect(new Sixth_Task.studentCollector()
+                .collect(new Sixth_Task.StudentCollector()
                 ).indexOf("graduated=true"), -1);
     }
 }
