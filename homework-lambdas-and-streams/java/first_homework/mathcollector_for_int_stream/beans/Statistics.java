@@ -1,31 +1,34 @@
 package first_homework.mathcollector_for_int_stream.beans;
 
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+
 public class Statistics {
 
-    private int max;
+    private AtomicInteger max = new AtomicInteger(0);
     private int min;
-    private long count;
-    private long sum;
+    private AtomicLong count = new AtomicLong(0);
+    private AtomicLong sum = new AtomicLong(0);
     private double average;
 
-    public void setCount(long count) {
-        this.count = count;
+    public void setCount(Long count) {
+        this.count.getAndSet(count);
     }
 
-    public long getSum() {
+    public synchronized AtomicLong getSum() {
         return sum;
     }
 
     public void setSum(long sum) {
-        this.sum = sum;
+        this.sum.set(sum);
     }
 
-    public int getMax() {
+    public synchronized AtomicInteger getMax() {
         return max;
     }
 
     public void setMax(int max) {
-        this.max = max;
+        this.max.set(max);
     }
 
     public int getMin() {
@@ -36,35 +39,35 @@ public class Statistics {
         this.min = min;
     }
 
-    public long getCount() {
+    public AtomicLong getCount() {
         return count;
     }
 
-    public synchronized void updateCount() {
-        this.count += 1;
+    public void updateCount() {
+        count.incrementAndGet();
     }
 
     public double getAverage() {
         return average;
     }
 
-    public void setAverage(double average) {
+    public synchronized void setAverage(double average) {
         this.average = average;
     }
 
     public Statistics() {
         this.average = 0;
-        this.count = 0;
-        this.sum = 0;
-        this.max = Integer.MIN_VALUE;
+        this.count = new AtomicLong(0);
+        this.sum = new AtomicLong(0);
+        this.max = new AtomicInteger(0);
         this.min = Integer.MAX_VALUE;
     }
 
     public Statistics(int max, int min, long count, long sum, double average) {
-        this.max = max;
+        this.max.set(max);
         this.min = min;
-        this.sum = sum;
-        this.count = count;
+        this.sum.set(sum);
+        this.count.set(count);
         this.average = average;
     }
 

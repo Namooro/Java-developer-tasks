@@ -19,7 +19,7 @@ public class Seventh_Task {
     public static void main(String[] args) {
         Stream<Integer> randomStream = Stream.iterate(1, i -> i + 1)
                 .parallel()
-                .limit(50000)
+                .limit(500000)
                 .unordered();
         long startTime = System.currentTimeMillis();
         System.out.println(randomStream.collect(new MathCollector()));
@@ -35,25 +35,24 @@ public class Seventh_Task {
         }
 
         @Override
-        public BiConsumer<Statistics, Integer> accumulator() {
-            return (newStats, number) ->
-            {
+        public synchronized BiConsumer<Statistics, Integer> accumulator() {
+            return (newStats, number) -> {
                 newStats.updateCount();
-                newStats.setMax(Math.max(number, newStats.getMax()));
+                newStats.setMax(Math.max(number, newStats.getMax().get()));
                 newStats.setMin(Math.min(number, newStats.getMin()));
-                newStats.setSum(newStats.getSum() + number);
-                newStats.setAverage(newStats.getSum() / (double) newStats.getCount());
+                newStats.setSum(newStats.getSum().addAndGet(number));
+                newStats.setAverage(newStats.getSum().get() / (double) newStats.getCount().get());
             };
         }
 
         @Override
         public BinaryOperator<Statistics> combiner() {
             return (statistics, statistics2) -> {
-                statistics.setCount(statistics.getCount() + statistics2.getCount());
-                statistics.setMax(Math.max(statistics.getMax(), statistics2.getMax()));
+                statistics.setCount(statistics.getCount().accumulateAndGet(statistics2.getCount().get(), Math::addExact));
+                statistics.setMax(statistics.getMax().accumulateAndGet(statistics2.getMax().get(), Math::min));
                 statistics.setMin(Math.min(statistics.getMin(), statistics2.getMin()));
-                statistics.setSum(statistics.getSum() + statistics2.getSum());
-                statistics.setAverage(statistics.getSum() / (double) statistics.getCount());
+                statistics.getSum().accumulateAndGet(statistics2.getSum().get(), Math::addExact);
+                statistics.setAverage(statistics.getSum().accumulateAndGet(statistics2.getCount().get(), Math::floorDiv));
                 return statistics;
             };
         }
