@@ -1,9 +1,9 @@
 Characteristics,Time
-Identity+Concurrent+Unordered,76ms
-Identity+Concurrent,84ms
-Identity+Unordered,67ms
-Concurrent+Unordered,83ms
-Identity,76ms
-Concurrent,81ms
-Unordered,101ms
-Empty,67ms
+Identity+Concurrent+Unordered,897ms
+Identity+Concurrent,892ms
+Identity+Unordered,226ms
+Concurrent+Unordered,908ms
+Identity,181ms
+Concurrent,888ms
+Unordered,199ms
+Empty,203ms

@@ -2,7 +2,8 @@ package first_homework.mathcollector_for_int_stream;
 
 import first_homework.mathcollector_for_int_stream.beans.Statistics;
 
-import java.util.EnumSet;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.BinaryOperator;
@@ -17,14 +18,21 @@ public class Seventh_Task {
      * via custom MathCollector class
      */
     public static void main(String[] args) {
-        Stream<Integer> randomStream = Stream.iterate(1, i -> i + 1)
-                .parallel()
-                .limit(500000)
-                .unordered();
-        long startTime = System.currentTimeMillis();
-        System.out.println(randomStream.collect(new MathCollector()));
-        System.out.println(System.currentTimeMillis() - startTime);
+        int j = 0;
+        ArrayList<Long> results = new ArrayList<>();
+        while (j < 9) {
 
+            Stream<Integer> randomStream = Stream.iterate(1, i -> i + 1)
+                    .parallel()
+                    .limit(5000000)
+                    .unordered();
+            long startTime = System.currentTimeMillis();
+            randomStream.collect(new MathCollector());
+            j++;
+            if (j != 0)
+                results.add(System.currentTimeMillis() - startTime);
+        }
+        System.out.println(results.stream().reduce((i, count) -> i + count).get() / j);
     }
 
     public static class MathCollector implements Collector<Integer, Statistics, Statistics> {
@@ -38,9 +46,9 @@ public class Seventh_Task {
         public synchronized BiConsumer<Statistics, Integer> accumulator() {
             return (newStats, number) -> {
                 newStats.updateCount();
-                newStats.setMax(Math.max(number, newStats.getMax().get()));
+                newStats.setMax(Math.max(number, newStats.getMax()));
                 newStats.setMin(Math.min(number, newStats.getMin()));
-                newStats.setSum(newStats.getSum().addAndGet(number));
+                newStats.getSum().addAndGet(number);
                 newStats.setAverage(newStats.getSum().get() / (double) newStats.getCount().get());
             };
         }
@@ -49,9 +57,9 @@ public class Seventh_Task {
         public BinaryOperator<Statistics> combiner() {
             return (statistics, statistics2) -> {
                 statistics.setCount(statistics.getCount().accumulateAndGet(statistics2.getCount().get(), Math::addExact));
-                statistics.setMax(statistics.getMax().accumulateAndGet(statistics2.getMax().get(), Math::min));
+                statistics.setMax(Math.max(statistics2.getMax(), statistics.getMax()));
                 statistics.setMin(Math.min(statistics.getMin(), statistics2.getMin()));
-                statistics.getSum().accumulateAndGet(statistics2.getSum().get(), Math::addExact);
+                statistics.setSum(statistics.getSum().get() + statistics2.getSum().get());
                 statistics.setAverage(statistics.getSum().accumulateAndGet(statistics2.getCount().get(), Math::floorDiv));
                 return statistics;
             };
@@ -64,7 +72,7 @@ public class Seventh_Task {
 
         @Override
         public Set<Characteristics> characteristics() {
-            return EnumSet.of(Characteristics.IDENTITY_FINISH, Characteristics.CONCURRENT);
+            return Collections.emptySet();
         }
     }
 }

@@ -1,11 +1,10 @@
 package first_homework.mathcollector_for_int_stream.beans;
 
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Statistics {
 
-    private AtomicInteger max = new AtomicInteger(0);
+    private int max;
     private int min;
     private AtomicLong count = new AtomicLong(0);
     private AtomicLong sum = new AtomicLong(0);
@@ -23,12 +22,12 @@ public class Statistics {
         this.sum.set(sum);
     }
 
-    public synchronized AtomicInteger getMax() {
+    public synchronized int getMax() {
         return max;
     }
 
     public void setMax(int max) {
-        this.max.set(max);
+        this.max = max;
     }
 
     public int getMin() {
@@ -59,12 +58,12 @@ public class Statistics {
         this.average = 0;
         this.count = new AtomicLong(0);
         this.sum = new AtomicLong(0);
-        this.max = new AtomicInteger(0);
+        this.max = 0;
         this.min = Integer.MAX_VALUE;
     }
 
     public Statistics(int max, int min, long count, long sum, double average) {
-        this.max.set(max);
+        this.max = (max);
         this.min = min;
         this.sum.set(sum);
         this.count.set(count);
