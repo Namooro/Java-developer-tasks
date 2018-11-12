@@ -3,7 +3,7 @@ package first_homework.mathcollector_for_int_stream;
 import first_homework.mathcollector_for_int_stream.beans.Statistics;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.EnumSet;
 import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.BinaryOperator;
@@ -72,7 +72,7 @@ public class Seventh_Task {
 
         @Override
         public Set<Characteristics> characteristics() {
-            return Collections.emptySet();
+            return EnumSet.of(Characteristics.UNORDERED);
         }
     }
 }

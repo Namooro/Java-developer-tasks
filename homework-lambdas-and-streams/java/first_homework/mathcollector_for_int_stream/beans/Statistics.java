@@ -14,7 +14,7 @@ public class Statistics {
         this.count.getAndSet(count);
     }
 
-    public synchronized AtomicLong getSum() {
+    public AtomicLong getSum() {
         return sum;
     }
 
@@ -22,7 +22,7 @@ public class Statistics {
         this.sum.set(sum);
     }
 
-    public synchronized int getMax() {
+    public int getMax() {
         return max;
     }
 
@@ -50,7 +50,7 @@ public class Statistics {
         return average;
     }
 
-    public synchronized void setAverage(double average) {
+    public void setAverage(double average) {
         this.average = average;
     }
 
