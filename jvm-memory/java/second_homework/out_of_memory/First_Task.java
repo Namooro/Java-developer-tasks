@@ -7,6 +7,12 @@ import java.util.List;
 public class First_Task {
     public static void main(String... args) {
 
+        int i = 0;
+        String s = "test";
+        System.out.println("Testing OutOfMemoryError without collections...");
+        while (i < 1000) {
+            s += s;
+        }
         //throws an outOfMemoryError: Java heap space exception
         List<Integer> crashedList = new ArrayList<>();
        /* while (true)
