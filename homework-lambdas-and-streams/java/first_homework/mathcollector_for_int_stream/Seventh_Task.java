@@ -4,7 +4,6 @@ import first_homework.mathcollector_for_int_stream.beans.Statistics;
 
 import java.util.EnumSet;
 import java.util.Set;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.BiConsumer;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
@@ -18,8 +17,7 @@ public class Seventh_Task {
      * via custom MathCollector class
      */
     public static void main(String[] args) {
-        Stream<Integer> randomStream = Stream.iterate(1, i -> i + ThreadLocalRandom.current()
-                .nextInt(1, 50))
+        Stream<Integer> randomStream = Stream.iterate(1, i -> i + 1)
                 .parallel()
                 .limit(50000)
                 .unordered();
@@ -67,6 +65,5 @@ public class Seventh_Task {
         public Set<Characteristics> characteristics() {
             return EnumSet.of(Characteristics.IDENTITY_FINISH, Characteristics.CONCURRENT);
         }
-
     }
 }

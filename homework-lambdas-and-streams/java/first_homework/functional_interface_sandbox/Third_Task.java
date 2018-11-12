@@ -14,8 +14,9 @@ import java.util.function.Supplier;
 public class Third_Task {
     /**
      * This task implements functional interfaces and one custom one
-     * */
+     */
     public static void main(String[] args) {
+
 
         Predicate<Integer> isAdult = Third_Task::moreThan21;
 
@@ -36,8 +37,14 @@ public class Third_Task {
                 .filter(isAdult)
                 .forEach(pesonNameConsumer);
 
-        Inverse<String> inverse = (x) -> new StringBuilder(x).reverse().toString();
+        Inverse inverse = (x) -> new StringBuilder(x).reverse().toString();
         System.out.println(inverse.run("Hello"));
+
+        System.out.println(Inverse1.staticMethod());
+        Inverse1.anotherStatic();
+
+        Inverse1 inverse1 = (x) -> new StringBuilder().reverse().toString();
+        System.out.println(inverse1.run("lower case"));
     }
 
     private static boolean moreThan21(Integer age) {
@@ -45,11 +52,28 @@ public class Third_Task {
     }
 
     @FunctionalInterface
-    interface Inverse<R> {
+    interface Inverse {
         String run(String input);
 
         default String run() {
-            return "";
+            return "empty default";
+        }
+    }
+
+    @FunctionalInterface
+    interface Inverse1 {
+        String run(String input);
+
+        static String staticMethod() {
+            return "new default";
+        }
+
+        static void anotherStatic() {
+            System.out.println("Another static");
+        }
+
+        default String run() {
+            return "Another default";
         }
     }
 }
