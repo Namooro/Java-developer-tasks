@@ -21,7 +21,9 @@ public class Seventh_Task {
                 .parallel()
                 .limit(50000)
                 .unordered();
+        long startTime = System.currentTimeMillis();
         System.out.println(randomStream.collect(new MathCollector()));
+        System.out.println(System.currentTimeMillis() - startTime);
 
     }
 
