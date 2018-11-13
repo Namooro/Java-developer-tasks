@@ -24,7 +24,7 @@ public class First_Task {
         ArrayList strangeList = new ArrayList();
         try {
             while (true) {
-                Class aClass = classLoader.loadClass("First_Task");
+                Class aClass = classLoader.loadClass("main.second_homework.out_of_memory.First_Task");
                 try {
                     strangeList.add(aClass.getDeclaredConstructor().newInstance());
                 } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {

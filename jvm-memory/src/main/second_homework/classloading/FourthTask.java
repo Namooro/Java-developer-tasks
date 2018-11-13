@@ -1,8 +1,8 @@
 package second_homework.classloading;
 
+import main.second_homework.classloading.beans.Animal;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
-import second_homework.classloading.beans.Animal;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -18,9 +18,9 @@ public class FourthTask {
         Class<?> catClass;
         Class<?> dogClass;
         try {
-            catClass = customClassLoader.loadClass("Cat");
+            catClass = customClassLoader.loadClass("main.second_homework.classloading.beans.Cat");
             animalsList.add((Animal) catClass.getDeclaredConstructor().newInstance());
-            dogClass = customClassLoader.loadClass("Dog");
+            dogClass = customClassLoader.loadClass("main.second_homework.classloading.beans.Dog");
             animalsList.add((Animal) dogClass.getDeclaredConstructor().newInstance());
 
             for (Animal animal : animalsList) {
