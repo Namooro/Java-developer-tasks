@@ -1,24 +1,36 @@
-allprojects  {
-  apply plugin: 'maven'
+allprojects {
+    apply plugin: 'maven'
 
-  group = 'java-maven-gradle'
-version = '0.0.1-SNAPSHOT'
+    group = 'java-maven-gradle'
+    version = '0.0.1-SNAPSHOT'
 }
-
-subprojects {
-  apply plugin: 'java'
-  sourceCompatibility = 1.10
-  targetCompatibility = 1.10
-  tasks.withType(JavaCompile) {
-  	options.encoding = 'UTF-8'
-  }
-
-  
-  repositories {
+repositories {
     mavenLocal()
-    
-    maven { url "http://repo.maven.apache.org/maven2" }
-  }
+    maven {
+        url "http://localhost:8081/nexus/content/repositories/snapshots"
+    }
+
+}
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://localhost:8081/nexus/content/repositories/snapshots") {
+                authentication(userName: "deploy_to_nexus", password: "12")
+            }
+            pom.version = "0.0.1-SNAPSHOT"
+            pom.artifactId = "simple-project"
+            pom.groupId = "com.example"
+        }
+    }
+}
+subprojects {
+    apply plugin: 'java'
+    sourceCompatibility = 1.10
+    targetCompatibility = 1.10
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
 
   
   dependencies {
@@ -30,5 +42,4 @@ subprojects {
   providedCompile project(':web-resources')
 }
 
-  
 }
