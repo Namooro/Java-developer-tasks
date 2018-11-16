@@ -5,8 +5,10 @@
     <groupId>com.epam</groupId>
     <artifactId>homework</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
+    <packaging>pom</packaging>
+    <modules>
+        <module>homework-lambdas-and-streams</module>
+    </modules>
     <name>${project.artifactId}</name>
     <description>Homework for java mentoring</description>
     <properties>
