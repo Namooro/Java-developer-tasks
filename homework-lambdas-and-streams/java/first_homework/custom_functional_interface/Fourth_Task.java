@@ -11,7 +11,7 @@ public class Fourth_Task {
 
         ThreeFunction<Integer, Integer, Integer> biggestNumber = (x, y, z) ->
                 Collections.max(Arrays.asList(x, y, z));
-        System.out.println(biggestNumber);
+        System.out.println(biggestNumber.result(10, 50, 1000));
     }
 }
 

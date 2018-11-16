@@ -46,7 +46,7 @@ public class Tree {
                 .collect(Collectors.toList());
     }
 
-    private Stream<Tree> flattened() {
+    public Stream<Tree> flattened() {
         return Stream.concat(
                 Stream.of(this), children.stream()
                         .flatMap(Tree::flattened));

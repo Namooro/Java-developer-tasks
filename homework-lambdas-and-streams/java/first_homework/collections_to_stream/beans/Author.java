@@ -1,4 +1,4 @@
-package first_homework.сollections_to_stream.beans;
+package first_homework.collections_to_stream.beans;
 
 import java.util.List;
 
