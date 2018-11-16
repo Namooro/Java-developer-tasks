@@ -12,7 +12,11 @@ import java.util.function.Supplier;
 
 
 public class Third_Task {
+    /**
+     * This task implements functional interfaces and one custom one
+     */
     public static void main(String[] args) {
+
 
         Predicate<Integer> isAdult = Third_Task::moreThan21;
 
@@ -32,9 +36,44 @@ public class Third_Task {
                 .map(Person::getAge)
                 .filter(isAdult)
                 .forEach(pesonNameConsumer);
+
+        Inverse inverse = (x) -> new StringBuilder(x).reverse().toString();
+        System.out.println(inverse.run("Hello"));
+
+        System.out.println(Inverse1.staticMethod());
+        Inverse1.anotherStatic();
+
+        Inverse1 inverse1 = (x) -> new StringBuilder().reverse().toString();
+        System.out.println(inverse1.run("lower case"));
     }
 
     private static boolean moreThan21(Integer age) {
         return age > 21;
+    }
+
+    @FunctionalInterface
+    interface Inverse {
+        String run(String input);
+
+        default String run() {
+            return "empty default";
+        }
+    }
+
+    @FunctionalInterface
+    interface Inverse1 {
+        String run(String input);
+
+        static String staticMethod() {
+            return "new default";
+        }
+
+        static void anotherStatic() {
+            System.out.println("Another static");
+        }
+
+        default String run() {
+            return "Another default";
+        }
     }
 }

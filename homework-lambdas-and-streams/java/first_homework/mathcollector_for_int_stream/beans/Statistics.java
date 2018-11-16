@@ -1,23 +1,25 @@
 package first_homework.mathcollector_for_int_stream.beans;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 public class Statistics {
 
     private int max;
     private int min;
-    private long count;
-    private long sum;
+    private AtomicLong count = new AtomicLong(0);
+    private AtomicLong sum = new AtomicLong(0);
     private double average;
 
-    public void setCount(long count) {
-        this.count = count;
+    public void setCount(Long count) {
+        this.count.getAndSet(count);
     }
 
-    public long getSum() {
+    public AtomicLong getSum() {
         return sum;
     }
 
     public void setSum(long sum) {
-        this.sum = sum;
+        this.sum.set(sum);
     }
 
     public int getMax() {
@@ -36,35 +38,38 @@ public class Statistics {
         this.min = min;
     }
 
-    public long getCount() {
+    public AtomicLong getCount() {
         return count;
     }
 
     public void updateCount() {
-        this.count += 1;
+        count.incrementAndGet();
     }
 
     public double getAverage() {
         return average;
     }
 
-    public void setAverage(double average) {
-        this.average = average;
+    public void setAverage(long sum, long count) {
+        if (count == 0) {
+            this.average = 0;
+        } else
+            this.average = 1.0 * sum / count;
     }
 
     public Statistics() {
         this.average = 0;
-        this.count = 0;
-        this.sum = 0;
-        this.max = Integer.MIN_VALUE;
+        this.count = new AtomicLong(0);
+        this.sum = new AtomicLong(0);
+        this.max = 0;
         this.min = Integer.MAX_VALUE;
     }
 
     public Statistics(int max, int min, long count, long sum, double average) {
-        this.max = max;
+        this.max = (max);
         this.min = min;
-        this.sum = sum;
-        this.count = count;
+        this.sum.set(sum);
+        this.count.set(count);
         this.average = average;
     }
 
