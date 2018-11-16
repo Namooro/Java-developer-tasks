@@ -8,6 +8,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>homework-lambdas-and-streams</module>
+        <module>jvm-memory</module>
     </modules>
     <name>${project.artifactId}</name>
     <description>Homework for java mentoring</description>
