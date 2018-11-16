@@ -50,8 +50,11 @@ public class Statistics {
         return average;
     }
 
-    public void setAverage(double average) {
-        this.average = average;
+    public void setAverage(long sum, long count) {
+        if (count == 0) {
+            this.average = 0;
+        } else
+            this.average = 1.0 * sum / count;
     }
 
     public Statistics() {

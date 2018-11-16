@@ -20,6 +20,7 @@ public class Seventh_Task {
     public static void main(String[] args) {
         int j = 0;
         ArrayList<Long> results = new ArrayList<>();
+        System.out.println("Performes calculation of huge amount of randomized numbers with custom Math Collector 9 times");
         while (j < 9) {
 
             Stream<Integer> randomStream = Stream.iterate(1, i -> i + 1)
@@ -32,7 +33,7 @@ public class Seventh_Task {
             if (j != 0)
                 results.add(System.currentTimeMillis() - startTime);
         }
-        System.out.println(results.stream().reduce((i, count) -> i + count).get() / j);
+        System.out.println("average result of execution is:" + results.stream().reduce((i, count) -> i + count).get() / j);
     }
 
     public static class MathCollector implements Collector<Integer, Statistics, Statistics> {
@@ -49,7 +50,7 @@ public class Seventh_Task {
                 newStats.setMax(Math.max(number, newStats.getMax()));
                 newStats.setMin(Math.min(number, newStats.getMin()));
                 newStats.getSum().addAndGet(number);
-                newStats.setAverage(newStats.getSum().get() / (double) newStats.getCount().get());
+                newStats.setAverage(newStats.getSum().get(), newStats.getCount().get());
             };
         }
 
@@ -60,7 +61,7 @@ public class Seventh_Task {
                 statistics.setMax(Math.max(statistics2.getMax(), statistics.getMax()));
                 statistics.setMin(Math.min(statistics.getMin(), statistics2.getMin()));
                 statistics.setSum(statistics.getSum().get() + statistics2.getSum().get());
-                statistics.setAverage(statistics.getSum().accumulateAndGet(statistics2.getCount().get(), Math::floorDiv));
+                statistics.setAverage(statistics.getSum().get(), statistics.getCount().get());
                 return statistics;
             };
         }

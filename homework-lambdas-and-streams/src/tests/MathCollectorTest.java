@@ -19,13 +19,13 @@ public class MathCollectorTest {
     @Test
     public void checkSum() {
         Stream<Integer> myStreamSum = Stream.iterate(100, i -> i + 100).limit(10).parallel().unordered();
-        assertEquals(5500, myStreamSum.collect(new Seventh_Task.MathCollector()).getSum());
+        assertEquals(5500, myStreamSum.collect(new Seventh_Task.MathCollector()).getSum().get());
     }
 
     @Test
     public void checkCount() {
         Stream<Integer> myStreamSum = Stream.iterate(100, i -> i + 100).parallel().unordered().limit(999999);
-        assertEquals(999999, myStreamSum.collect(new Seventh_Task.MathCollector()).getCount());
+        assertEquals(999999, myStreamSum.collect(new Seventh_Task.MathCollector()).getCount().get());
     }
 
 }

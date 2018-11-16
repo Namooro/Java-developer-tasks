@@ -1,7 +1,7 @@
-package first_homework.сollections_to_stream;
+package first_homework.collections_to_stream;
 
-import first_homework.сollections_to_stream.beans.Author;
-import first_homework.сollections_to_stream.beans.Book;
+import first_homework.collections_to_stream.beans.Author;
+import first_homework.collections_to_stream.beans.Book;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,12 +14,12 @@ import static java.util.Comparator.comparing;
 
 public class Fifth_Task {
     public static void main(String[] args) {
-        System.out.printf("123");
+        collectionsToStream();
     }
 
     /**
      * This task shows functional of streams
-     * */
+     */
     private static void collectionsToStream() {
         Author firstAuthor = new Author("Tolstoy", (short) 50);
         Author secondAuthor = new Author("Ilf", (short) 30);
@@ -44,56 +44,56 @@ public class Fifth_Task {
         Book[] books = {firstBook, secondBook, thirdBook, fourthBook};
 
         //5.2.1
-        System.out.println("Print some/all books with more than 200 pages:");
+        System.out.println("5.2.1 Print some/all books with more than 200 pages:");
         System.out.println(stream(books)
                 .allMatch(book -> book.getNumberOfPages() > 200)); // or anyMatch
         //5.2.2
-        System.out.println("Find books with min(max) number of pages:");
+        System.out.println("5.2.2 Find books with min(max) number of pages:");
         System.out.println(stream(books)
                 .min(comparing(Book::getNumberOfPages)) //or max
                 .get().getTitle());
         //5.2.3
-        System.out.println("Print books with only single author");
+        System.out.println("5.2.3 Print books with only single author");
         stream(books)
                 .filter(book -> book.getAuthors().size() == 1)
                 .forEach(System.out::println);
         //5.2.4
-        System.out.println("Sort book by Title(number of pages)");
+        System.out.println("5.2.4 Sort book by Title(number of pages)");
         stream(books)
                 .sorted(comparing(Book::getTitle)) //or Book::getNumberOfPages
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
         //5.2.5
-        System.out.println("Getting list of titles");
+        System.out.println("5.2.5 Getting list of titles");
         stream(books)
                 .map(Book::getTitle) //getting list of titles
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
         //5.2.6
-        System.out.println("Print all books titles");
+        System.out.println("5.2.6 Print all books titles");
         stream(books)
                 .map(Book::getTitle)
                 .forEach(System.out::println);
         //5.2.7
-        System.out.println("Retrieve distinct list of all authors");
+        System.out.println("5.2.7 Retrieve distinct list of all authors");
         stream(books)
                 .map(Book::getAuthors)
                 .distinct()
                 .collect(ArrayList::new, List::addAll, List::addAll)
                 .forEach(System.out::println);
         //5.3
-        System.out.println("Peek into stream while printing authors names");
+        System.out.println("5.3 Peek into stream while printing authors names");
         stream(books)
                 .map(Book::getAuthors)
                 .peek(System.out::println)
                 .collect(Collectors.toList());
         //5.4
-        System.out.println("Usage of parallel stream");
+        System.out.println("5.4 Usage of parallel stream");
         stream(books).parallel()
                 .filter(book -> book.getAuthors().size() == 1)
                 .forEach(System.out::println);
         //5.6
-        System.out.println("Usage of optional type");
+        System.out.println("5.6 Usage of optional type");
         stream(authors)
                 .filter(author -> ("Petrov").equals(author.getName()))
                 .map(Author::getBooks)
@@ -101,5 +101,47 @@ public class Fifth_Task {
                         .max(comparing(Book::getNumberOfPages)))
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
+
+        System.out.println("Streaming with parallel: ");
+        //5.2.1
+        System.out.println("5.2.1 Print some/all books with more than 200 pages:");
+        System.out.println(stream(books).parallel()
+                .allMatch(book -> book.getNumberOfPages() > 200)); // or anyMatch
+        //5.2.2
+        System.out.println("5.2.2 Find books with min(max) number of pages:");
+        System.out.println(stream(books).parallel()
+                .min(comparing(Book::getNumberOfPages)) //or max
+                .get().getTitle());
+        System.out.println("May not working right in parallel");
+        //5.2.3
+        System.out.println("5.2.3 Print books with only single author");
+        stream(books).parallel()
+                .filter(book -> book.getAuthors().size() == 1)
+                .forEach(System.out::println);
+        //5.2.4
+        System.out.println("5.2.4. Sort book by Title(number of pages)");
+        stream(books).parallel()
+                .sorted(comparing(Book::getTitle)) //or Book::getNumberOfPages
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+        //5.2.5
+        System.out.println("5.2.5. Getting list of titles");
+        stream(books).parallel()
+                .map(Book::getTitle) //getting list of titles
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+        //5.2.6
+        System.out.println("5.2.6 Print all books titles");
+        stream(books).parallel()
+                .map(Book::getTitle)
+                .forEach(System.out::println);
+        //5.2.7
+        System.out.println("5.2.7 Retrieve distinct list of all authors");
+        stream(books).parallel()
+                .map(Book::getAuthors)
+                .distinct()
+                .collect(ArrayList::new, List::addAll, List::addAll)
+                .forEach(System.out::println);
+
     }
 }
