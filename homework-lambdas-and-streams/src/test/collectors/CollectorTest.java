@@ -1,4 +1,4 @@
-package tests;
+package collectors;
 
 import first_homework.custom_collector.Sixth_Task;
 import first_homework.custom_collector.beans.Student;

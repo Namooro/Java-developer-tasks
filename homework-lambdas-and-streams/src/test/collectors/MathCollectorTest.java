@@ -1,4 +1,4 @@
-package tests;
+package collectors;
 
 import first_homework.mathcollector_for_int_stream.Seventh_Task;
 import org.junit.Test;
