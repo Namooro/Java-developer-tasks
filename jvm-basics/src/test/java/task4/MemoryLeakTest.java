@@ -1,5 +1,6 @@
 package task4;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.*;
@@ -17,6 +18,7 @@ public class MemoryLeakTest {
      * 2) huge collections
      * 3) duplicate strings
      */
+    @Ignore
     @Test(expected = OutOfMemoryError.class)
     public void testOutOfMemory()
             throws IOException {

@@ -1,6 +1,7 @@
 package task5;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import third_homework.JarClassLoader;
 
@@ -23,7 +24,7 @@ public class ClassloaderTest {
         pathToJar = getClass().getClassLoader().getResource("module3.jar").getPath().substring(1);
         jarClassLoader = new JarClassLoader(new URL("jar:file:" + pathToJar + "!/"));
     }
-
+    @Ignore
     @Test
     public void test() throws ClassNotFoundException, IOException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException, NoSuchFieldException {
 
