@@ -21,7 +21,7 @@ public class ClassloaderTest {
 
     @Before
     public void init() throws MalformedURLException {
-        pathToJar = getClass().getClassLoader().getResource("module3.jar").getPath().substring(1);
+        pathToJar = getClass().getClassLoader().getResource("jvm-memory-1.0-SNAPSHOT.jar").getPath().substring(1);
         jarClassLoader = new JarClassLoader(new URL("jar:file:" + pathToJar + "!/"));
     }
     @Ignore
@@ -29,13 +29,13 @@ public class ClassloaderTest {
     public void test() throws ClassNotFoundException, IOException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException, NoSuchFieldException {
 
         //Test getting SampleClass from Jar
-        retrieveClass("main/SampleClass");
+        retrieveClass("third_homework/SampleClass");
         //Test getting SampleClass from classLoaderCache
-        retrieveClass("main/SampleClass");
+        retrieveClass("third_homework/SampleClass");
         //Test getting AnotherSampleClass from Jar
-        retrieveClass("main/AnotherSampleClass");
+        retrieveClass("third_homework/AnotherSampleClass");
         //Test getting AnotherSampleClass from classloader cache
-        retrieveClass("main/AnotherSampleClass");
+        retrieveClass("third_homework/AnotherSampleClass");
     }
 
     private void retrieveClass(String className) throws IOException, ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
