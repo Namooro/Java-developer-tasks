@@ -1,4 +1,4 @@
-package main.second_homework.classloading.beans;
+package second_homework.classloading.beans;
 
 public class Dog implements Animal {
     @Override

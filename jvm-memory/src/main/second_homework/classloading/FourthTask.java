@@ -1,6 +1,6 @@
 package second_homework.classloading;
 
-import main.second_homework.classloading.beans.Animal;
+import second_homework.classloading.beans.Animal;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
