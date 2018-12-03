@@ -54,6 +54,6 @@ public class UtilsTest {
 
     @AfterClass
     public static void after() {
-        logger.log(Level.INFO, "all test completed");
+        logger.log(Level.INFO, "all tests completed");
     }
 }

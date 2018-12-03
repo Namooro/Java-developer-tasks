@@ -18,6 +18,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+
+/**
+ * Those tests will fail if no instance of postgresql is running
+ */
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
@@ -41,10 +46,12 @@ public class UserApplicationTest {
     private String firstPassword = "1";
     private double emptyAmount = 0.0;
     private double amount = 5.0;
+
     @Before
-    public void before(){
+    public void before() {
 
     }
+
     @After
     public void after() {
         userRepository.deleteAll();
