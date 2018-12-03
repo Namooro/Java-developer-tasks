@@ -11,6 +11,7 @@
         <module>jvm-memory</module>
         <module>jvm-basics</module>
         <module>junit</module>
+        <module>junit/src/main/petapp</module>
     </modules>
     <name>${project.artifactId}</name>
     <description>Homework for java mentoring</description>
