@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Main {
+public class Threads {
     public static void main(String[] args) throws InterruptedException {
         List<Integer> arrayList = new ArrayList<>();
 
@@ -13,8 +13,7 @@ public class Main {
                 for (int i = 0; i < 100; i++)
                     arrayList.add(ThreadLocalRandom.current().nextInt(0, 100));
             }
-        }
-        );
+        });
 
         var t2 = new Thread(() -> {
             synchronized (arrayList) {
