@@ -37,7 +37,8 @@ public class BlockingObjectPool {
             lock.lock();
             if (!pool.isEmpty()) {
                 result = pool.remove(0);
-                System.out.println("Extracted object of class: " + result.getClass().getSimpleName() + "\n" + "There are %n elements in pool: " + createdObjects.getAndDecrement());
+                System.out.println("Extracted object of class: " + result.getClass().getSimpleName());
+                System.out.println("There are %n elements in pool: " + createdObjects.decrementAndGet());
             }
         } finally {
             lock.unlock();
@@ -55,7 +56,8 @@ public class BlockingObjectPool {
             lock.lock();
             if (createdObjects.intValue() < size.intValue()) {
                 pool.add(object);
-                System.out.println("Put object of class: " + object.getClass().getSimpleName() + "\n" + "There are %n elements in pool: " + createdObjects.getAndIncrement());
+                System.out.println("Put object of class: " + object.getClass().getSimpleName());
+                System.out.println("There are %n elements in pool: " + createdObjects.incrementAndGet());
             }
         } finally {
             lock.unlock();
