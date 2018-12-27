@@ -14,7 +14,7 @@ repositories {
 
 
 dependencies {
-    compile project(':api')
+    compile project(':domain')
     compile project(':tests')
     compile project(':resources')
 
