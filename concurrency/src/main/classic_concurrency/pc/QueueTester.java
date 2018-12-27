@@ -14,6 +14,14 @@ public class QueueTester {
             }
         });
 
+        Thread secondProducerThread = new Thread(() -> {
+            try {
+                messageQueue.secondProducer();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
         Thread consumerThread = new Thread(() -> {
             try {
                 messageQueue.consume();
@@ -22,10 +30,22 @@ public class QueueTester {
             }
         });
 
+        Thread secondConsumerThread = new Thread(() -> {
+            try {
+                messageQueue.secondConsumer();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
         producerThread.start();
         consumerThread.start();
+        secondConsumerThread.start();
+        secondProducerThread.start();
 
         producerThread.join();
+        secondConsumerThread.join();
+        secondProducerThread.join();
         consumerThread.join();
     }
 }
