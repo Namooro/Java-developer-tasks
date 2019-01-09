@@ -15,7 +15,7 @@ import static org.mockito.Mockito.when;
 
 /**
  * This test class shows usage of Mockito framework
- * */
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class MocksApplicationTest {
 

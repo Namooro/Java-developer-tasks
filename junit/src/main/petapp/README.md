@@ -1,4 +1,5 @@
 # Demo 
 This app shows simple banking application.
 Tasks: 2,3,4.
-run with cobertura, sonar, testNG
+for cobertura: mvn clean package cobertura:cobertura
+for jacoco
