@@ -1,0 +1,807 @@
+000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-11-21 17:55:31.835  INFO 24888 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2018-11-21 17:55:32.579  INFO 24888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 17:55:32.960  INFO 24888 --- [           main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-11-21 17:55:33.683  INFO 24888 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-11-21 17:55:33.701  WARN 24888 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-11-21 17:55:35.003  INFO 24888 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/manage'
+2018-11-21 17:55:35.066  INFO 24888 --- [           main] o.s.s.p.PetclinicIntegrationTests        : Started PetclinicIntegrationTests in 6.044 seconds (JVM running for 13.828)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.226 s - in org.springframework.samples.petclinic.PetclinicIntegrationTests
+[INFO] Running org.springframework.samples.petclinic.service.ClinicServiceTests
+2018-11-21 17:55:35.247  INFO 24888 --- [           main] b.t.a.o.j.DataJpaTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.springframework.samples.petclinic.service.ClinicServiceTests], using SpringBootContextLoader
+2018-11-21 17:55:35.247  INFO 24888 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [org.springframework.samples.petclinic.service.ClinicServiceTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-11-21 17:55:35.247  INFO 24888 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [org.springframework.samples.petclinic.service.ClinicServiceTests]: ClinicServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-11-21 17:55:35.258  INFO 24888 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration org.springframework.samples.petclinic.PetClinicApplication for test class org.springframework.samples.petclinic.service.ClinicServiceTests
+2018-11-21 17:55:35.259  INFO 24888 --- [           main] b.t.a.o.j.DataJpaTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-11-21 17:55:35.260  INFO 24888 --- [           main] b.t.a.o.j.DataJpaTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3eb5c77b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2b2ad96a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@18a30ed8, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6832d99b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@782c45f9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5b0321f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5e539bf, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7be5c699, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@617c5791, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6558b16b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@495c54be, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1c588202]
+
+
+              |\      _,,,--,,_
+             /,`.-'`'   ._  \-;;,_
+  _______ __|,4-  ) )_   .;.(__`'-'__     ___ __    _ ___ _______
+ |       | '---''(_/._)-'(_\_)   |   |   |   |  |  | |   |       |
+ |    _  |    ___|_     _|       |   |   |   |   |_| |   |       | __ _ _
+ |   |_| |   |___  |   | |       |   |   |   |       |   |       | \ \ \ \
+ |    ___|    ___| |   | |      _|   |___|   |  _    |   |      _|  \ \ \ \
+ |   |   |   |___  |   | |     |_|       |   | | |   |   |     |_    ) ) ) )
+ |___|   |_______| |___| |_______|_______|___|_|  |__|___|_______|  / / / /
+ ==================================================================/_/_/_/
+
+:: Built with Spring Boot :: 2.1.0.BUILD-SNAPSHOT
+
+
+2018-11-21 17:55:35.286  INFO 24888 --- [           main] o.s.s.p.service.ClinicServiceTests       : Starting ClinicServiceTests on EPRUSAMW0206 with PID 24888 (started by Roman_Selianko in D:\Jenkins\workspace\checkout-setup)
+2018-11-21 17:55:35.287  INFO 24888 --- [           main] o.s.s.p.service.ClinicServiceTests       : No active profile set, falling back to default profiles: default
+2018-11-21 17:55:35.382  INFO 24888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-11-21 17:55:35.399  INFO 24888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 4 repository interfaces.
+2018-11-21 17:55:35.407  INFO 24888 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2018-11-21 17:55:35.432  INFO 24888 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:hsqldb:mem:000c6d9c-b02f-468a-bb22-59b5ba8408cf', username='sa'
+2018-11-21 17:55:35.549  INFO 24888 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-21 17:55:35.560  INFO 24888 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2018-11-21 17:55:35.620  INFO 24888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 17:55:35.695  INFO 24888 --- [           main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-11-21 17:55:35.776  INFO 24888 --- [           main] o.s.s.p.service.ClinicServiceTests       : Started ClinicServiceTests in 0.514 seconds (JVM running for 14.537)
+2018-11-21 17:55:35.785  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@29322ca9, testMethod = shouldFindVets@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@2c3ea76d]; rollback [true]
+Hibernate: select vet0_.id as id1_5_, vet0_.first_name as first_na2_5_, vet0_.last_name as last_nam3_5_ from vets vet0_
+Hibernate: select specialtie0_.vet_id as vet_id1_4_0_, specialtie0_.specialty_id as specialt2_4_0_, specialty1_.id as id1_2_1_, specialty1_.name as name2_2_1_ from vet_specialties specialtie0_ inner join specialties specialty1_ on specialtie0_.specialty_id=specialty1_.id where specialtie0_.vet_id=?
+Hibernate: select specialtie0_.vet_id as vet_id1_4_0_, specialtie0_.specialty_id as specialt2_4_0_, specialty1_.id as id1_2_1_, specialty1_.name as name2_2_1_ from vet_specialties specialtie0_ inner join specialties specialty1_ on specialtie0_.specialty_id=specialty1_.id where specialtie0_.vet_id=?
+Hibernate: select specialtie0_.vet_id as vet_id1_4_0_, specialtie0_.specialty_id as specialt2_4_0_, specialty1_.id as id1_2_1_, specialty1_.name as name2_2_1_ from vet_specialties specialtie0_ inner join specialties specialty1_ on specialtie0_.specialty_id=specialty1_.id where specialtie0_.vet_id=?
+Hibernate: select specialtie0_.vet_id as vet_id1_4_0_, specialtie0_.specialty_id as specialt2_4_0_, specialty1_.id as id1_2_1_, specialty1_.name as name2_2_1_ from vet_specialties specialtie0_ inner join specialties specialty1_ on specialtie0_.specialty_id=specialty1_.id where specialtie0_.vet_id=?
+Hibernate: select specialtie0_.vet_id as vet_id1_4_0_, specialtie0_.specialty_id as specialt2_4_0_, specialty1_.id as id1_2_1_, specialty1_.name as name2_2_1_ from vet_specialties specialtie0_ inner join specialties specialty1_ on specialtie0_.specialty_id=specialty1_.id where specialtie0_.vet_id=?
+Hibernate: select specialtie0_.vet_id as vet_id1_4_0_, specialtie0_.specialty_id as specialt2_4_0_, specialty1_.id as id1_2_1_, specialty1_.name as name2_2_1_ from vet_specialties specialtie0_ inner join specialties specialty1_ on specialtie0_.specialty_id=specialty1_.id where specialtie0_.vet_id=?
+2018-11-21 17:55:35.808  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@29322ca9, testMethod = shouldFindVets@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]
+2018-11-21 17:55:35.814  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@7b4d376d, testMethod = shouldFindOwnersByLastName@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@2c3ea76d]; rollback [true]
+Hibernate: select distinct owner0_.id as id1_0_0_, pets1_.id as id1_1_1_, owner0_.first_name as first_na2_0_0_, owner0_.last_name as last_nam3_0_0_, owner0_.address as address4_0_0_, owner0_.city as city5_0_0_, owner0_.telephone as telephon6_0_0_, pets1_.name as name2_1_1_, pets1_.birth_date as birth_da3_1_1_, pets1_.owner_id as owner_id4_1_1_, pets1_.type_id as type_id5_1_1_, pets1_.owner_id as owner_id4_1_0__, pets1_.id as id1_1_0__ from owners owner0_ left outer join pets pets1_ on owner0_.id=pets1_.owner_id where owner0_.last_name like ?
+Hibernate: select pettype0_.id as id1_3_0_, pettype0_.name as name2_3_0_ from types pettype0_ where pettype0_.id=?
+Hibernate: select pettype0_.id as id1_3_0_, pettype0_.name as name2_3_0_ from types pettype0_ where pettype0_.id=?
+Hibernate: select visits0_.pet_id as pet_id4_6_0_, visits0_.id as id1_6_0_, visits0_.id as id1_6_1_, visits0_.visit_date as visit_da2_6_1_, visits0_.description as descript3_6_1_, visits0_.pet_id as pet_id4_6_1_ from visits visits0_ where visits0_.pet_id=?
+Hibernate: select visits0_.pet_id as pet_id4_6_0_, visits0_.id as id1_6_0_, visits0_.id as id1_6_1_, visits0_.visit_date as visit_da2_6_1_, visits0_.description as descript3_6_1_, visits0_.pet_id as pet_id4_6_1_ from visits visits0_ where visits0_.pet_id=?
+Hibernate: select distinct owner0_.id as id1_0_0_, pets1_.id as id1_1_1_, owner0_.first_name as first_na2_0_0_, owner0_.last_name as last_nam3_0_0_, owner0_.address as address4_0_0_, owner0_.city as city5_0_0_, owner0_.telephone as telephon6_0_0_, pets1_.name as name2_1_1_, pets1_.birth_date as birth_da3_1_1_, pets1_.owner_id as owner_id4_1_1_, pets1_.type_id as type_id5_1_1_, pets1_.owner_id as owner_id4_1_0__, pets1_.id as id1_1_0__ from owners owner0_ left outer join pets pets1_ on owner0_.id=pets1_.owner_id where owner0_.last_name like ?
+2018-11-21 17:55:35.877  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@7b4d376d, testMethod = shouldFindOwnersByLastName@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]
+2018-11-21 17:55:35.879  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@ddaebd0, testMethod = shouldAddNewVisitForPet@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@2c3ea76d]; rollback [true]
+Hibernate: select pet0_.id as id1_1_0_, pet0_.name as name2_1_0_, pet0_.birth_date as birth_da3_1_0_, pet0_.owner_id as owner_id4_1_0_, pet0_.type_id as type_id5_1_0_, owner1_.id as id1_0_1_, owner1_.first_name as first_na2_0_1_, owner1_.last_name as last_nam3_0_1_, owner1_.address as address4_0_1_, owner1_.city as city5_0_1_, owner1_.telephone as telephon6_0_1_, pettype2_.id as id1_3_2_, pettype2_.name as name2_3_2_, visits3_.pet_id as pet_id4_6_3_, visits3_.id as id1_6_3_, visits3_.id as id1_6_4_, visits3_.visit_date as visit_da2_6_4_, visits3_.description as descript3_6_4_, visits3_.pet_id as pet_id4_6_4_ from pets pet0_ left outer join owners owner1_ on pet0_.owner_id=owner1_.id left outer join types pettype2_ on pet0_.type_id=pettype2_.id left outer join visits visits3_ on pet0_.id=visits3_.pet_id where pet0_.id=?
+Hibernate: insert into visits (id, visit_date, description, pet_id) values (default, ?, ?, ?)
+2018-11-21 17:55:35.940  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@ddaebd0, testMethod = shouldAddNewVisitForPet@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]
+2018-11-21 17:55:35.955  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@764b3bfe, testMethod = shouldUpdateOwner@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@2c3ea76d]; rollback [true]
+Hibernate: select owner0_.id as id1_0_0_, pets1_.id as id1_1_1_, owner0_.first_name as first_na2_0_0_, owner0_.last_name as last_nam3_0_0_, owner0_.address as address4_0_0_, owner0_.city as city5_0_0_, owner0_.telephone as telephon6_0_0_, pets1_.name as name2_1_1_, pets1_.birth_date as birth_da3_1_1_, pets1_.owner_id as owner_id4_1_1_, pets1_.type_id as type_id5_1_1_, pets1_.owner_id as owner_id4_1_0__, pets1_.id as id1_1_0__ from owners owner0_ left outer join pets pets1_ on owner0_.id=pets1_.owner_id where owner0_.id=?
+Hibernate: select pettype0_.id as id1_3_0_, pettype0_.name as name2_3_0_ from types pettype0_ where pettype0_.id=?
+Hibernate: select visits0_.pet_id as pet_id4_6_0_, visits0_.id as id1_6_0_, visits0_.id as id1_6_1_, visits0_.visit_date as visit_da2_6_1_, visits0_.description as descript3_6_1_, visits0_.pet_id as pet_id4_6_1_ from visits visits0_ where visits0_.pet_id=?
+Hibernate: update owners set first_name=?, last_name=?, address=?, city=?, telephone=? where id=?
+Hibernate: select owner0_.id as id1_0_0_, pets1_.id as id1_1_1_, owner0_.first_name as first_na2_0_0_, owner0_.last_name as last_nam3_0_0_, owner0_.address as address4_0_0_, owner0_.city as city5_0_0_, owner0_.telephone as telephon6_0_0_, pets1_.name as name2_1_1_, pets1_.birth_date as birth_da3_1_1_, pets1_.owner_id as owner_id4_1_1_, pets1_.type_id as type_id5_1_1_, pets1_.owner_id as owner_id4_1_0__, pets1_.id as id1_1_0__ from owners owner0_ left outer join pets pets1_ on owner0_.id=pets1_.owner_id where owner0_.id=?
+2018-11-21 17:55:35.995  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@764b3bfe, testMethod = shouldUpdateOwner@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]
+2018-11-21 17:55:35.998  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@2b286ff6, testMethod = shouldFindVisitsByPetId@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@2c3ea76d]; rollback [true]
+Hibernate: select visit0_.id as id1_6_, visit0_.visit_date as visit_da2_6_, visit0_.description as descript3_6_, visit0_.pet_id as pet_id4_6_ from visits visit0_ where visit0_.pet_id=?
+2018-11-21 17:55:36.007  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@2b286ff6, testMethod = shouldFindVisitsByPetId@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]
+2018-11-21 17:55:36.010  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@7b1d0973, testMethod = shouldInsertPetIntoDatabaseAndGenerateId@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@2c3ea76d]; rollback [true]
+Hibernate: select owner0_.id as id1_0_0_, pets1_.id as id1_1_1_, owner0_.first_name as first_na2_0_0_, owner0_.last_name as last_nam3_0_0_, owner0_.address as address4_0_0_, owner0_.city as city5_0_0_, owner0_.telephone as telephon6_0_0_, pets1_.name as name2_1_1_, pets1_.birth_date as birth_da3_1_1_, pets1_.owner_id as owner_id4_1_1_, pets1_.type_id as type_id5_1_1_, pets1_.owner_id as owner_id4_1_0__, pets1_.id as id1_1_0__ from owners owner0_ left outer join pets pets1_ on owner0_.id=pets1_.owner_id where owner0_.id=?
+Hibernate: select pettype0_.id as id1_3_0_, pettype0_.name as name2_3_0_ from types pettype0_ where pettype0_.id=?
+Hibernate: select visits0_.pet_id as pet_id4_6_0_, visits0_.id as id1_6_0_, visits0_.id as id1_6_1_, visits0_.visit_date as visit_da2_6_1_, visits0_.description as descript3_6_1_, visits0_.pet_id as pet_id4_6_1_ from visits visits0_ where visits0_.pet_id=?
+Hibernate: select visits0_.pet_id as pet_id4_6_0_, visits0_.id as id1_6_0_, visits0_.id as id1_6_1_, visits0_.visit_date as visit_da2_6_1_, visits0_.description as descript3_6_1_, visits0_.pet_id as pet_id4_6_1_ from visits visits0_ where visits0_.pet_id=?
+Hibernate: select pettype0_.id as id1_3_, pettype0_.name as name2_3_ from types pettype0_ order by pettype0_.name
+Hibernate: insert into pets (id, name, birth_date, owner_id, type_id) values (default, ?, ?, ?, ?)
+Hibernate: select owner0_.id as id1_0_0_, pets1_.id as id1_1_1_, owner0_.first_name as first_na2_0_0_, owner0_.last_name as last_nam3_0_0_, owner0_.address as address4_0_0_, owner0_.city as city5_0_0_, owner0_.telephone as telephon6_0_0_, pets1_.name as name2_1_1_, pets1_.birth_date as birth_da3_1_1_, pets1_.owner_id as owner_id4_1_1_, pets1_.type_id as type_id5_1_1_, pets1_.owner_id as owner_id4_1_0__, pets1_.id as id1_1_0__ from owners owner0_ left outer join pets pets1_ on owner0_.id=pets1_.owner_id where owner0_.id=?
+2018-11-21 17:55:36.036  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@7b1d0973, testMethod = shouldInsertPetIntoDatabaseAndGenerateId@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]
+2018-11-21 17:55:36.038  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@77a0a66a, testMethod = shouldInsertOwner@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@2c3ea76d]; rollback [true]
+Hibernate: select distinct owner0_.id as id1_0_0_, pets1_.id as id1_1_1_, owner0_.first_name as first_na2_0_0_, owner0_.last_name as last_nam3_0_0_, owner0_.address as address4_0_0_, owner0_.city as city5_0_0_, owner0_.telephone as telephon6_0_0_, pets1_.name as name2_1_1_, pets1_.birth_date as birth_da3_1_1_, pets1_.owner_id as owner_id4_1_1_, pets1_.type_id as type_id5_1_1_, pets1_.owner_id as owner_id4_1_0__, pets1_.id as id1_1_0__ from owners owner0_ left outer join pets pets1_ on owner0_.id=pets1_.owner_id where owner0_.last_name like ?
+Hibernate: insert into owners (id, first_name, last_name, address, city, telephone) values (default, ?, ?, ?, ?, ?)
+Hibernate: select distinct owner0_.id as id1_0_0_, pets1_.id as id1_1_1_, owner0_.first_name as first_na2_0_0_, owner0_.last_name as last_nam3_0_0_, owner0_.address as address4_0_0_, owner0_.city as city5_0_0_, owner0_.telephone as telephon6_0_0_, pets1_.name as name2_1_1_, pets1_.birth_date as birth_da3_1_1_, pets1_.owner_id as owner_id4_1_1_, pets1_.type_id as type_id5_1_1_, pets1_.owner_id as owner_id4_1_0__, pets1_.id as id1_1_0__ from owners owner0_ left outer join pets pets1_ on owner0_.id=pets1_.owner_id where owner0_.last_name like ?
+2018-11-21 17:55:36.054  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@77a0a66a, testMethod = shouldInsertOwner@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]
+2018-11-21 17:55:36.058  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@672a67a3, testMethod = shouldFindSingleOwnerWithPet@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@2c3ea76d]; rollback [true]
+Hibernate: select owner0_.id as id1_0_0_, pets1_.id as id1_1_1_, owner0_.first_name as first_na2_0_0_, owner0_.last_name as last_nam3_0_0_, owner0_.address as address4_0_0_, owner0_.city as city5_0_0_, owner0_.telephone as telephon6_0_0_, pets1_.name as name2_1_1_, pets1_.birth_date as birth_da3_1_1_, pets1_.owner_id as owner_id4_1_1_, pets1_.type_id as type_id5_1_1_, pets1_.owner_id as owner_id4_1_0__, pets1_.id as id1_1_0__ from owners owner0_ left outer join pets pets1_ on owner0_.id=pets1_.owner_id where owner0_.id=?
+Hibernate: select pettype0_.id as id1_3_0_, pettype0_.name as name2_3_0_ from types pettype0_ where pettype0_.id=?
+Hibernate: select visits0_.pet_id as pet_id4_6_0_, visits0_.id as id1_6_0_, visits0_.id as id1_6_1_, visits0_.visit_date as visit_da2_6_1_, visits0_.description as descript3_6_1_, visits0_.pet_id as pet_id4_6_1_ from visits visits0_ where visits0_.pet_id=?
+2018-11-21 17:55:36.067  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@672a67a3, testMethod = shouldFindSingleOwnerWithPet@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]
+2018-11-21 17:55:36.070  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@76c0e686, testMethod = shouldUpdatePetName@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@2c3ea76d]; rollback [true]
+Hibernate: select pet0_.id as id1_1_0_, pet0_.name as name2_1_0_, pet0_.birth_date as birth_da3_1_0_, pet0_.owner_id as owner_id4_1_0_, pet0_.type_id as type_id5_1_0_, owner1_.id as id1_0_1_, owner1_.first_name as first_na2_0_1_, owner1_.last_name as last_nam3_0_1_, owner1_.address as address4_0_1_, owner1_.city as city5_0_1_, owner1_.telephone as telephon6_0_1_, pettype2_.id as id1_3_2_, pettype2_.name as name2_3_2_, visits3_.pet_id as pet_id4_6_3_, visits3_.id as id1_6_3_, visits3_.id as id1_6_4_, visits3_.visit_date as visit_da2_6_4_, visits3_.description as descript3_6_4_, visits3_.pet_id as pet_id4_6_4_ from pets pet0_ left outer join owners owner1_ on pet0_.owner_id=owner1_.id left outer join types pettype2_ on pet0_.type_id=pettype2_.id left outer join visits visits3_ on pet0_.id=visits3_.pet_id where pet0_.id=?
+2018-11-21 17:55:36.078  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@76c0e686, testMethod = shouldUpdatePetName@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]
+2018-11-21 17:55:36.080  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@6b621094, testMethod = shouldFindAllPetTypes@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@2c3ea76d]; rollback [true]
+Hibernate: select pettype0_.id as id1_3_, pettype0_.name as name2_3_ from types pettype0_ order by pettype0_.name
+2018-11-21 17:55:36.085  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@6b621094, testMethod = shouldFindAllPetTypes@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]
+2018-11-21 17:55:36.087  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@43384a21, testMethod = shouldFindPetWithCorrectId@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@2c3ea76d]; rollback [true]
+Hibernate: select pet0_.id as id1_1_0_, pet0_.name as name2_1_0_, pet0_.birth_date as birth_da3_1_0_, pet0_.owner_id as owner_id4_1_0_, pet0_.type_id as type_id5_1_0_, owner1_.id as id1_0_1_, owner1_.first_name as first_na2_0_1_, owner1_.last_name as last_nam3_0_1_, owner1_.address as address4_0_1_, owner1_.city as city5_0_1_, owner1_.telephone as telephon6_0_1_, pettype2_.id as id1_3_2_, pettype2_.name as name2_3_2_, visits3_.pet_id as pet_id4_6_3_, visits3_.id as id1_6_3_, visits3_.id as id1_6_4_, visits3_.visit_date as visit_da2_6_4_, visits3_.description as descript3_6_4_, visits3_.pet_id as pet_id4_6_4_ from pets pet0_ left outer join owners owner1_ on pet0_.owner_id=owner1_.id left outer join types pettype2_ on pet0_.type_id=pettype2_.id left outer join visits visits3_ on pet0_.id=visits3_.pet_id where pet0_.id=?
+2018-11-21 17:55:36.093  INFO 24888 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@6c1b62ce testClass = ClinicServiceTests, testInstance = org.springframework.samples.petclinic.service.ClinicServiceTests@43384a21, testMethod = shouldFindPetWithCorrectId@ClinicServiceTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@875dc77 testClass = ClinicServiceTests, locations = '{}', classes = '{class org.springframework.samples.petclinic.PetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@17db8cda key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@443253a6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e80960a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49353d43, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@8babf79, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f26d02b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c225adb], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.929 s - in org.springframework.samples.petclinic.service.ClinicServiceTests
+[INFO] Running org.springframework.samples.petclinic.system.CrashControllerTests
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s - in org.springframework.samples.petclinic.system.CrashControllerTests
+[INFO] Running org.springframework.samples.petclinic.vet.VetControllerTests
+2018-11-21 17:55:36.099  INFO 24888 --- [           main] .b.t.a.w.s.WebMvcTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.springframework.samples.petclinic.vet.VetControllerTests], using SpringBootContextLoader
+2018-11-21 17:55:36.100  INFO 24888 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [org.springframework.samples.petclinic.vet.VetControllerTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-11-21 17:55:36.100  INFO 24888 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [org.springframework.samples.petclinic.vet.VetControllerTests]: VetControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-11-21 17:55:36.132  INFO 24888 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration org.springframework.samples.petclinic.PetClinicApplication for test class org.springframework.samples.petclinic.vet.VetControllerTests
+2018-11-21 17:55:36.133  INFO 24888 --- [           main] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-11-21 17:55:36.133  INFO 24888 --- [           main] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2ecb9430, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@45d6260c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4edca8be, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@149ecd50, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6606a1e7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@12940d6d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@39a6ced9, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5b3060f0, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@86aebe8, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3a2760ed, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3578b176, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6d1770c9]
+
+
+              |\      _,,,--,,_
+             /,`.-'`'   ._  \-;;,_
+  _______ __|,4-  ) )_   .;.(__`'-'__     ___ __    _ ___ _______
+ |       | '---''(_/._)-'(_\_)   |   |   |   |  |  | |   |       |
+ |    _  |    ___|_     _|       |   |   |   |   |_| |   |       | __ _ _
+ |   |_| |   |___  |   | |       |   |   |   |       |   |       | \ \ \ \
+ |    ___|    ___| |   | |      _|   |___|   |  _    |   |      _|  \ \ \ \
+ |   |   |   |___  |   | |     |_|       |   | | |   |   |     |_    ) ) ) )
+ |___|   |_______| |___| |_______|_______|___|_|  |__|___|_______|  / / / /
+ ==================================================================/_/_/_/
+
+:: Built with Spring Boot :: 2.1.0.BUILD-SNAPSHOT
+
+
+2018-11-21 17:55:36.186  INFO 24888 --- [           main] o.s.s.petclinic.vet.VetControllerTests   : Starting VetControllerTests on EPRUSAMW0206 with PID 24888 (started by Roman_Selianko in D:\Jenkins\workspace\checkout-setup)
+2018-11-21 17:55:36.187  INFO 24888 --- [           main] o.s.s.petclinic.vet.VetControllerTests   : No active profile set, falling back to default profiles: default
+2018-11-21 17:55:36.471  INFO 24888 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-11-21 17:55:36.593  INFO 24888 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2018-11-21 17:55:36.593  INFO 24888 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2018-11-21 17:55:36.601  INFO 24888 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 8 ms
+2018-11-21 17:55:36.614  INFO 24888 --- [           main] o.s.s.petclinic.vet.VetControllerTests   : Started VetControllerTests in 0.478 seconds (JVM running for 15.375)
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.587 s - in org.springframework.samples.petclinic.vet.VetControllerTests
+[INFO] Running org.springframework.samples.petclinic.vet.VetTests
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.springframework.samples.petclinic.vet.VetTests
+2018-11-21 17:55:36.794  INFO 24888 --- [      Thread-16] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2018-11-21 17:55:36.794  INFO 24888 --- [       Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2018-11-21 17:55:36.794  INFO 24888 --- [       Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2018-11-21 17:55:36.797  INFO 24888 --- [      Thread-14] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 17:55:36.794  INFO 24888 --- [       Thread-8] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2018-11-21 17:55:36.799  INFO 24888 --- [      Thread-12] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2018-11-21 17:55:36.801  INFO 24888 --- [      Thread-12] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 17:55:37.004  INFO 24888 --- [      Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-11-21 17:55:37.009  INFO 24888 --- [      Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-11-21 17:55:37.015  INFO 24888 --- [      Thread-12] org.ehcache.core.EhcacheManager          : Cache 'vets' removed from EhcacheManager.
+[INFO] 
+[INFO] Results:
+[INFO] 
+[WARNING] Tests run: 40, Failures: 0, Errors: 0, Skipped: 1
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:report (report) @ spring-petclinic ---
+[INFO] Loading execution data file D:\Jenkins\workspace\checkout-setup\target\jacoco.exec
+[INFO] Analyzed bundle 'petclinic' with 20 classes
+[INFO] 
+[INFO] --- maven-jar-plugin:3.1.0:jar (default-jar) @ spring-petclinic ---
+[INFO] Building jar: D:\Jenkins\workspace\checkout-setup\target\spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.1.0.BUILD-SNAPSHOT:repackage (repackage) @ spring-petclinic ---
+[INFO] Replacing main artifact D:\Jenkins\workspace\checkout-setup\target\spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (default) @ spring-petclinic ---
+[INFO] argLine set to -javaagent:C:\\Users\\Roman_Selianko\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.2\\org.jacoco.agent-0.8.2-runtime.jar=destfile=D:\\Jenkins\\workspace\\checkout-setup\\target\\jacoco.exec
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.5:revision (default) @ spring-petclinic ---
+[INFO] dotGitDirectory D:\Jenkins\workspace\checkout-setup\.git
+[INFO] git.build.user.name Roman Selianko
+[INFO] git.build.user.email romanselyanko@gmail.com
+[INFO] Using environment variable based branch name. GIT_BRANCH = origin/master
+[INFO] git.branch origin/master
+[INFO] --always = true
+[INFO] --dirty = -dirty
+[INFO] --abbrev = 7
+[INFO] Tag refs [[Ref[refs/tags/1.5.x=c36452a2c34443ae26b4ecbba4f149906af14717]]]
+[INFO] Created map: [{}]
+[INFO] evalCommit is [b760ba5a3d5c75771414106d0ac507debfd375f8]
+[INFO] git.commit.id.describe b760ba5
+[INFO] git.commit.id b760ba5a3d5c75771414106d0ac507debfd375f8
+[INFO] git.commit.id.abbrev b760ba5
+[INFO] git.dirty false
+[INFO] git.commit.user.name Roman Selianko
+[INFO] git.commit.user.email romanselyanko@gmail.com
+[INFO] git.commit.message.full changed spring-boot-starter-parent version
+[INFO] git.commit.message.short changed spring-boot-starter-parent version
+[INFO] git.commit.time 2018-11-15T19:25:59+0400
+[INFO] git.remote.origin.url https://github.com/Namooro/spring-petclinic.git
+[INFO] git.tags 
+[INFO] evalCommit is [b760ba5a3d5c75771414106d0ac507debfd375f8]
+[INFO] Tag refs [[Ref[refs/tags/1.5.x=c36452a2c34443ae26b4ecbba4f149906af14717]]]
+[INFO] Created map: [{}]
+[INFO] git.closest.tag.name 
+[INFO] evalCommit is [b760ba5a3d5c75771414106d0ac507debfd375f8]
+[INFO] Tag refs [[Ref[refs/tags/1.5.x=c36452a2c34443ae26b4ecbba4f149906af14717]]]
+[INFO] Created map: [{}]
+[INFO] git.closest.tag.commit.count 
+[INFO] git.total.commit.count 631
+[INFO] git.build.time 2018-11-21T17:55:38+0400
+[INFO] git.build.version 2.1.0.BUILD-SNAPSHOT
+[INFO] git.build.host EPRUSAMW0206
+[INFO] git.build.number 200
+[INFO] git.commit.id.describe-short b760ba5
+[INFO] found property git.build.user.email
+[INFO] found property git.build.host
+[INFO] found property git.dirty
+[INFO] found property git.remote.origin.url
+[INFO] found property git.closest.tag.name
+[INFO] found property git.total.commit.count
+[INFO] found property git.commit.id.describe-short
+[INFO] found property git.commit.user.email
+[INFO] found property git.commit.time
+[INFO] found property git.commit.message.full
+[INFO] found property git.build.version
+[INFO] found property git.commit.message.short
+[INFO] found property git.commit.id.abbrev
+[INFO] found property git.branch
+[INFO] found property git.build.user.name
+[INFO] found property git.build.number
+[INFO] found property git.closest.tag.commit.count
+[INFO] found property git.commit.id.describe
+[INFO] found property git.commit.id
+[INFO] found property git.tags
+[INFO] found property git.build.time
+[INFO] found property git.commit.user.name
+[INFO] Reading existing properties file [D:\Jenkins\workspace\checkout-setup\target\classes\git.properties] (for module petclinic)...
+[INFO] Properties file [D:\Jenkins\workspace\checkout-setup\target\classes\git.properties] is up-to-date (for module petclinic)...
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.1.0.BUILD-SNAPSHOT:build-info (default) @ spring-petclinic ---
+[INFO] 
+[INFO] --- wro4j-maven-plugin:1.8.0:run (default) @ spring-petclinic ---
+[INFO] D:\Jenkins\workspace\checkout-setup/src/main/less
+[INFO] Executing the mojo: 
+[INFO] Wro4j Model path: D:\Jenkins\workspace\checkout-setup\src\main\wro\wro.xml
+[INFO] targetGroups: null
+[INFO] minimize: true
+[INFO] ignoreMissingResources: null
+[INFO] parallelProcessing: false
+[INFO] buildDirectory: D:\Jenkins\workspace\checkout-setup\target
+[INFO] destinationFolder: D:\Jenkins\workspace\checkout-setup\target
+[INFO] cssDestinationFolder: D:\Jenkins\workspace\checkout-setup\target\classes\static\resources\css
+[INFO] The following groups will be processed: [petclinic]
+[INFO] folder: D:\Jenkins\workspace\checkout-setup\target\classes\static\resources\css
+[INFO] processing group: petclinic.css
+[WARNING] Less warnings are:
+[WARNING] 10:1 Cannot link source map. Css result location is not know and could not be deduced from input less source..
+[INFO] file size: petclinic.css -> 152399 bytes
+[INFO] D:\Jenkins\workspace\checkout-setup\target\classes\static\resources\css\petclinic.css (152399 bytes)
+[INFO] folder: D:\Jenkins\workspace\checkout-setup\target
+[INFO] processing group: petclinic.js
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ spring-petclinic ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 35 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ spring-petclinic ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 25 source files to D:\Jenkins\workspace\checkout-setup\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ spring-petclinic ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\Jenkins\workspace\checkout-setup\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ spring-petclinic ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ spring-petclinic ---
+[INFO] Skipping execution of surefire because it has already been run for this configuration
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  28.230 s
+[INFO] Finished at: 2018-11-21T17:55:40+04:00
+[INFO] ------------------------------------------------------------------------
+[checkout-setup] $ D:\sonarqube-7.4\bin\sonar-scanner.bat -X -Dproject.settings=D:\Jenkins\workspace\checkout-setup\sonar-project.properties -Dsonar.java.binaries=target/classes/org -Dsonar.projectBaseDir=D:\Jenkins\workspace\checkout-setup
+17:55:40.655 INFO: Scanner configuration file: D:\sonarqube-7.4\bin\..\conf\sonar-scanner.properties
+17:55:40.657 INFO: Project root configuration file: D:\Jenkins\workspace\checkout-setup\sonar-project.properties
+17:55:40.678 INFO: SonarQube Scanner 3.2.0.1227
+17:55:40.678 INFO: Java 1.8.0_181 Oracle Corporation (64-bit)
+17:55:40.678 INFO: Windows 10 10.0 amd64
+17:55:40.787 DEBUG: keyStore is : 
+17:55:40.787 DEBUG: keyStore type is : jks
+17:55:40.787 DEBUG: keyStore provider is : 
+17:55:40.787 DEBUG: init keystore
+17:55:40.787 DEBUG: init keymanager of type SunX509
+17:55:40.919 DEBUG: Create: C:\Users\Roman_Selianko\.sonar\cache
+17:55:40.921 INFO: User cache: C:\Users\Roman_Selianko\.sonar\cache
+17:55:40.921 DEBUG: Create: C:\Users\Roman_Selianko\.sonar\cache\_tmp
+17:55:40.924 DEBUG: Extract sonar-scanner-api-batch in temp...
+17:55:40.928 DEBUG: Get bootstrap index...
+17:55:40.929 DEBUG: Download: http://localhost:9000/batch/index
+17:55:40.980 DEBUG: Get bootstrap completed
+17:55:40.986 DEBUG: Create isolated classloader...
+17:55:40.992 DEBUG: Start temp cleaning...
+17:55:40.996 DEBUG: Temp cleaning done
+17:55:40.997 DEBUG: Execution getVersion
+17:55:40.999 INFO: SonarQube server 7.4.0
+17:55:40.999 INFO: Default locale: "en_US", source code encoding: "UTF-8"
+17:55:41.000 DEBUG: Work directory: D:\Jenkins\workspace\checkout-setup\.scannerwork
+17:55:41.000 DEBUG: Execution execute
+17:55:41.173 INFO: Publish mode
+17:55:41.270 INFO: Load global settings
+17:55:41.304 DEBUG: GET 200 http://localhost:9000/api/settings/values.protobuf | time=28ms
+17:55:41.323 INFO: Load global settings (done) | time=54ms
+17:55:41.329 INFO: Server id: BF41A1F2-AWc2T2Ah0EIQY6QDZvVo
+17:55:41.337 INFO: User cache: C:\Users\Roman_Selianko\.sonar\cache
+17:55:41.741 INFO: Load/download plugins
+17:55:41.741 INFO: Load plugins index
+17:55:41.756 DEBUG: GET 200 http://localhost:9000/api/plugins/installed | time=14ms
+17:55:41.785 INFO: Load plugins index (done) | time=44ms
+17:55:41.852 INFO: Load/download plugins (done) | time=110ms
+17:55:41.987 DEBUG: Plugins:
+17:55:41.987 DEBUG:   * SonarCSS 1.0.2.611 (cssfamily)
+17:55:41.987 DEBUG:   * Svn 1.9.0.1295 (scmsvn)
+17:55:41.987 DEBUG:   * SonarPLSQL 3.2.0.1753 (plsql)
+17:55:41.987 DEBUG:   * SonarC# 7.7.0.7192 (csharp)
+17:55:41.987 DEBUG:   * Vulnerability Analysis 7.4.0.1949 (security)
+17:55:41.987 DEBUG:   * SonarJava 5.8.0.15699 (java)
+17:55:41.987 DEBUG:   * LDAP 2.2.0.608 (ldap)
+17:55:41.988 DEBUG:   * SonarFlex 2.4.0.1222 (flex)
+17:55:41.988 DEBUG:   * SonarXML 1.5.1.1452 (xml)
+17:55:41.988 DEBUG:   * SonarTS 1.8.0.3332 (typescript)
+17:55:41.988 DEBUG:   * SonarVB 7.7.0.7192 (vbnet)
+17:55:41.988 DEBUG:   * SonarSwift 4.0.0.2853 (swift)
+17:55:41.988 DEBUG:   * SonarCFamily 5.1.1.10386 (cpp)
+17:55:41.988 DEBUG:   * SonarPython 1.10.0.2131 (python)
+17:55:41.988 DEBUG:   * JaCoCo 1.0.1.143 (jacoco)
+17:55:41.988 DEBUG:   * SonarGo 1.1.0.1612 (go)
+17:55:41.988 DEBUG:   * SonarKotlin 1.2.1.2009 (kotlin)
+17:55:41.988 DEBUG:   * SonarTSQL 1.3.0.2899 (tsql)
+17:55:41.988 DEBUG:   * SonarJS 5.0.0.6962 (javascript)
+17:55:41.989 DEBUG:   * SonarRuby 1.2.1.2009 (ruby)
+17:55:41.989 DEBUG:   * Vulnerability Rules for C# 7.4.0.1949 (securitycsharpfrontend)
+17:55:41.989 DEBUG:   * Vulnerability Rules for Java 7.4.0.1949 (securityjavafrontend)
+17:55:41.989 DEBUG:   * License for SonarLint 7.4 (license)
+17:55:41.989 DEBUG:   * Git 1.6.0.1349 (scmgit)
+17:55:41.989 DEBUG:   * SonarPHP 2.14.0.3569 (php)
+17:55:41.989 DEBUG:   * SonarABAP 3.7.0.1603 (abap)
+17:55:42.003 INFO: Loaded core extensions: branch-scanner
+17:55:42.014 DEBUG: Installed core extension: branch-scanner
+17:55:42.317 DEBUG: Installed core extension: branch-scanner
+17:55:42.368 INFO: Process project properties
+17:55:42.373 DEBUG: Process project properties (done) | time=5ms
+17:55:42.403 INFO: Load project branches
+17:55:42.410 DEBUG: GET 200 http://localhost:9000/api/project_branches/list?project=java-sonar-runner-simple | time=6ms
+17:55:42.414 INFO: Load project branches (done) | time=11ms
+17:55:42.414 INFO: Load project pull requests
+17:55:42.420 DEBUG: GET 200 http://localhost:9000/api/project_pull_requests/list?project=java-sonar-runner-simple | time=5ms
+17:55:42.422 INFO: Load project pull requests (done) | time=8ms
+17:55:42.422 INFO: Load branch configuration
+17:55:42.425 INFO: Load branch configuration (done) | time=2ms
+17:55:42.425 INFO: Load project repositories
+17:55:42.432 DEBUG: GET 200 http://localhost:9000/batch/project.protobuf?key=java-sonar-runner-simple | time=7ms
+17:55:42.467 INFO: Load project repositories (done) | time=42ms
+17:55:42.636 DEBUG: Available languages:
+17:55:42.636 DEBUG:   * CSS => "css"
+17:55:42.636 DEBUG:   * PL/SQL => "plsql"
+17:55:42.637 DEBUG:   * C# => "cs"
+17:55:42.637 DEBUG:   * Java => "java"
+17:55:42.637 DEBUG:   * Flex => "flex"
+17:55:42.637 DEBUG:   * XML => "xml"
+17:55:42.637 DEBUG:   * TypeScript => "ts"
+17:55:42.637 DEBUG:   * Visual Basic .NET => "vbnet"
+17:55:42.637 DEBUG:   * Swift => "swift"
+17:55:42.637 DEBUG:   * C => "c"
+17:55:42.637 DEBUG:   * C++ => "cpp"
+17:55:42.637 DEBUG:   * Objective-C => "objc"
+17:55:42.637 DEBUG:   * Python => "py"
+17:55:42.637 DEBUG:   * Go => "go"
+17:55:42.637 DEBUG:   * Kotlin => "kotlin"
+17:55:42.637 DEBUG:   * T-SQL => "tsql"
+17:55:42.637 DEBUG:   * JavaScript => "js"
+17:55:42.637 DEBUG:   * Ruby => "ruby"
+17:55:42.637 DEBUG:   * PHP => "php"
+17:55:42.637 DEBUG:   * ABAP => "abap"
+17:55:42.644 INFO: Load quality profiles
+17:55:42.678 DEBUG: GET 200 http://localhost:9000/api/qualityprofiles/search.protobuf?projectKey=java-sonar-runner-simple | time=33ms
+17:55:42.685 INFO: Load quality profiles (done) | time=40ms
+17:55:42.696 INFO: Load active rules
+17:55:42.822 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9AT0EIQY6QDZw_T&p=1&ps=500 | time=126ms
+17:55:42.922 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T89R0EIQY6QDZw7u&p=1&ps=500 | time=58ms
+17:55:43.021 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9Da0EIQY6QDZxEk&p=1&ps=500 | time=96ms
+17:55:43.081 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9Ii0EIQY6QDZxIH&p=1&ps=500 | time=53ms
+17:55:43.139 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9Gp0EIQY6QDZxHJ&p=1&ps=500 | time=56ms
+17:55:43.218 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9P10EIQY6QDZxOF&p=1&ps=500 | time=77ms
+17:55:43.278 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9TK0EIQY6QDZxQA&p=1&ps=500 | time=55ms
+17:55:43.343 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9VH0EIQY6QDZxRa&p=1&ps=500 | time=62ms
+17:55:43.453 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9bV0EIQY6QDZxVE&p=1&ps=500 | time=107ms
+17:55:43.509 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9Xp0EIQY6QDZxSy&p=1&ps=500 | time=51ms
+17:55:43.653 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9ff0EIQY6QDZxaW&p=1&ps=500 | time=143ms
+17:55:43.833 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9kj0EIQY6QDZxjN&p=1&ps=500 | time=172ms
+17:55:43.898 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9qS0EIQY6QDZxpU&p=1&ps=500 | time=55ms
+17:55:43.907 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9sH0EIQY6QDZxqF&p=1&ps=500 | time=8ms
+17:55:43.981 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9xb0EIQY6QDZxsz&p=1&ps=500 | time=73ms
+17:55:44.053 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9zo0EIQY6QDZxvT&p=1&ps=500 | time=71ms
+17:55:44.115 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9150EIQY6QDZxxY&p=1&ps=500 | time=61ms
+17:55:44.206 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T-Ev0EIQY6QDZx7J&p=1&ps=500 | time=89ms
+17:55:44.284 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T98W0EIQY6QDZxzT&p=1&ps=500 | time=76ms
+17:55:44.349 DEBUG: GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt&activation=true&qprofile=AWc2T9-40EIQY6QDZx1I&p=1&ps=500 | time=64ms
+17:55:44.361 INFO: Load active rules (done) | time=1665ms
+17:55:44.363 INFO: Load metrics repository
+17:55:44.371 DEBUG: GET 200 http://localhost:9000/api/metrics/search?f=name,description,direction,qualitative,custom&ps=500&p=1 | time=8ms
+17:55:44.376 INFO: Load metrics repository (done) | time=12ms
+17:55:44.401 INFO: Project key: java-sonar-runner-simple
+17:55:44.401 INFO: Project base dir: D:\Jenkins\workspace\checkout-setup
+17:55:44.401 DEBUG: Start recursive analysis of project modules
+17:55:44.402 INFO: -------------  Scan Simple Java project analyzed with the SonarQube Runner
+17:55:44.433 DEBUG: Installed core extension: branch-scanner
+17:55:44.509 INFO: Base dir: D:\Jenkins\workspace\checkout-setup
+17:55:44.509 INFO: Working dir: D:\Jenkins\workspace\checkout-setup\.scannerwork
+17:55:44.510 INFO: Source paths: src
+17:55:44.511 INFO: Source encoding: UTF-8, default locale: en_US
+17:55:44.514 INFO: Load server rules
+17:55:44.832 DEBUG: GET 200 http://localhost:9000/api/rules/list.protobuf | time=318ms
+17:55:44.849 INFO: Load server rules (done) | time=335ms
+17:55:44.945 WARN: Property 'sonar.abap.file.suffixes' is not declared as multi-values/property set but was read using 'getStringArray' method. The SonarQube plugin declaring this property should be updated.
+17:55:44.947 DEBUG: Declared extensions of language CSS were converted to sonar.lang.patterns.css : **/*.css,**/*.less,**/*.scss
+17:55:44.947 DEBUG: Declared extensions of language PL/SQL were converted to sonar.lang.patterns.plsql : **/*.sql,**/*.pks,**/*.pkb
+17:55:44.947 DEBUG: Declared extensions of language C# were converted to sonar.lang.patterns.cs : **/*.cs
+17:55:44.947 DEBUG: Declared extensions of language Java were converted to sonar.lang.patterns.java : **/*.java,**/*.jav
+17:55:44.947 DEBUG: Declared extensions of language Flex were converted to sonar.lang.patterns.flex : **/*.as
+17:55:44.947 DEBUG: Declared extensions of language XML were converted to sonar.lang.patterns.xml : **/*.xml,**/*.xsd,**/*.xsl
+17:55:44.948 DEBUG: Declared extensions of language TypeScript were converted to sonar.lang.patterns.ts : **/*.ts,**/*.tsx
+17:55:44.948 DEBUG: Declared extensions of language Visual Basic .NET were converted to sonar.lang.patterns.vbnet : **/*.vb
+17:55:44.948 DEBUG: Declared extensions of language Swift were converted to sonar.lang.patterns.swift : **/*.swift
+17:55:44.948 DEBUG: Declared extensions of language C were converted to sonar.lang.patterns.c : **/*.c,**/*.h
+17:55:44.948 DEBUG: Declared extensions of language C++ were converted to sonar.lang.patterns.cpp : **/*.cc,**/*.cpp,**/*.cxx,**/*.c++,**/*.hh,**/*.hpp,**/*.hxx,**/*.h++,**/*.ipp
+17:55:44.948 DEBUG: Declared extensions of language Objective-C were converted to sonar.lang.patterns.objc : **/*.m
+17:55:44.948 DEBUG: Declared extensions of language Python were converted to sonar.lang.patterns.py : **/*.py
+17:55:44.948 DEBUG: Declared extensions of language Go were converted to sonar.lang.patterns.go : **/*.go
+17:55:44.948 DEBUG: Declared extensions of language Kotlin were converted to sonar.lang.patterns.kotlin : **/*.kt
+17:55:44.949 DEBUG: Declared extensions of language T-SQL were converted to sonar.lang.patterns.tsql : **/*.tsql
+17:55:44.949 DEBUG: Declared extensions of language JavaScript were converted to sonar.lang.patterns.js : **/*.js,**/*.jsx,**/*.vue
+17:55:44.949 DEBUG: Declared extensions of language Ruby were converted to sonar.lang.patterns.ruby : **/*.rb
+17:55:44.949 DEBUG: Declared extensions of language PHP were converted to sonar.lang.patterns.php : **/*.php,**/*.php3,**/*.php4,**/*.php5,**/*.phtml,**/*.inc
+17:55:44.949 DEBUG: Declared extensions of language ABAP were converted to sonar.lang.patterns.abap : **/*.abap,**/*.ab4,**/*.flow,**/*.asprog
+17:55:44.949 INFO: Language is forced to java
+17:55:44.963 INFO: Index files
+17:55:44.982 DEBUG: 'src\main\java\org\springframework\samples\petclinic\model\Person.java' indexed with language 'java'
+17:55:44.983 DEBUG: 'src\main\java\org\springframework\samples\petclinic\model\BaseEntity.java' indexed with language 'java'
+17:55:44.983 DEBUG: 'src\main\java\org\springframework\samples\petclinic\model\package-info.java' indexed with language 'java'
+17:55:44.983 DEBUG: 'src\main\java\org\springframework\samples\petclinic\owner\Owner.java' indexed with language 'java'
+17:55:44.983 DEBUG: 'src\main\java\org\springframework\samples\petclinic\model\NamedEntity.java' indexed with language 'java'
+17:55:44.984 DEBUG: 'src\main\java\org\springframework\samples\petclinic\owner\OwnerController.java' indexed with language 'java'
+17:55:44.984 DEBUG: 'src\main\java\org\springframework\samples\petclinic\owner\OwnerRepository.java' indexed with language 'java'
+17:55:44.984 DEBUG: 'src\main\java\org\springframework\samples\petclinic\owner\Pet.java' indexed with language 'java'
+17:55:44.985 DEBUG: 'src\main\java\org\springframework\samples\petclinic\owner\PetType.java' indexed with language 'java'
+17:55:44.985 DEBUG: 'src\main\java\org\springframework\samples\petclinic\owner\PetController.java' indexed with language 'java'
+17:55:44.985 DEBUG: 'src\main\java\org\springframework\samples\petclinic\owner\VisitController.java' indexed with language 'java'
+17:55:44.986 DEBUG: 'src\main\java\org\springframework\samples\petclinic\owner\PetValidator.java' indexed with language 'java'
+17:55:44.986 DEBUG: 'src\main\java\org\springframework\samples\petclinic\PetClinicApplication.java' indexed with language 'java'
+17:55:44.986 DEBUG: 'src\main\java\org\springframework\samples\petclinic\owner\PetRepository.java' indexed with language 'java'
+17:55:44.987 DEBUG: 'src\main\java\org\springframework\samples\petclinic\system\CrashController.java' indexed with language 'java'
+17:55:44.987 DEBUG: 'src\main\java\org\springframework\samples\petclinic\system\WelcomeController.java' indexed with language 'java'
+17:55:44.987 DEBUG: 'src\main\java\org\springframework\samples\petclinic\vet\Specialty.java' indexed with language 'java'
+17:55:44.987 DEBUG: 'src\main\java\org\springframework\samples\petclinic\system\CacheConfiguration.java' indexed with language 'java'
+17:55:44.987 DEBUG: 'src\main\java\org\springframework\samples\petclinic\owner\PetTypeFormatter.java' indexed with language 'java'
+17:55:44.988 DEBUG: 'src\main\java\org\springframework\samples\petclinic\vet\VetController.java' indexed with language 'java'
+17:55:44.988 DEBUG: 'src\main\java\org\springframework\samples\petclinic\vet\Vet.java' indexed with language 'java'
+17:55:44.988 DEBUG: 'src\main\java\org\springframework\samples\petclinic\vet\Vets.java' indexed with language 'java'
+17:55:44.988 DEBUG: 'src\main\java\org\springframework\samples\petclinic\vet\VetRepository.java' indexed with language 'java'
+17:55:44.988 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\less\header.less' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.989 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\less\responsive.less' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.989 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\less\petclinic.less' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.989 DEBUG: 'src\main\java\org\springframework\samples\petclinic\visit\Visit.java' indexed with language 'java'17:55:44.989 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\application-mysql.properties' is ignored because it doesn't belong to the forced language 'java'
+
+17:55:44.989 DEBUG: 'src\main\java\org\springframework\samples\petclinic\visit\VisitRepository.java' indexed with language 'java'
+17:55:44.989 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\banner.txt' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.989 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\less\typography.less' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.990 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\application.properties' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.990 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\db\hsqldb\data.sql' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.990 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\db\mysql\data.sql' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.990 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\db\mysql\petclinic_db_setup_mysql.txt' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.990 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\db\mysql\schema.sql' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.991 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\db\hsqldb\schema.sql' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.991 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\messages\messages_en.properties' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.992 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\static\resources\fonts\montserrat-webfont.eot' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.992 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\messages\messages.properties' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.992 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\messages\messages_de.properties' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.992 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\static\resources\fonts\montserrat-webfont.svg' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.992 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\static\resources\fonts\montserrat-webfont.ttf' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.993 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\static\resources\fonts\varela_round-webfont.svg' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.993 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\static\resources\images\pets.png' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.993 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\static\resources\fonts\montserrat-webfont.woff' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.993 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\static\resources\fonts\varela_round-webfont.woff' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.994 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\static\resources\fonts\varela_round-webfont.ttf' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.994 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\static\resources\images\spring-pivotal-logo.png' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.994 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\static\resources\images\spring-logo-dataflow-mobile.png' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.994 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\static\resources\images\spring-logo-dataflow.png' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.994 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\templates\error.html' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.995 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\static\resources\images\favicon.png' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.995 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\templates\fragments\inputField.html' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.995 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\templates\fragments\layout.html' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.996 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\templates\owners\ownerDetails.html' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.996 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\templates\owners\findOwners.html' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.996 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\static\resources\images\platform-bg.png' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.997 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\templates\owners\ownersList.html' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.997 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\templates\owners\createOrUpdateOwnerForm.html' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.997 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\templates\pets\createOrUpdatePetForm.html' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.998 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\templates\pets\createOrUpdateVisitForm.html' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.998 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\templates\vets\vetList.html' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.998 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\wro\wro.properties' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.998 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\wro\wro.xml' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.998 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\templates\welcome.html' is ignored because it doesn't belong to the forced language 'java'
+17:55:44.999 DEBUG: 'src\test\java\org\springframework\samples\petclinic\model\ValidatorTests.java' indexed with language 'java'
+17:55:44.999 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\templates\fragments\selectField.html' is ignored because it doesn't belong to the forced language 'java'
+17:55:45.000 DEBUG: 'src\test\java\org\springframework\samples\petclinic\owner\OwnerControllerTests.java' indexed with language 'java'
+17:55:45.000 DEBUG: 'src\test\java\org\springframework\samples\petclinic\owner\VisitControllerTests.java' indexed with language 'java'
+17:55:45.000 DEBUG: 'src\test\java\org\springframework\samples\petclinic\PetclinicIntegrationTests.java' indexed with language 'java'
+17:55:45.000 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\main\resources\static\resources\fonts\varela_round-webfont.eot' is ignored because it doesn't belong to the forced language 'java'
+17:55:45.001 DEBUG: 'src\test\java\org\springframework\samples\petclinic\system\CrashControllerTests.java' indexed with language 'java'
+17:55:45.001 DEBUG: 'src\test\java\org\springframework\samples\petclinic\owner\PetControllerTests.java' indexed with language 'java'
+17:55:45.002 DEBUG: 'src\test\java\org\springframework\samples\petclinic\vet\VetControllerTests.java' indexed with language 'java'
+17:55:45.002 DEBUG: 'src\test\java\org\springframework\samples\petclinic\owner\PetTypeFormatterTests.java' indexed with language 'java'
+17:55:45.002 DEBUG: 'src\test\java\org\springframework\samples\petclinic\service\ClinicServiceTests.java' indexed with language 'java'
+17:55:45.002 DEBUG: 'src\test\java\org\springframework\samples\petclinic\service\EntityUtils.java' indexed with language 'java'
+17:55:45.003 DEBUG: 'src\test\java\org\springframework\samples\petclinic\vet\VetTests.java' indexed with language 'java'
+17:55:45.003 WARN: File 'D:\Jenkins\workspace\checkout-setup\src\test\jmeter\petclinic_test_plan.jmx' is ignored because it doesn't belong to the forced language 'java'
+17:55:45.003 INFO: 36 files indexed
+17:55:45.004 INFO: Quality profile for java: Sonar way
+17:55:46.594 DEBUG: 'Generic Coverage Report' skipped because one of the required properties is missing
+17:55:46.595 DEBUG: 'Generic Test Executions Report' skipped because one of the required properties is missing
+17:55:46.595 DEBUG: 'Import external issues report' skipped because one of the required properties is missing
+17:55:46.595 DEBUG: 'SonarCSS Metrics' skipped because there is no related file in current project
+17:55:46.595 DEBUG: 'SonarCSS Rules' skipped because there is no related file in current project
+17:55:46.596 DEBUG: 'Import of stylelint issues' skipped because there is no related file in current project
+17:55:46.596 DEBUG: 'PL/SQL Sensor' skipped because there is no related file in current project
+17:55:46.596 DEBUG: 'C# Properties' skipped because there is no related file in current project
+17:55:46.597 DEBUG: 'Import of Checkstyle issues' skipped because one of the required properties is missing
+17:55:46.597 DEBUG: 'Import of PMD issues' skipped because one of the required properties is missing
+17:55:46.597 DEBUG: 'Import of SpotBugs issues' skipped because one of the required properties is missing
+17:55:46.597 DEBUG: 'Flex' skipped because there is no related file in current project
+17:55:46.598 DEBUG: 'Flex Cobertura' skipped because there is no related file in current project
+17:55:46.598 DEBUG: 'XML Sensor' skipped because there is no related file in current project
+17:55:46.598 DEBUG: 'SonarTS' skipped because there is no related file in current project
+17:55:46.598 DEBUG: 'SonarTS Coverage' skipped because there is no related file in current project
+17:55:46.599 DEBUG: 'Import of TSLint issues' skipped because one of the required properties is missing
+17:55:46.599 DEBUG: 'VB.NET Properties' skipped because there is no related file in current project
+17:55:46.599 DEBUG: 'SonarSwift' skipped because there is no related file in current project
+17:55:46.600 DEBUG: 'Import of SwiftLint issues' skipped because there is no related file in current project
+17:55:46.600 DEBUG: 'gcov' skipped because there is no related file in current project
+17:55:46.600 DEBUG: 'llvm-cov' skipped because there is no related file in current project
+17:55:46.601 DEBUG: 'cppunit' skipped because there is no related file in current project
+17:55:46.601 DEBUG: 'VisualStudioCoverage' skipped because there is no related file in current project
+17:55:46.601 DEBUG: 'bullseye' skipped because there is no related file in current project
+17:55:46.601 DEBUG: 'Python Squid Sensor' skipped because there is no related file in current project
+17:55:46.601 DEBUG: 'PylintSensor' skipped because there is no related file in current project
+17:55:46.602 DEBUG: 'PylintImportSensor' skipped because there is no related file in current project
+17:55:46.602 DEBUG: 'PythonXUnitSensor' skipped because there is no related file in current project
+17:55:46.602 DEBUG: 'SonarGo' skipped because there is no related file in current project
+17:55:46.602 DEBUG: 'Go Unit Test Report' skipped because there is no related file in current project
+17:55:46.603 DEBUG: 'Import of go vet issues' skipped because there is no related file in current project
+17:55:46.603 DEBUG: 'Import of Golint issues' skipped because there is no related file in current project
+17:55:46.603 DEBUG: 'Import of GoMetaLinter issues' skipped because there is no related file in current project
+17:55:46.603 DEBUG: 'Kotlin Sensor' skipped because there is no related file in current project
+17:55:46.604 DEBUG: 'Import of detekt issues' skipped because there is no related file in current project
+17:55:46.604 DEBUG: 'Import of Android Lint issues' skipped because one of the required properties is missing
+17:55:46.604 DEBUG: 'T-SQL Sensor' skipped because there is no related file in current project
+17:55:46.604 DEBUG: 'SonarJS' skipped because there is no related file in current project
+17:55:46.605 DEBUG: 'SonarJS Coverage' skipped because there is no related file in current project
+17:55:46.605 DEBUG: 'Import of ESLint issues' skipped because one of the required properties is missing
+17:55:46.605 DEBUG: 'ESLint-based SonarJS' skipped because there is no related file in current project
+17:55:46.605 DEBUG: 'Ruby Sensor' skipped because there is no related file in current project
+17:55:46.606 DEBUG: 'Import of RuboCop issues' skipped because one of the required properties is missing
+17:55:46.606 DEBUG: 'SimpleCov Sensor for Ruby coverage' skipped because there is no related file in current project
+17:55:46.606 DEBUG: 'PHP sensor' skipped because there is no related file in current project
+17:55:46.606 DEBUG: 'Analyzer for "php.ini" files' skipped because there is no related file in current project
+17:55:46.606 DEBUG: 'AbapSquidSensor' skipped because there is no related file in current project
+17:55:46.614 DEBUG: 'C#' skipped because there is no related file in current project
+17:55:46.614 DEBUG: 'C# Tests Coverage Report Import' skipped because there is no related file in current project
+17:55:46.614 DEBUG: '[Deprecated] C# Integration Tests Coverage Report Import' skipped because there is no related file in current project
+17:55:46.614 DEBUG: 'C# Unit Test Results Import' skipped because there is no related file in current project
+17:55:46.614 DEBUG: 'VB.NET' skipped because there is no related file in current project
+17:55:46.615 DEBUG: 'Visual Basic .NET Tests Coverage Report Import' skipped because there is no related file in current project
+17:55:46.615 DEBUG: '[Deprecated] Visual Basic .NET Integration Tests Coverage Report Import' skipped because there is no related file in current project
+17:55:46.615 DEBUG: 'Visual Basic .NET Unit Test Results Import' skipped because there is no related file in current project
+17:55:46.615 DEBUG: 'CFamily' skipped because there is no related file in current project
+17:55:46.616 DEBUG: Sensors : JavaSquidSensor -> SurefireSensor -> JaCoCoSensor -> SonarJavaXmlFileSensor -> JaCoCo XML Report Importer -> Zero Coverage Sensor -> JavaSecuritySensor -> CSharpSecuritySensor -> Java CPD Block Indexer
+17:55:46.616 INFO: Sensor JavaSquidSensor [java]
+17:55:46.820 INFO: Configured Java source version (sonar.java.source): none
+17:55:46.835 INFO: JavaClasspath initialization
+17:55:46.846 WARN: Bytecode of dependencies was not provided for analysis of source files, you might end up with less precise results. Bytecode can be provided using sonar.java.libraries property
+17:55:46.846 INFO: JavaClasspath initialization (done) | time=11ms
+17:55:46.846 INFO: JavaTestClasspath initialization
+17:55:46.846 INFO: JavaTestClasspath initialization (done) | time=0ms
+17:55:47.027 DEBUG: ----- Classpath analyzed by Squid:
+17:55:47.027 DEBUG: D:\Jenkins\workspace\checkout-setup\target\classes\org
+17:55:47.027 DEBUG: -----
+17:55:47.029 DEBUG: ----- Classpath analyzed by Squid:
+17:55:47.029 DEBUG: -----
+17:55:47.030 INFO: Java Main Files AST scan
+17:55:47.030 INFO: 36 source files to be analyzed
+17:55:47.166 DEBUG: 'src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java' generated metadata  with charset 'UTF-8'
+17:55:47.511 DEBUG: 'src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java' generated metadata  with charset 'UTF-8'
+17:55:47.598 DEBUG: 'src/main/java/org/springframework/samples/petclinic/model/NamedEntity.java' generated metadata  with charset 'UTF-8'
+17:55:47.648 DEBUG: 'src/main/java/org/springframework/samples/petclinic/model/Person.java' generated metadata  with charset 'UTF-8'
+17:55:47.687 DEBUG: 'src/main/java/org/springframework/samples/petclinic/model/package-info.java' generated metadata  with charset 'UTF-8'
+17:55:47.697 DEBUG: 'src/main/java/org/springframework/samples/petclinic/owner/Owner.java' generated metadata  with charset 'UTF-8'
+17:55:47.870 DEBUG: 'src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java' generated metadata  with charset 'UTF-8'
+17:55:47.967 DEBUG: 'src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java' generated metadata  with charset 'UTF-8'
+17:55:47.991 DEBUG: 'src/main/java/org/springframework/samples/petclinic/owner/Pet.java' generated metadata  with charset 'UTF-8'
+17:55:48.063 DEBUG: 'src/main/java/org/springframework/samples/petclinic/owner/PetController.java' generated metadata  with charset 'UTF-8'
+17:55:48.122 DEBUG: 'src/main/java/org/springframework/samples/petclinic/owner/PetRepository.java' generated metadata  with charset 'UTF-8'
+17:55:48.140 DEBUG: 'src/main/java/org/springframework/samples/petclinic/owner/PetType.java' generated metadata  with charset 'UTF-8'
+17:55:48.151 DEBUG: 'src/main/java/org/springframework/samples/petclinic/owner/PetTypeFormatter.java' generated metadata  with charset 'UTF-8'
+17:55:48.190 DEBUG: 'src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java' generated metadata  with charset 'UTF-8'
+17:55:48.229 DEBUG: 'src/main/java/org/springframework/samples/petclinic/owner/VisitController.java' generated metadata  with charset 'UTF-8'
+17:55:48.270 DEBUG: 'src/main/java/org/springframework/samples/petclinic/system/CacheConfiguration.java' generated metadata  with charset 'UTF-8'
+17:55:48.312 DEBUG: 'src/main/java/org/springframework/samples/petclinic/system/CrashController.java' generated metadata  with charset 'UTF-8'
+17:55:48.337 DEBUG: 'src/main/java/org/springframework/samples/petclinic/system/WelcomeController.java' generated metadata  with charset 'UTF-8'
+17:55:48.360 DEBUG: 'src/main/java/org/springframework/samples/petclinic/vet/Specialty.java' generated metadata  with charset 'UTF-8'
+17:55:48.376 DEBUG: 'src/main/java/org/springframework/samples/petclinic/vet/Vet.java' generated metadata  with charset 'UTF-8'
+17:55:48.421 DEBUG: 'src/main/java/org/springframework/samples/petclinic/vet/VetController.java' generated metadata  with charset 'UTF-8'
+17:55:48.454 DEBUG: 'src/main/java/org/springframework/samples/petclinic/vet/VetRepository.java' generated metadata  with charset 'UTF-8'
+17:55:48.472 DEBUG: 'src/main/java/org/springframework/samples/petclinic/vet/Vets.java' generated metadata  with charset 'UTF-8'
+17:55:48.495 DEBUG: 'src/main/java/org/springframework/samples/petclinic/visit/Visit.java' generated metadata  with charset 'UTF-8'
+17:55:48.544 DEBUG: 'src/main/java/org/springframework/samples/petclinic/visit/VisitRepository.java' generated metadata  with charset 'UTF-8'
+17:55:48.561 DEBUG: 'src/test/java/org/springframework/samples/petclinic/PetclinicIntegrationTests.java' generated metadata  with charset 'UTF-8'
+17:55:48.584 DEBUG: 'src/test/java/org/springframework/samples/petclinic/model/ValidatorTests.java' generated metadata  with charset 'UTF-8'
+17:55:48.622 DEBUG: 'src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java' generated metadata  with charset 'UTF-8'
+17:55:48.815 DEBUG: 'src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java' generated metadata  with charset 'UTF-8'
+17:55:48.923 DEBUG: 'src/test/java/org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java' generated metadata  with charset 'UTF-8'
+17:55:48.989 DEBUG: 'src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java' generated metadata  with charset 'UTF-8'
+17:55:49.040 DEBUG: 'src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java' generated metadata  with charset 'UTF-8'
+17:55:49.170 DEBUG: 'src/test/java/org/springframework/samples/petclinic/service/EntityUtils.java' generated metadata  with charset 'UTF-8'
+17:55:49.202 DEBUG: 'src/test/java/org/springframework/samples/petclinic/system/CrashControllerTests.java' generated metadata  with charset 'UTF-8'
+17:55:49.234 DEBUG: 'src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java' generated metadata  with charset 'UTF-8'
+17:55:49.282 DEBUG: 'src/test/java/org/springframework/samples/petclinic/vet/VetTests.java' generated metadata  with charset 'UTF-8'
+17:55:49.307 INFO: 36/36 source files have been analyzed
+17:55:49.308 INFO: Java Main Files AST scan (done) | time=2278ms
+17:55:49.308 INFO: Java Test Files AST scan
+17:55:49.308 INFO: 0 source files to be analyzed
+17:55:49.308 INFO: Java Test Files AST scan (done) | time=0ms
+17:55:49.309 INFO: Sensor JavaSquidSensor [java] (done) | time=2692ms
+17:55:49.309 INFO: 0/0 source files have been analyzed
+17:55:49.309 INFO: Sensor SurefireSensor [java]
+17:55:49.309 INFO: parsing [D:\Jenkins\workspace\checkout-setup\target\surefire-reports]
+17:55:49.393 INFO: Sensor SurefireSensor [java] (done) | time=84ms
+17:55:49.393 INFO: Sensor JaCoCoSensor [java]
+17:55:49.398 INFO: Analysing D:\Jenkins\workspace\checkout-setup\target\jacoco.exec
+17:55:49.465 INFO: No information about coverage per test.
+17:55:49.465 INFO: Sensor JaCoCoSensor [java] (done) | time=72ms
+17:55:49.466 INFO: Sensor SonarJavaXmlFileSensor [java]
+17:55:49.466 INFO: Sensor SonarJavaXmlFileSensor [java] (done) | time=0ms
+17:55:49.466 INFO: Sensor JaCoCo XML Report Importer [jacoco]
+17:55:49.470 DEBUG: Reading report 'D:\Jenkins\workspace\checkout-setup\target\site\jacoco\jacoco.xml'
+17:55:49.492 INFO: Sensor JaCoCo XML Report Importer [jacoco] (done) | time=26ms
+17:55:49.493 INFO: Sensor Zero Coverage Sensor
+17:55:49.521 INFO: Sensor Zero Coverage Sensor (done) | time=28ms
+17:55:49.521 INFO: Sensor JavaSecuritySensor [security]
+17:55:49.522 INFO: Reading UCFGs from: D:\Jenkins\workspace\checkout-setup\.scannerwork\ucfg2\java
+17:55:49.590 INFO: UCFGs: 93, excluded: 93, source entrypoints: 0
+17:55:49.590 INFO: No UCFGs have been included for analysis.
+17:55:49.590 INFO: Sensor JavaSecuritySensor [security] (done) | time=69ms
+17:55:49.591 INFO: Sensor CSharpSecuritySensor [security]
+17:55:49.591 INFO: Reading UCFGs from: D:\Jenkins\workspace\checkout-setup\ucfg_cs2
+17:55:49.591 INFO: UCFGs: 0, excluded: 0, source entrypoints: 0
+17:55:49.591 INFO: No UCFGs have been included for analysis.
+17:55:49.591 INFO: Sensor CSharpSecuritySensor [security] (done) | time=0ms
+17:55:49.591 INFO: Sensor Java CPD Block Indexer
+17:55:49.595 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java
+17:55:49.600 DEBUG: Not enough content in 'src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java' to have CPD blocks, it will not be part of the duplication detection
+17:55:49.600 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java
+17:55:49.601 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/model/NamedEntity.java
+17:55:49.602 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/model/Person.java
+17:55:49.603 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/model/package-info.java
+17:55:49.603 DEBUG: Not enough content in 'src/main/java/org/springframework/samples/petclinic/model/package-info.java' to have CPD blocks, it will not be part of the duplication detection
+17:55:49.603 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/owner/Owner.java
+17:55:49.606 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java
+17:55:49.608 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java
+17:55:49.609 DEBUG: Not enough content in 'src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java' to have CPD blocks, it will not be part of the duplication detection
+17:55:49.609 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/owner/Pet.java
+17:55:49.611 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/owner/PetController.java
+17:55:49.613 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/owner/PetRepository.java
+17:55:49.614 DEBUG: Not enough content in 'src/main/java/org/springframework/samples/petclinic/owner/PetRepository.java' to have CPD blocks, it will not be part of the duplication detection
+17:55:49.614 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/owner/PetType.java
+17:55:49.614 DEBUG: Not enough content in 'src/main/java/org/springframework/samples/petclinic/owner/PetType.java' to have CPD blocks, it will not be part of the duplication detection
+17:55:49.614 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/owner/PetTypeFormatter.java
+17:55:49.615 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java
+17:55:49.616 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/owner/VisitController.java
+17:55:49.618 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/system/CacheConfiguration.java
+17:55:49.619 DEBUG: Not enough content in 'src/main/java/org/springframework/samples/petclinic/system/CacheConfiguration.java' to have CPD blocks, it will not be part of the duplication detection
+17:55:49.619 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/system/CrashController.java
+17:55:49.619 DEBUG: Not enough content in 'src/main/java/org/springframework/samples/petclinic/system/CrashController.java' to have CPD blocks, it will not be part of the duplication detection
+17:55:49.619 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/system/WelcomeController.java
+17:55:49.620 DEBUG: Not enough content in 'src/main/java/org/springframework/samples/petclinic/system/WelcomeController.java' to have CPD blocks, it will not be part of the duplication detection
+17:55:49.620 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/vet/Specialty.java
+17:55:49.620 DEBUG: Not enough content in 'src/main/java/org/springframework/samples/petclinic/vet/Specialty.java' to have CPD blocks, it will not be part of the duplication detection
+17:55:49.620 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/vet/Vet.java
+17:55:49.621 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/vet/VetController.java
+17:55:49.621 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/vet/VetRepository.java
+17:55:49.622 DEBUG: Not enough content in 'src/main/java/org/springframework/samples/petclinic/vet/VetRepository.java' to have CPD blocks, it will not be part of the duplication detection
+17:55:49.622 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/vet/Vets.java
+17:55:49.622 DEBUG: Not enough content in 'src/main/java/org/springframework/samples/petclinic/vet/Vets.java' to have CPD blocks, it will not be part of the duplication detection
+17:55:49.622 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/visit/Visit.java
+17:55:49.623 DEBUG: Populating index from src/main/java/org/springframework/samples/petclinic/visit/VisitRepository.java
+17:55:49.624 DEBUG: Not enough content in 'src/main/java/org/springframework/samples/petclinic/visit/VisitRepository.java' to have CPD blocks, it will not be part of the duplication detection
+17:55:49.624 DEBUG: Populating index from src/test/java/org/springframework/samples/petclinic/PetclinicIntegrationTests.java
+17:55:49.625 DEBUG: Not enough content in 'src/test/java/org/springframework/samples/petclinic/PetclinicIntegrationTests.java' to have CPD blocks, it will not be part of the duplication detection
+17:55:49.625 DEBUG: Populating index from src/test/java/org/springframework/samples/petclinic/model/ValidatorTests.java
+17:55:49.626 DEBUG: Populating index from src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java
+17:55:49.629 DEBUG: Populating index from src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java
+17:55:49.631 DEBUG: Populating index from src/test/java/org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java
+17:55:49.631 DEBUG: Populating index from src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java
+17:55:49.632 DEBUG: Populating index from src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java
+17:55:49.634 DEBUG: Populating index from src/test/java/org/springframework/samples/petclinic/service/EntityUtils.java
+17:55:49.635 DEBUG: Not enough content in 'src/test/java/org/springframework/samples/petclinic/service/EntityUtils.java' to have CPD blocks, it will not be part of the duplication detection
+17:55:49.635 DEBUG: Populating index from src/test/java/org/springframework/samples/petclinic/system/CrashControllerTests.java
+17:55:49.636 DEBUG: Not enough content in 'src/test/java/org/springframework/samples/petclinic/system/CrashControllerTests.java' to have CPD blocks, it will not be part of the duplication detection
+17:55:49.636 DEBUG: Populating index from src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java
+17:55:49.648 DEBUG: Populating index from src/test/java/org/springframework/samples/petclinic/vet/VetTests.java
+17:55:49.650 INFO: Sensor Java CPD Block Indexer (done) | time=58ms
+17:55:49.650 INFO: SCM provider for this project is: git
+17:55:49.651 INFO: 36 files to be analyzed
+17:55:49.664 DEBUG: readpipe [git, --version],C:\Users\Roman_Selianko\AppData\Local\Programs\Git\cmd
+17:55:49.726 DEBUG: readpipe may return 'git version 2.19.0.windows.1'
+17:55:49.726 DEBUG: remaining output:
+
+17:55:49.730 DEBUG: readpipe [git, config, --system, --edit],C:\Users\Roman_Selianko\AppData\Local\Programs\Git\cmd
+17:55:49.823 DEBUG: readpipe may return 'C:/Users/Roman_Selianko/AppData/Local/Programs/Git/mingw64/etc/gitconfig'
+17:55:49.823 DEBUG: remaining output:
+
+17:55:49.859 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/visit/Visit.java
+17:55:49.859 DEBUG: Blame file src/test/java/org/springframework/samples/petclinic/service/EntityUtils.java
+17:55:49.859 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/owner/PetType.java
+17:55:49.859 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/vet/VetController.java
+17:55:49.859 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/owner/Owner.java
+17:55:49.859 DEBUG: Blame file src/test/java/org/springframework/samples/petclinic/PetclinicIntegrationTests.java
+17:55:49.859 DEBUG: Blame file src/test/java/org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java
+17:55:49.859 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/model/NamedEntity.java
+17:55:49.969 DEBUG: Blame file src/test/java/org/springframework/samples/petclinic/model/ValidatorTests.java
+17:55:50.012 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/visit/VisitRepository.java
+17:55:50.052 DEBUG: Blame file src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java
+17:55:50.044 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/model/Person.java
+17:55:50.063 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/model/package-info.java
+17:55:50.065 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/vet/Vets.java
+17:55:50.067 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/vet/VetRepository.java
+17:55:50.087 DEBUG: Blame file src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java
+17:55:50.094 DEBUG: Blame file src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java
+17:55:50.100 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java
+17:55:50.122 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java
+17:55:50.129 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/owner/PetTypeFormatter.java
+17:55:50.140 DEBUG: Blame file src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java
+17:55:50.141 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/system/CacheConfiguration.java
+17:55:50.145 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java
+17:55:50.150 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/vet/Vet.java
+17:55:50.153 DEBUG: Blame file src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java
+17:55:50.159 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java
+17:55:50.160 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/system/WelcomeController.java
+17:55:50.169 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/owner/Pet.java
+17:55:50.175 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/vet/Specialty.java
+17:55:50.176 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/owner/PetRepository.java
+17:55:50.192 DEBUG: Blame file src/test/java/org/springframework/samples/petclinic/vet/VetTests.java
+17:55:50.195 DEBUG: Blame file src/test/java/org/springframework/samples/petclinic/system/CrashControllerTests.java
+17:55:50.197 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/owner/VisitController.java
+17:55:50.217 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/system/CrashController.java
+17:55:50.218 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/owner/PetController.java
+17:55:50.220 DEBUG: Blame file src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java
+17:55:50.263 INFO: 36/36 files analyzed
+17:55:50.266 INFO: 15 files had no CPD blocks
+17:55:50.266 INFO: Calculating CPD for 21 files
+17:55:50.267 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/test/java/org/springframework/samples/petclinic/vet/VetTests.java
+17:55:50.272 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java
+17:55:50.273 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/main/java/org/springframework/samples/petclinic/owner/PetTypeFormatter.java
+17:55:50.275 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/test/java/org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java
+17:55:50.276 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/main/java/org/springframework/samples/petclinic/vet/VetController.java
+17:55:50.277 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/main/java/org/springframework/samples/petclinic/vet/Vet.java
+17:55:50.278 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java
+17:55:50.279 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/test/java/org/springframework/samples/petclinic/model/ValidatorTests.java
+17:55:50.280 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java
+17:55:50.281 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/main/java/org/springframework/samples/petclinic/visit/Visit.java
+17:55:50.282 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/main/java/org/springframework/samples/petclinic/model/Person.java
+17:55:50.283 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/main/java/org/springframework/samples/petclinic/owner/VisitController.java
+17:55:50.284 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java
+17:55:50.285 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/main/java/org/springframework/samples/petclinic/owner/PetController.java
+17:55:50.285 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java
+17:55:50.286 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/main/java/org/springframework/samples/petclinic/owner/Owner.java
+17:55:50.287 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/main/java/org/springframework/samples/petclinic/model/NamedEntity.java
+17:55:50.288 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/main/java/org/springframework/samples/petclinic/owner/Pet.java
+17:55:50.289 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java
+17:55:50.290 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java
+17:55:50.290 DEBUG: Detection of duplications for D:/Jenkins/workspace/checkout-setup/src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java
+17:55:50.291 INFO: CPD calculation finished
+17:55:50.484 INFO: Analysis report generated in 186ms, dir size=254 KB
+17:55:50.607 INFO: Analysis reports compressed in 123ms, zip size=137 KB
+17:55:50.607 INFO: Analysis report generated in D:\Jenkins\workspace\checkout-setup\.scannerwork\scanner-report
+17:55:50.608 DEBUG: Upload report
+17:55:50.635 DEBUG: POST 200 http://localhost:9000/api/ce/submit?projectKey=java-sonar-runner-simple&projectName=Simple%20Java%20project%20analyzed%20with%20the%20SonarQube%20Runner | time=26ms
+17:55:50.635 INFO: Analysis report uploaded in 27ms
+17:55:50.636 INFO: ANALYSIS SUCCESSFUL, you can browse http://localhost:9000/dashboard?id=java-sonar-runner-simple
+17:55:50.636 INFO: Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+17:55:50.637 INFO: More about the report processing at http://localhost:9000/api/ce/task?id=AWc2jjzm0EIQY6QDZx9l
+17:55:50.638 DEBUG: Report metadata written to D:\Jenkins\workspace\checkout-setup\.scannerwork\report-task.txt
+17:55:50.639 DEBUG: Post-jobs : 
+17:55:50.644 INFO: Task total time: 8.641 s
+17:55:50.767 INFO: ------------------------------------------------------------------------
+17:55:50.767 INFO: EXECUTION SUCCESS
+17:55:50.767 INFO: ------------------------------------------------------------------------
+17:55:50.767 INFO: Total time: 10.134s
+17:55:50.850 INFO: Final Memory: 34M/764M
+17:55:50.850 INFO: ------------------------------------------------------------------------
+Recording test results
+Finished: SUCCESS
