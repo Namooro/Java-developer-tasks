@@ -10,6 +10,7 @@
         <module>homework-lambdas-and-streams</module>
         <module>jvm-memory</module>
         <module>jvm-basics</module>
+        <module>infrastructure-build-java-application-with-maven-and-gradle</module>
         <module>spring-core</module>
     </modules>
     <name>${project.artifactId}</name>
