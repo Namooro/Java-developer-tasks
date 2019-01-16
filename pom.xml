@@ -11,6 +11,7 @@
         <module>jvm-memory</module>
         <module>jvm-basics</module>
         <module>infrastructure-build-java-application-with-maven-and-gradle</module>
+        <module>spring-boot</module>
     </modules>
     <name>${project.artifactId}</name>
     <description>Homework for java mentoring</description>
