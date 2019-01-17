@@ -1,6 +1,6 @@
-package com.epam.real_estate.services;
+package com.epam.estate.services;
 
-import com.epam.real_estate.beans.Agent;
+import com.epam.estate.beans.Agent;
 
 import java.util.List;
 
