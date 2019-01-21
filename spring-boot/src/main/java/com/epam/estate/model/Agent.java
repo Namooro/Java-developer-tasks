@@ -1,17 +1,26 @@
-package com.epam.estate.beans;
+package com.epam.estate.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="AGENT")
 public class Agent {
+    public Agent(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Agent() {
+    }
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    @NotBlank(message = "Name is mandatory")
+    @Column(name = "id")
+    private Long id;
+
+    @Column(name = "name")
     private String name;
 
     public long getId() {

@@ -1,6 +1,6 @@
-package com.epam.estate.services;
+package com.epam.estate.service;
 
-import com.epam.estate.beans.Agent;
+import com.epam.estate.model.Agent;
 
 import java.util.List;
 

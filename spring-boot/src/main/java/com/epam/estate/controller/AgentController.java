@@ -1,6 +1,6 @@
-package com.epam.estate.controllers;
+package com.epam.estate.controller;
 
-import com.epam.estate.beans.Agent;
+import com.epam.estate.model.Agent;
 import com.epam.estate.repository.AgentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -8,8 +8,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import javax.validation.Valid;
 
 public class AgentController {
     @Autowired
@@ -21,7 +19,7 @@ public class AgentController {
     }
 
     @PostMapping("/add-agent")
-    public String addAgent(@Valid Agent agent, BindingResult result, Model model) {
+    public String addAgent(Agent agent, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "add-agent";
         }
@@ -35,15 +33,15 @@ public class AgentController {
         Agent user = agentRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid agent Id:" + id));
         model.addAttribute("user", user);
-        return "update-user";
+        return "update-agent";
     }
 
     @PostMapping("/update/{id}")
-    public String updateAgent(@PathVariable("id") long id, @Valid Agent agent,
+    public String updateAgent(@PathVariable("id") long id, Agent agent,
                               BindingResult result, Model model) {
         if (result.hasErrors()) {
             agent.setId(id);
-            return "update-uAgent";
+            return "update-Agent";
         }
 
         agentRepository.save(agent);
