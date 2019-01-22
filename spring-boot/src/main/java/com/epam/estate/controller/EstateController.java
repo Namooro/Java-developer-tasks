@@ -1,5 +1,6 @@
 package com.epam.estate.controller;
 
+import com.epam.estate.model.Agent;
 import com.epam.estate.model.Estate;
 import com.epam.estate.repository.EstateRepository;
 import com.epam.estate.service.EstateService;
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,6 +39,11 @@ public class EstateController {
     public Estate retrieveEstate(@PathVariable long id) {
         Optional<Estate> estate = estateRepository.findById(id);
         return estate.get();
+    }
+
+    @GetMapping("estates/top")
+    public Agent retrieveAgent(Date before, Date after) {
+        return estateService.getTop(before, after);
     }
 
     @DeleteMapping("/estates/{id}")
