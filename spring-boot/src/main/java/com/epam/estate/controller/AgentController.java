@@ -28,15 +28,15 @@ public class AgentController {
     }
 
     @GetMapping("/edit_agent/{id}")
-    public String updateAgent(@PathVariable("id") long id, Model model) {
+    public String updateAgent(@PathVariable("id") int id, Model model) {
         Agent agent = agentRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid agent Id:" + id));
+                .get();
         model.addAttribute("agent", agent);
         return "update_agent";
     }
 
     @PostMapping("/update_agent/{id}")
-    public String updateAgent(@PathVariable("id") long id, Agent agent,
+    public String updateAgent(@PathVariable("id") int id, Agent agent,
                               BindingResult result, Model model) {
         if (result.hasErrors()) {
             agent.setId(id);
@@ -49,7 +49,7 @@ public class AgentController {
     }
 
     @GetMapping("/delete_agent/{id}")
-    public String deleteAgent(@PathVariable("id") long id, Model model) {
+    public String deleteAgent(@PathVariable("id") int id, Model model) {
         Agent agent = agentRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid agent Id:" + id));
         agentRepository.delete(agent);
@@ -58,9 +58,9 @@ public class AgentController {
     }
 
     @GetMapping("view_sales/{id}")
-    public String viewAgent(@PathVariable("id") long id, Model model) {
+    public String viewAgent(@PathVariable("id") int id, Model model) {
         Agent agent = agentRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid agent Id:" + id));
-        return agentService.getEstates(agent).toString();
+        return agent.getEstateList().toString();
     }
 }

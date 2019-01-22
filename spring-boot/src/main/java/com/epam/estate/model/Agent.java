@@ -7,25 +7,24 @@ import java.util.List;
 @Entity
 @Table(name="AGENT")
 public class Agent {
-    public Agent(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    @Id
+    @Column(name = "id")
+    private Integer id;
 
     public Agent() {
     }
-
-    @Id
-    @Column(name = "id")
-    private Long id;
+    @OneToMany(mappedBy = "agent", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Estate> estateList = new ArrayList<>();
 
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "agent_id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Estate> estateList = new ArrayList<>();
+    public Agent(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
-    public Agent(Long id, String name, List<Estate> estateList) {
+    public Agent(Integer id, String name, List<Estate> estateList) {
         this.id = id;
         this.name = name;
         this.estateList = estateList;
@@ -39,11 +38,11 @@ public class Agent {
         this.estateList = estateList;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -60,7 +59,6 @@ public class Agent {
         return "Agent{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", estateList=" + estateList +
                 '}';
     }
 }

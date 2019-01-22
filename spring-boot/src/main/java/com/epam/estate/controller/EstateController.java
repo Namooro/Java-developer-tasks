@@ -1,6 +1,5 @@
 package com.epam.estate.controller;
 
-import com.epam.estate.model.Agent;
 import com.epam.estate.model.Estate;
 import com.epam.estate.repository.EstateRepository;
 import com.epam.estate.service.EstateService;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public class EstateController {
 
@@ -25,7 +25,7 @@ public class EstateController {
     Logger logger = LoggerFactory.getLogger(EstateController.class);
 
     @RequestMapping(value = "/view_estates/{id}", method = RequestMethod.POST)
-    public String viewEstates(@PathVariable Long id) {
+    public String viewEstates(@PathVariable int id) {
         estateService.view(id);
         return "OK";
     }
@@ -36,18 +36,18 @@ public class EstateController {
     }
 
     @GetMapping("/estates/{id}")
-    public Estate retrieveEstate(@PathVariable long id) {
+    public Estate retrieveEstate(@PathVariable int id) {
         Optional<Estate> estate = estateRepository.findById(id);
         return estate.get();
     }
 
     @GetMapping("estates/top")
-    public List<Agent> retrieveAgent(Date before, Date after) {
+    public Set<Integer> retrieveAgent(Date before, Date after) {
         return estateService.getTopAgents(before, after);
     }
 
     @DeleteMapping("/estates/{id}")
-    public void deleteEstate(@PathVariable long id) {
+    public void deleteEstate(@PathVariable int id) {
         estateRepository.deleteById(id);
     }
 
@@ -62,7 +62,7 @@ public class EstateController {
     }
 
     @PostMapping("/estate/{id}")
-    public String updateUser(@PathVariable("id") long id, Estate estate,
+    public String updateUser(@PathVariable("id") int id, Estate estate,
                              BindingResult result, Model model) {
         if (result.hasErrors()) {
             estate.setId(id);

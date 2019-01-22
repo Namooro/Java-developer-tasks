@@ -15,35 +15,33 @@ public class Estate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
     @Column(name = "address")
     private String address;
-
-    public Estate(Long id, Integer cost, String address, Integer views, Date sell_date, Agent agent_id) {
-        this.id = id;
-        this.cost = cost;
-        this.address = address;
-        this.views = views;
-        this.sell_date = sell_date;
-        this.agent_id = agent_id;
-    }
+    @Column(name = "sell_date")
+    private Date sellDate;
 
     @Column(name = "views")
     private Integer views;
-
-    @Column(name = "sell_date")
-    private Date sell_date;
-
     @ManyToOne
     @JoinColumn(name = "agent_id")
-    private Agent agent_id;
+    private Agent agent;
 
-    public Long getId() {
+    public Estate(Integer id, String address, Integer cost, Date sellDate, Integer views, Agent agent) {
+        this.id = id;
+        this.address = address;
+        this.cost = cost;
+        this.sellDate = sellDate;
+        this.views = views;
+        this.agent = agent;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -71,20 +69,20 @@ public class Estate {
         this.views = views;
     }
 
-    public Date getSell_date() {
-        return sell_date;
+    public Date getSellDate() {
+        return sellDate;
     }
 
-    public void setSell_date(Date sell_date) {
-        this.sell_date = sell_date;
+    public void setSellDate(Date sellDate) {
+        this.sellDate = sellDate;
     }
 
-    public Agent getAgent_id() {
-        return agent_id;
+    public Agent getAgent() {
+        return agent;
     }
 
-    public void setAgent_id(Agent agent_id) {
-        this.agent_id = agent_id;
+    public void setAgent(Agent agent) {
+        this.agent = agent;
     }
 
     @Override
@@ -94,8 +92,8 @@ public class Estate {
                 ", cost=" + cost +
                 ", address='" + address + '\'' +
                 ", views=" + views +
-                ", sell_date=" + sell_date +
-                ", agent_id=" + agent_id +
+                ", sellDate=" + sellDate +
+                ", agent=" + agent +
                 '}';
     }
 }

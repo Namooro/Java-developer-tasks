@@ -24,11 +24,12 @@ public class AgentsTest {
     @Autowired
     AgentRepository agentRepository;
 
-    private Long firstID = 1L;
+    private Integer FIRST_ID = 1;
 
     @Before
     public void before() {
-        Agent agent = new Agent(1l, "123");
+        agentRepository.deleteAll();
+        Agent agent = new Agent(1, "123");
         agentRepository.save(agent);
     }
 
@@ -39,8 +40,8 @@ public class AgentsTest {
 
     @Test
     public void findAgent() {
-        Agent agent = new Agent(firstID, "123");
-        assertEquals(agent.getName(), agentRepository.findById(firstID)
+        Agent agent = new Agent(FIRST_ID, "123");
+        assertEquals(agent.getName(), agentRepository.findById(FIRST_ID)
                 .orElse(null).getName());
     }
 }
