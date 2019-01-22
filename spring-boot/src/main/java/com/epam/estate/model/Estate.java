@@ -10,7 +10,7 @@ public class Estate {
     public Estate() {
     }
 
-    public Estate(Integer id, Integer area, String address, Integer views, Date sell_date, Agent agent_id) {
+    public Estate(Long id, Integer area, String address, Integer views, Date sell_date, Agent agent_id) {
         this.id = id;
         this.area = area;
         this.address = address;
@@ -21,7 +21,7 @@ public class Estate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     @Column(name = "address")
     private String address;
@@ -39,11 +39,11 @@ public class Estate {
     @JoinColumn(name = "agent_id")
     private Agent agent_id;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

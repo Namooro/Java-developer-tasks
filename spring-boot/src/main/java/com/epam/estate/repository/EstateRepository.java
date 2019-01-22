@@ -1,8 +1,8 @@
 package com.epam.estate.repository;
 
 import com.epam.estate.model.Estate;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface EstateRepository extends CrudRepository<Estate, Long> {
+public interface EstateRepository extends JpaRepository<Estate, Long> {
 
 }
