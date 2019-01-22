@@ -1,9 +1,8 @@
 package com.epam.estate.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="AGENT")
@@ -22,6 +21,23 @@ public class Agent {
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "agent_id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Estate> estateList = new ArrayList<>();
+
+    public Agent(Long id, String name, List<Estate> estateList) {
+        this.id = id;
+        this.name = name;
+        this.estateList = estateList;
+    }
+
+    public List<Estate> getEstateList() {
+        return estateList;
+    }
+
+    public void setEstateList(List<Estate> estateList) {
+        this.estateList = estateList;
+    }
 
     public long getId() {
         return id;
@@ -44,6 +60,7 @@ public class Agent {
         return "Agent{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", estateList=" + estateList +
                 '}';
     }
 }
