@@ -23,11 +23,11 @@ public class Estate {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "area")
-    private Integer area;
-
     @Column(name = "address")
     private String address;
+
+    @Column(name = "area")
+    private Integer area;
 
     @Column(name = "views")
     private Integer views;
