@@ -10,14 +10,8 @@ public class Estate {
     public Estate() {
     }
 
-    public Estate(Long id, Integer area, String address, Integer views, Date sell_date, Agent agent_id) {
-        this.id = id;
-        this.area = area;
-        this.address = address;
-        this.views = views;
-        this.sell_date = sell_date;
-        this.agent_id = agent_id;
-    }
+    @Column(name = "cost")
+    private Integer cost;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,8 +20,14 @@ public class Estate {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "area")
-    private Integer area;
+    public Estate(Long id, Integer cost, String address, Integer views, Date sell_date, Agent agent_id) {
+        this.id = id;
+        this.cost = cost;
+        this.address = address;
+        this.views = views;
+        this.sell_date = sell_date;
+        this.agent_id = agent_id;
+    }
 
     @Column(name = "views")
     private Integer views;
@@ -47,12 +47,12 @@ public class Estate {
         this.id = id;
     }
 
-    public Integer getArea() {
-        return area;
+    public Integer getCost() {
+        return cost;
     }
 
-    public void setArea(Integer area) {
-        this.area = area;
+    public void setCost(Integer cost) {
+        this.cost = cost;
     }
 
     public String getAddress() {
@@ -91,7 +91,7 @@ public class Estate {
     public String toString() {
         return "Estate{" +
                 "id=" + id +
-                ", area=" + area +
+                ", cost=" + cost +
                 ", address='" + address + '\'' +
                 ", views=" + views +
                 ", sell_date=" + sell_date +

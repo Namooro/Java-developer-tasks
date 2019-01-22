@@ -3,9 +3,10 @@ package com.epam.estate.service;
 import com.epam.estate.model.Agent;
 
 import java.util.Date;
+import java.util.List;
 
 public interface EstateService {
-    Agent getTop(Date before, Date after);
+    List<Agent> getTopAgents(Date before, Date after);
 
     void view(Long id);
 }

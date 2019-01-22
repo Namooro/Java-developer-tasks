@@ -42,8 +42,8 @@ public class EstateController {
     }
 
     @GetMapping("estates/top")
-    public Agent retrieveAgent(Date before, Date after) {
-        return estateService.getTop(before, after);
+    public List<Agent> retrieveAgent(Date before, Date after) {
+        return estateService.getTopAgents(before, after);
     }
 
     @DeleteMapping("/estates/{id}")
