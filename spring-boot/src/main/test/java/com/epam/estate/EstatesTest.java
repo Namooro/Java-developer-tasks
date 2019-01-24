@@ -44,12 +44,16 @@ public class EstatesTest {
     private Integer SECOND_ID = 2;
     private Integer THIRD_ID = 3;
 
+    private String FIRST_NAME = "first";
+    private String SECOND_NAME = "second";
+    private String THIRD_NAME = "third";
+
     @Before
     public void before() {
         List<Agent> agents = new ArrayList<>();
-        Agent firstAgent = new Agent(FIRST_ID, "123");
-        Agent secondAgent = new Agent(SECOND_ID, "3412321");
-        Agent thirdAgent = new Agent(THIRD_ID, "444");
+        Agent firstAgent = new Agent(FIRST_ID, FIRST_NAME);
+        Agent secondAgent = new Agent(SECOND_ID, SECOND_NAME);
+        Agent thirdAgent = new Agent(THIRD_ID, THIRD_NAME);
         agents.add(firstAgent);
         agents.add(secondAgent);
         agents.add(thirdAgent);
@@ -60,7 +64,7 @@ public class EstatesTest {
         estates.add(new Estate(7, "Saint-Petersburg", 32, Date.valueOf("2018-04-01"), 0, thirdAgent));
         estates.add(new Estate(6, "Moscow", 32, Date.valueOf("2018-04-01"), 0, thirdAgent));
         estates.add(new Estate(5, "Togliatty", 32, Date.valueOf("2018-03-01"), 0, secondAgent));
-        estates.add(new Estate(4, "Samara", 32, Date.valueOf("2018-02-01"), 0, firstAgent));
+        estates.add(new Estate(4, "Samara", 32, Date.valueOf("2018-02-01"), 0, secondAgent));
         estates.add(new Estate(3, "Togliatty", 32, Date.valueOf("2018-01-02"), 0, firstAgent));
         estates.add(new Estate(2, "Togliatty", 32, Date.valueOf("2018-01-02"), 0, firstAgent));
         estates.add(new Estate(1, "Togliatty", 32, Date.valueOf("2018-01-01"), 0, firstAgent));
@@ -81,7 +85,7 @@ public class EstatesTest {
 
     @Test
     public void checkTopFive() {
-        assertEquals(1, estateService.getTopAgents(Date.valueOf("2018-01-01"), Date.valueOf(("2018-01-26"))));
+        assertEquals(Arrays.asList(FIRST_NAME, SECOND_NAME), estateService.getTopAgents(Date.valueOf("2018-01-01"), Date.valueOf(("2018-03-01"))));
     }
 
 }

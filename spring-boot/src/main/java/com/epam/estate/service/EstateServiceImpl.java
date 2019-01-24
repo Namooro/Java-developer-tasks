@@ -5,9 +5,9 @@ import com.epam.estate.repository.EstateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.List;
 
 @Service
 public class EstateServiceImpl implements EstateService {
@@ -16,8 +16,8 @@ public class EstateServiceImpl implements EstateService {
     EstateRepository estateRepository;
 
     @Override
-    public Set<Integer> getTopAgents(Date before, Date after) {
-        return estateRepository.topFive(before, after).entrySet().stream().map(e->e.getKey()).collect(Collectors.toSet());
+    public List<String> getTopAgents(Date before, Date after) {
+        return new ArrayList<>(estateRepository.topFive(before, after));
     }
 
     @Override

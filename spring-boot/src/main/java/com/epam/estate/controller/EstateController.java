@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 public class EstateController {
 
@@ -42,7 +41,7 @@ public class EstateController {
     }
 
     @GetMapping("estates/top")
-    public Set<Integer> retrieveAgent(Date before, Date after) {
+    public List<String> retrieveAgentNames(Date before, Date after) {
         return estateService.getTopAgents(before, after);
     }
 

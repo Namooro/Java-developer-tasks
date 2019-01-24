@@ -18,4 +18,9 @@ public class AgentServiceImpl implements AgentService {
         return agentRepository.findAll();
     }
 
+    @Override
+    public Integer agentResult(Integer id) {
+        return agentRepository.soldProperty(id);
+    }
+
 }

@@ -6,10 +6,19 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.Date;
-import java.util.Map;
+import java.util.List;
 
 public interface EstateRepository extends JpaRepository<Estate, Integer> {
 
-    @Query(value = "SELECT agent_id, sum(cost) FROM Estate where sell_date >:before and sell_date <:after group by agent_id, sell_Date limit 5", nativeQuery = true)
-    Map<Integer, Integer> topFive(@Param("before") Date before, @Param("after") Date after);
+    String TOP_AGENTS_BY_MONTH_SOLD_ESTATES_QUERY = "Select names from( SELECT a.id, a.name as names, SUM(e.cost) as month_total_price " +
+            "FROM agent a " +
+            "INNER JOIN estate e ON e.agent_id=a.id " +
+            "WHERE e.sell_date >:dateFrom AND e.sell_date < :dateTo " +
+            "GROUP BY a.id " +
+            "ORDER BY month_total_price DESC " +
+            "LIMIT 5)";
+
+
+    @Query(value = TOP_AGENTS_BY_MONTH_SOLD_ESTATES_QUERY, nativeQuery = true)
+    List<String> topFive(@Param("dateFrom") Date before, @Param("dateTo") Date after);
 }

@@ -8,10 +8,12 @@ import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import javax.sql.DataSource;
 
 @SpringBootApplication
+@EnableScheduling
 @ComponentScan({"com.epam.estate"})
 @EntityScan("com.epam.estate.model")
 @EnableJpaRepositories("com.epam.estate.repository")
@@ -30,9 +32,7 @@ public class EstateApplication {
                 .build();
     }
 
-
     public static void main(String[] args) {
         SpringApplication.run(EstateApplication.class, args);
     }
-
 }

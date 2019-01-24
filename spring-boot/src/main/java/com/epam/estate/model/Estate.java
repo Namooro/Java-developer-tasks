@@ -14,7 +14,6 @@ public class Estate {
     private Integer cost;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(name = "address")
@@ -24,6 +23,7 @@ public class Estate {
 
     @Column(name = "views")
     private Integer views;
+
     @ManyToOne
     @JoinColumn(name = "agent_id")
     private Agent agent;
