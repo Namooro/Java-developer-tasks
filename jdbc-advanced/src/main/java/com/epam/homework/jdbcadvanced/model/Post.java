@@ -1,5 +1,7 @@
 package com.epam.homework.jdbcadvanced.model;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +14,7 @@ import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 @Entity
+@EnableAutoConfiguration
 @Table(name = "posts")
 public class Post {
     @Id

@@ -1,5 +1,7 @@
 package com.epam.homework.jdbcadvanced.model;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
-@Table(name = "users")
+@Table(name = "user")
+@EnableAutoConfiguration
 @Entity
 public class User {
     @Id

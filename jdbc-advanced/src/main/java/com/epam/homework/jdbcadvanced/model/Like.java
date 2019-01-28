@@ -1,5 +1,7 @@
 package com.epam.homework.jdbcadvanced.model;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
 
+@EnableAutoConfiguration
 @Entity
 @Table(name = "likes")
 public class Like {
