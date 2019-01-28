@@ -1,13 +1,25 @@
 package com.epam.homework.jdbcadvanced.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
-@Table(name="user")
+@Table(name = "user")
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "surname")
     private String surname;
-    private Date birthdate;
+    @Column(name = "birthDate")
+    private Date birthDate;
 
     public Integer getId() {
         return id;
@@ -33,12 +45,12 @@ public class User {
         this.surname = surname;
     }
 
-    public Date getBirthdate() {
-        return birthdate;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     @Override
@@ -47,7 +59,7 @@ public class User {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", birthdate=" + birthdate +
+                ", birthDate=" + birthDate +
                 '}';
     }
 }
