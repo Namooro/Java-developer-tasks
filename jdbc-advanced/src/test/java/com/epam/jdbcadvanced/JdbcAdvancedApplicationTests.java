@@ -27,7 +27,7 @@ public class JdbcAdvancedApplicationTests {
     public void simpleTest() {
         User user = new User(1, "1", "2", LocalDate.now());
         userRepository.save(user);
-        assertEquals("1", userRepository.findById(1).get().getName());
+        assertEquals("1",userService.getUsers().stream().findAny().get().getName());
     }
 
 }
