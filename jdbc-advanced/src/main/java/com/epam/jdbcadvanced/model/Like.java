@@ -1,7 +1,7 @@
 package com.epam.jdbcadvanced.model;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "likes")
@@ -19,7 +19,7 @@ public class Like {
     private User user;
 
     @Column(name = "likeTime")
-    private LocalDateTime likeTime;
+    private LocalDate likeTime;
 
     @Override
     public String toString() {
@@ -55,18 +55,18 @@ public class Like {
         this.user = user;
     }
 
-    public LocalDateTime getLikeTime() {
-        return likeTime;
-    }
-
-    public void setLikeTime(LocalDateTime likeTime) {
-        this.likeTime = likeTime;
-    }
-
-    public Like(Integer likeId, Post post, User user, LocalDateTime likeTime) {
+    public Like(Integer likeId, Post post, User user, LocalDate likeTime) {
         this.likeId = likeId;
         this.post = post;
         this.user = user;
+        this.likeTime = likeTime;
+    }
+
+    public LocalDate getLikeTime() {
+        return likeTime;
+    }
+
+    public void setLikeTime(LocalDate likeTime) {
         this.likeTime = likeTime;
     }
 
