@@ -1,17 +1,9 @@
-package com.epam.homework.jdbcadvanced.model;
+package com.epam.jdbcadvanced.model;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.util.Date;
+import javax.persistence.*;
+import java.time.LocalDate;
 
 @Table(name = "user")
-@EnableAutoConfiguration
 @Entity
 public class User {
     @Id
@@ -22,7 +14,7 @@ public class User {
     @Column(name = "surname")
     private String surname;
     @Column(name = "birthDate")
-    private Date birthDate;
+    private LocalDate birthDate;
 
     public Integer getUserId() {
         return userId;
@@ -48,11 +40,21 @@ public class User {
         this.surname = surname;
     }
 
-    public Date getBirthDate() {
+    public User(Integer userId, String name, String surname, LocalDate birthDate) {
+        this.userId = userId;
+        this.name = name;
+        this.surname = surname;
+        this.birthDate = birthDate;
+    }
+
+    public User() {
+    }
+
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 

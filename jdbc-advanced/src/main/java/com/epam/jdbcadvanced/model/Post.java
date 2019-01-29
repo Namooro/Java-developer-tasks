@@ -1,21 +1,10 @@
-package com.epam.homework.jdbcadvanced.model;
+package com.epam.jdbcadvanced.model;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@EnableAutoConfiguration
-@Table(name = "posts")
+@Table(name = "post")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -61,6 +50,16 @@ public class Post {
 
     public void setTime(LocalDateTime time) {
         this.time = time;
+    }
+
+    public Post(Integer postId, User user, String text, LocalDateTime time) {
+        this.postId = postId;
+        this.user = user;
+        this.text = text;
+        this.time = time;
+    }
+
+    public Post() {
     }
 
     @Override

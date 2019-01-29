@@ -1,13 +1,10 @@
-package com.epam.homework.jdbcadvanced.model;
-
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+package com.epam.jdbcadvanced.model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@EnableAutoConfiguration
 @Entity
-@Table(name = "likes")
+@Table(name = "like")
 public class Like {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -54,6 +51,16 @@ public class Like {
 
     public void setLikeTime(LocalDateTime likeTime) {
         this.likeTime = likeTime;
+    }
+
+    public Like(Integer likeId, Post post, User user, LocalDateTime likeTime) {
+        this.likeId = likeId;
+        this.post = post;
+        this.user = user;
+        this.likeTime = likeTime;
+    }
+
+    public Like() {
     }
 
     @Override

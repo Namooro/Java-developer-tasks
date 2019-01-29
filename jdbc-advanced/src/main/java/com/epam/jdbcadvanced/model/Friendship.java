@@ -1,18 +1,10 @@
-package com.epam.homework.jdbcadvanced.model;
+package com.epam.jdbcadvanced.model;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@EnableAutoConfiguration
-@Table(name = "frienships")
+@Table(name = "friendship")
 public class Friendship {
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -48,6 +40,15 @@ public class Friendship {
 
     public void setAddTime(LocalDateTime addTime) {
         this.addTime = addTime;
+    }
+
+    public Friendship(User firstUser, User secondUser, LocalDateTime addTime) {
+        this.firstUser = firstUser;
+        this.secondUser = secondUser;
+        this.addTime = addTime;
+    }
+
+    public Friendship() {
     }
 
     @Override
