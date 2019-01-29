@@ -12,7 +12,7 @@ public class Post {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId")
-    private User user;
+    private SUser SUser;
 
     @Column(name = "text")
     private String text;
@@ -28,12 +28,15 @@ public class Post {
         this.postId = postId;
     }
 
-    public User getUser() {
-        return user;
+    public Post(Integer postId, SUser SUser, String text, LocalDate time) {
+        this.postId = postId;
+        this.SUser = SUser;
+        this.text = text;
+        this.time = time;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public SUser getSUser() {
+        return SUser;
     }
 
     public String getText() {
@@ -44,11 +47,8 @@ public class Post {
         this.text = text;
     }
 
-    public Post(Integer postId, User user, String text, LocalDate time) {
-        this.postId = postId;
-        this.user = user;
-        this.text = text;
-        this.time = time;
+    public void setSUser(SUser SUser) {
+        this.SUser = SUser;
     }
 
     public LocalDate getTime() {
@@ -66,7 +66,7 @@ public class Post {
     public String toString() {
         return "Post{" +
                 "postId=" + postId +
-                ", user=" + user +
+                ", SUser=" + SUser +
                 ", text='" + text + '\'' +
                 ", time=" + time +
                 '}';

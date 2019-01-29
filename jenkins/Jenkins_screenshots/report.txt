@@ -169,8 +169,8 @@ Hibernate: select pet0_.id as id1_1_0_, pet0_.name as name2_1_0_, pet0_.birth_da
 [INFO] 
 [INFO] --- git-commit-id-plugin:2.2.5:revision (default) @ spring-petclinic ---
 [INFO] dotGitDirectory D:\Jenkins\workspace\checkout-setup\.git
-[INFO] git.build.user.name Roman Selianko
-[INFO] git.build.user.email romanselyanko@gmail.com
+[INFO] git.build.SUser.name Roman Selianko
+[INFO] git.build.SUser.email romanselyanko@gmail.com
 [INFO] Using environment variable based branch name. GIT_BRANCH = origin/master
 [INFO] git.branch origin/master
 [INFO] --always = true
@@ -183,8 +183,8 @@ Hibernate: select pet0_.id as id1_1_0_, pet0_.name as name2_1_0_, pet0_.birth_da
 [INFO] git.commit.id b760ba5a3d5c75771414106d0ac507debfd375f8
 [INFO] git.commit.id.abbrev b760ba5
 [INFO] git.dirty false
-[INFO] git.commit.user.name Roman Selianko
-[INFO] git.commit.user.email romanselyanko@gmail.com
+[INFO] git.commit.SUser.name Roman Selianko
+[INFO] git.commit.SUser.email romanselyanko@gmail.com
 [INFO] git.commit.message.full changed spring-boot-starter-parent version
 [INFO] git.commit.message.short changed spring-boot-starter-parent version
 [INFO] git.commit.time 2018-11-15T19:25:59+0400
@@ -204,28 +204,28 @@ Hibernate: select pet0_.id as id1_1_0_, pet0_.name as name2_1_0_, pet0_.birth_da
 [INFO] git.build.host EPRUSAMW0206
 [INFO] git.build.number 200
 [INFO] git.commit.id.describe-short b760ba5
-[INFO] found property git.build.user.email
+[INFO] found property git.build.SUser.email
 [INFO] found property git.build.host
 [INFO] found property git.dirty
 [INFO] found property git.remote.origin.url
 [INFO] found property git.closest.tag.name
 [INFO] found property git.total.commit.count
 [INFO] found property git.commit.id.describe-short
-[INFO] found property git.commit.user.email
+[INFO] found property git.commit.SUser.email
 [INFO] found property git.commit.time
 [INFO] found property git.commit.message.full
 [INFO] found property git.build.version
 [INFO] found property git.commit.message.short
 [INFO] found property git.commit.id.abbrev
 [INFO] found property git.branch
-[INFO] found property git.build.user.name
+[INFO] found property git.build.SUser.name
 [INFO] found property git.build.number
 [INFO] found property git.closest.tag.commit.count
 [INFO] found property git.commit.id.describe
 [INFO] found property git.commit.id
 [INFO] found property git.tags
 [INFO] found property git.build.time
-[INFO] found property git.commit.user.name
+[INFO] found property git.commit.SUser.name
 [INFO] Reading existing properties file [D:\Jenkins\workspace\checkout-setup\target\classes\git.properties] (for module petclinic)...
 [INFO] Properties file [D:\Jenkins\workspace\checkout-setup\target\classes\git.properties] is up-to-date (for module petclinic)...
 [INFO] 

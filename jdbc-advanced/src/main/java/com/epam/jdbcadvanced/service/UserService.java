@@ -1,11 +1,11 @@
 package com.epam.jdbcadvanced.service;
 
-import com.epam.jdbcadvanced.model.User;
+import com.epam.jdbcadvanced.model.SUser;
 
 import java.util.List;
 
 public interface UserService {
-    List<User> getUsers();
+    List<SUser> getUsers();
 
-    void batchInsert(List<User> users);
+    void batchInsert(List<SUser> SUsers);
 }

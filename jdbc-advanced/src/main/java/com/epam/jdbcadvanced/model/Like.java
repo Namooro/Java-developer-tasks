@@ -16,19 +16,16 @@ public class Like {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId")
-    private User user;
+    private SUser SUser;
 
     @Column(name = "likeTime")
     private LocalDate likeTime;
 
-    @Override
-    public String toString() {
-        return "Like{" +
-                "likeId=" + likeId +
-                ", post=" + post +
-                ", user=" + user +
-                ", likeTime=" + likeTime +
-                '}';
+    public Like(Integer likeId, Post post, SUser SUser, LocalDate likeTime) {
+        this.likeId = likeId;
+        this.post = post;
+        this.SUser = SUser;
+        this.likeTime = likeTime;
     }
 
     public Integer getLikeId() {
@@ -47,19 +44,22 @@ public class Like {
         this.post = post;
     }
 
-    public User getUser() {
-        return user;
+    @Override
+    public String toString() {
+        return "Like{" +
+                "likeId=" + likeId +
+                ", post=" + post +
+                ", SUser=" + SUser +
+                ", likeTime=" + likeTime +
+                '}';
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public SUser getSUser() {
+        return SUser;
     }
 
-    public Like(Integer likeId, Post post, User user, LocalDate likeTime) {
-        this.likeId = likeId;
-        this.post = post;
-        this.user = user;
-        this.likeTime = likeTime;
+    public void setSUser(SUser SUser) {
+        this.SUser = SUser;
     }
 
     public LocalDate getLikeTime() {

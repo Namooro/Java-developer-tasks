@@ -4,9 +4,9 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
-@Table(name = "user")
+@Table(name = "suser")
 @Entity
-public class User {
+public class SUser {
     @Id
     @Column(name="userId")
     private Integer userId;
@@ -21,12 +21,12 @@ public class User {
     @JoinTable(name = "friendship",
             joinColumns = @JoinColumn(name = "userId"),
             inverseJoinColumns = @JoinColumn(name = "otherUserId"))
-    private List<User> friends;
+    private List<SUser> friends;
 
-    public User() {
+    public SUser() {
     }
 
-    public User(Integer userid, String name, String surname, LocalDate birthDate, List<User> friends) {
+    public SUser(Integer userid, String name, String surname, LocalDate birthDate, List<SUser> friends) {
         this.userId = userid;
         this.name = name;
         this.surname = surname;
@@ -58,17 +58,17 @@ public class User {
         this.surname = surname;
     }
 
-    public List<User> getFriends() {
+    public List<SUser> getFriends() {
         return friends;
     }
 
-    public void setFriends(List<User> friends) {
+    public void setFriends(List<SUser> friends) {
         this.friends = friends;
     }
 
     @Override
     public String toString() {
-        return "User{" +
+        return "SUser{" +
                 "userId=" + userId +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +

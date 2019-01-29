@@ -16,32 +16,32 @@ public class Friendship {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId")
-    private User firstUser;
+    private SUser firstSUser;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "otherUserId")
-    private User otherUser;
+    private SUser otherSUser;
 
     @Column(name = "addTime")
     private LocalDate addTime;
 
-    public Friendship(Integer friendshipId, User firstUser, User otherUser, LocalDate addTime) {
+    public Friendship(Integer friendshipId, SUser firstSUser, SUser otherSUser, LocalDate addTime) {
         this.friendshipId = friendshipId;
-        this.firstUser = firstUser;
-        this.otherUser = otherUser;
+        this.firstSUser = firstSUser;
+        this.otherSUser = otherSUser;
         this.addTime = addTime;
     }
 
-    public User getFirstUser() {
-        return firstUser;
+    public SUser getFirstSUser() {
+        return firstSUser;
     }
 
-    public void setFirstUser(User firstUser) {
-        this.firstUser = firstUser;
+    public void setFirstSUser(SUser firstSUser) {
+        this.firstSUser = firstSUser;
     }
 
-    public User getOtherUser() {
-        return otherUser;
+    public SUser getOtherSUser() {
+        return otherSUser;
     }
 
     public Integer getFriendshipId() {
@@ -52,8 +52,8 @@ public class Friendship {
         this.friendshipId = friendshipId;
     }
 
-    public void setOtherUser(User otherUser) {
-        this.otherUser = otherUser;
+    public void setOtherSUser(SUser otherSUser) {
+        this.otherSUser = otherSUser;
     }
 
     public LocalDate getAddTime() {
@@ -71,8 +71,8 @@ public class Friendship {
     public String toString() {
         return "Friendship{" +
                 "friendshipId=" + friendshipId +
-                ", firstUser=" + firstUser +
-                ", otherUser=" + otherUser +
+                ", firstSUser=" + firstSUser +
+                ", otherSUser=" + otherSUser +
                 ", addTime=" + addTime +
                 '}';
     }
