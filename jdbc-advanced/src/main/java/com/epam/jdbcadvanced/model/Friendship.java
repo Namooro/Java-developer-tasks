@@ -7,31 +7,27 @@ import java.time.LocalDateTime;
 @Table(name = "friendship")
 public class Friendship {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer friendshipId;
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId")
     private User firstUser;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "userId")
-    private User secondUser;
+    @JoinColumn(name = "otherUserId")
+    private User otherUser;
 
     @Column(name = "addTime")
     private LocalDateTime addTime;
 
-    public User getFirstUser() {
-        return firstUser;
+    public Integer getFriendshipId() {
+        return friendshipId;
     }
 
-    public void setFirstUser(User firstUser) {
-        this.firstUser = firstUser;
-    }
-
-    public User getSecondUser() {
-        return secondUser;
-    }
-
-    public void setSecondUser(User secondUser) {
-        this.secondUser = secondUser;
+    public void setFriendshipId(Integer friendshipId) {
+        this.friendshipId = friendshipId;
     }
 
     public LocalDateTime getAddTime() {
@@ -42,21 +38,8 @@ public class Friendship {
         this.addTime = addTime;
     }
 
-    public Friendship(User firstUser, User secondUser, LocalDateTime addTime) {
-        this.firstUser = firstUser;
-        this.secondUser = secondUser;
-        this.addTime = addTime;
-    }
 
     public Friendship() {
     }
 
-    @Override
-    public String toString() {
-        return "Friendship{" +
-                "firstUser=" + firstUser +
-                ", secondUser=" + secondUser +
-                ", addTime=" + addTime +
-                '}';
-    }
 }

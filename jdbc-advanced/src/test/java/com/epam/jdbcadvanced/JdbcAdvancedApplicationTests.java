@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDate;
+import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 
@@ -25,9 +26,9 @@ public class JdbcAdvancedApplicationTests {
 
     @Test
     public void simpleTest() {
-        User user = new User(1, "1", "2", LocalDate.now());
+        User user = new User(1, "1", "2", LocalDate.now(), Collections.emptyList());
         userRepository.save(user);
-        assertEquals("1",userService.getUsers().stream().findAny().get().getName());
+        assertEquals("1", userService.getUsers().stream().findAny().get().getName());
     }
 
 }

@@ -4,22 +4,32 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "like")
+@Table(name = "likes")
 public class Like {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer likeId;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "postId")
     private Post post;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId")
     private User user;
 
     @Column(name = "likeTime")
     private LocalDateTime likeTime;
+
+    @Override
+    public String toString() {
+        return "Like{" +
+                "likeId=" + likeId +
+                ", post=" + post +
+                ", user=" + user +
+                ", likeTime=" + likeTime +
+                '}';
+    }
 
     public Integer getLikeId() {
         return likeId;
@@ -63,13 +73,4 @@ public class Like {
     public Like() {
     }
 
-    @Override
-    public String toString() {
-        return "Like{" +
-                "likeId=" + likeId +
-                ", post=" + post +
-                ", user=" + user +
-                ", likeTime=" + likeTime +
-                '}';
-    }
 }
