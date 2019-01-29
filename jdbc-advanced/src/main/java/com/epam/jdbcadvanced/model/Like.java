@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 @Table(name = "likes")
 public class Like {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "likeId")
     private Integer likeId;
 
     @ManyToOne(cascade = CascadeType.ALL)

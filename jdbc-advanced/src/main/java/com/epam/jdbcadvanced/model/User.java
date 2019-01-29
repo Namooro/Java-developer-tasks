@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="userId")
     private Integer userId;
     @Column(name = "name")
     private String name;
@@ -26,8 +26,8 @@ public class User {
     public User() {
     }
 
-    public User(Integer userId, String name, String surname, LocalDate birthDate, List<User> friends) {
-        this.userId = userId;
+    public User(Integer userid, String name, String surname, LocalDate birthDate, List<User> friends) {
+        this.userId = userid;
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;

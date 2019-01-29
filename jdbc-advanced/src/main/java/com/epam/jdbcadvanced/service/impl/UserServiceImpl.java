@@ -18,4 +18,10 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 
+    @Override
+    public void batchInsert(List<User> users) {
+        userRepository.saveAll(users);
+    }
+
+
 }

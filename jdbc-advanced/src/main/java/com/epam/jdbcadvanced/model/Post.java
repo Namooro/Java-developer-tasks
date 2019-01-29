@@ -1,13 +1,13 @@
 package com.epam.jdbcadvanced.model;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "post")
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "postId")
     private Integer postId;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -18,7 +18,7 @@ public class Post {
     private String text;
 
     @Column(name = "post_time")
-    private LocalDateTime time;
+    private LocalDate time;
 
     public Integer getPostId() {
         return postId;
@@ -44,18 +44,18 @@ public class Post {
         this.text = text;
     }
 
-    public LocalDateTime getTime() {
-        return time;
-    }
-
-    public void setTime(LocalDateTime time) {
-        this.time = time;
-    }
-
-    public Post(Integer postId, User user, String text, LocalDateTime time) {
+    public Post(Integer postId, User user, String text, LocalDate time) {
         this.postId = postId;
         this.user = user;
         this.text = text;
+        this.time = time;
+    }
+
+    public LocalDate getTime() {
+        return time;
+    }
+
+    public void setTime(LocalDate time) {
         this.time = time;
     }
 

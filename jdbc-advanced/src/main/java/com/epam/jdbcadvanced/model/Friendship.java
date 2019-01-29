@@ -1,14 +1,17 @@
 package com.epam.jdbcadvanced.model;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
+@Transactional
 @Table(name = "friendship")
 public class Friendship {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "friendshipId")
     private Integer friendshipId;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -20,7 +23,26 @@ public class Friendship {
     private User otherUser;
 
     @Column(name = "addTime")
-    private LocalDateTime addTime;
+    private LocalDate addTime;
+
+    public Friendship(Integer friendshipId, User firstUser, User otherUser, LocalDate addTime) {
+        this.friendshipId = friendshipId;
+        this.firstUser = firstUser;
+        this.otherUser = otherUser;
+        this.addTime = addTime;
+    }
+
+    public User getFirstUser() {
+        return firstUser;
+    }
+
+    public void setFirstUser(User firstUser) {
+        this.firstUser = firstUser;
+    }
+
+    public User getOtherUser() {
+        return otherUser;
+    }
 
     public Integer getFriendshipId() {
         return friendshipId;
@@ -30,16 +52,28 @@ public class Friendship {
         this.friendshipId = friendshipId;
     }
 
-    public LocalDateTime getAddTime() {
+    public void setOtherUser(User otherUser) {
+        this.otherUser = otherUser;
+    }
+
+    public LocalDate getAddTime() {
         return addTime;
     }
-
-    public void setAddTime(LocalDateTime addTime) {
-        this.addTime = addTime;
-    }
-
 
     public Friendship() {
     }
 
+    public void setAddTime(LocalDate addTime) {
+        this.addTime = addTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Friendship{" +
+                "friendshipId=" + friendshipId +
+                ", firstUser=" + firstUser +
+                ", otherUser=" + otherUser +
+                ", addTime=" + addTime +
+                '}';
+    }
 }
