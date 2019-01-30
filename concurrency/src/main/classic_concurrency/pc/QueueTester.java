@@ -11,12 +11,13 @@ public class QueueTester {
         List<String> queue = new LinkedList<>();
         Consumer consumer = new Consumer();
         Producer producer = new Producer();
-        while (true) {
-            producer.produce(queue, 1);
-            producer.produce(queue, 2);
-            consumer.consume(queue, 1);
-            consumer.consume(queue, 2);
-        }
-    }
 
+        producer.produce(queue, 1);
+        producer.produce(queue, 2);
+        producer.produce(queue, 2);
+        producer.produce(queue, 1);
+        producer.produce(queue, 2);
+        consumer.consume(queue, 1);
+        consumer.consume(queue, 2);
+    }
 }

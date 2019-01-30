@@ -9,13 +9,13 @@ public class Producer {
         Thread thread = new  Thread(() -> {
             try {
                 while (true) {
-                    synchronized (this) {
+                    synchronized (queue) {
                         while (queue.size() == capacity) {
-                            wait();
+                            queue.wait();
                         }
                         queue.add("topic " + topic);
                         System.out.println(topic + "nd Producer produced - topic " + topic);
-                        notify();
+                        queue.notifyAll();
                     }
                     Thread.sleep(1000);
                 }

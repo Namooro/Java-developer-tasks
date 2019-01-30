@@ -5,18 +5,20 @@ import java.util.List;
 public class Consumer {
 
     public void consume(List<String> queue, int topic) throws InterruptedException {
-       Thread thread =  new Thread(() -> {
+        Thread thread = new Thread(() -> {
             try {
                 while (true) {
-                    synchronized (this) {
+                    synchronized (queue) {
                         while (queue.size() == 0) {
-                            wait();
+                            queue.wait();
                         }
                         if (queue.get(0).contains("topic " + topic)) {
                             queue.remove(0);
+                            System.out.println("Consumer consumed - topic " + topic);
+                            queue.notifyAll();
+                        } else {
+                            System.out.println("Consumer not found:" + topic);
                         }
-                        System.out.println("Consumer consumed - topic " + topic);
-                        notify();
                     }
                     Thread.sleep(100);
                 }
@@ -24,7 +26,7 @@ public class Consumer {
                 e.printStackTrace();
             }
         });
-       thread.start();
-       thread.join(100);
+        thread.start();
+        thread.join(100);
     }
 }
