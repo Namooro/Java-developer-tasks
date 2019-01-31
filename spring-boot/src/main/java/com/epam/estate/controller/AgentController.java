@@ -3,6 +3,7 @@ package com.epam.estate.controller;
 import com.epam.estate.model.Agent;
 import com.epam.estate.repository.AgentRepository;
 import com.epam.estate.service.AgentService;
+import com.epam.estate.service.EstateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+import java.util.List;
+
 @RestController
 public class AgentController {
     @Autowired
@@ -18,6 +22,9 @@ public class AgentController {
 
     @Autowired
     private AgentService agentService;
+
+    @Autowired
+    EstateService estateService;
 
     @PostMapping("/add_agent")
     public String addAgent(Agent agent, BindingResult result, Model model) {
@@ -57,6 +64,13 @@ public class AgentController {
         agentRepository.delete(agent);
         model.addAttribute("agent", agentRepository.findAll());
         return "index";
+    }
+
+    @PostMapping("/agentRating")
+    public List<String> topFiveAgents(Model model, Date from, Date to) {
+        List<String> topAgentsNames = estateService.getTopAgents(from, to);
+        model.addAttribute("agentsRating", topAgentsNames);
+        return topAgentsNames;
     }
 
     @GetMapping("view_sales/{id}")
