@@ -22,7 +22,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static org.junit.Assert.assertEquals;
 
@@ -65,26 +65,27 @@ public class JdbcAdvancedApplicationTests {
             SUserList.add(new SUser(i, String.format("firstname %s", i), String.format("secondName %S", i), LocalDate.now(), Collections.emptyList()));
         }
         userService.batchInsert(SUserList);
-      /*  for (int i = 0; i < 15000; i++) {
+        for (int i = 0; i < 15000; i++) {
             postList.add(new Post(i, SUserList.get(ThreadLocalRandom.current().nextInt(1, 1000)),
                     String.format("i am post with id: {}", i), LocalDate.now()));
         }
-        postService.batchInsert(postList);*/
-     /*   for (int i = 0; i < 90000; i++) {
-            friendshipList.add(new Friendship(i, SUserList.get(ThreadLocalRandom.current().nextInt(1, 1000)),
-                    SUserList.get(ThreadLocalRandom.current().nextInt(1, 1000)), LocalDate.now()));
+        postService.batchInsert(postList);
+        for (int i = 0; i < 90000; i++) {
+            friendshipList.add(new Friendship(i, SUserList.get(ThreadLocalRandom.current().nextInt(0, 1000)),
+                    SUserList.get(ThreadLocalRandom.current().nextInt(0, 1000)), LocalDate.now()));
         }
-        friendshipService.batchInsert(friendshipList);*/
-      /*  for (int i = 0; i < 30000; i++) {
+
+        friendshipService.batchInsert(friendshipList);
+        for (int i = 0; i < 30000; i++) {
             likeList.add(new Like(i, postList.get(ThreadLocalRandom.current().nextInt(0, 15000)),
                     SUserList.get(ThreadLocalRandom.current().nextInt(0, 1000)), LocalDate.now()));
         }
-        likeService.batchInsert(likeList);*/
-        //  assertEquals(1000, userRepository.findAll().size());
-        // assertEquals(90000, friendshipRepository.findAll().size());
-        // assertEquals(15000, postRepository.findAll().size());
-        //assertEquals(30000, likeRepository.findAll().size());
-        assertEquals(null, userRepository.findAll().stream().map(SUser::getName).collect(Collectors.toList()));
+        likeService.batchInsert(likeList);
+        assertEquals(1000, userRepository.findAll().size());
+        assertEquals(15000, postRepository.findAll().size());
+      //  assertEquals(9000, friendshipRepository.findAll().size());
+        assertEquals(30000, likeRepository.findAll().size());
+        // assertEquals(null, userRepository.findAll().stream().map(SUser::getName).collect(Collectors.toList()));
 
     }
 /*
