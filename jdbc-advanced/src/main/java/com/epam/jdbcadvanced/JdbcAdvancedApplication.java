@@ -29,14 +29,14 @@ public class JdbcAdvancedApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        ClassPathResource imgFile = new ClassPathResource("image_input/logo.gif");
+        ClassPathResource imgFile = new ClassPathResource("image_input/sonarqube-7.5.zip");
         byte[] arrayPic = new byte[(int) imgFile.contentLength()];
         imgFile.getInputStream().read(arrayPic);
         FileShare gifpic = new FileShare(1, "OUTPUT-LOGO", arrayPic);
         fileShareRepository.save(gifpic);
 
         for (FileShare fileShare : fileShareRepository.findAll()) {
-            Files.write(Paths.get("image_output.gif"), fileShare.getPic());
+            Files.write(Paths.get("sonarQube-output.zip"), fileShare.getPic());
         }
 
     }

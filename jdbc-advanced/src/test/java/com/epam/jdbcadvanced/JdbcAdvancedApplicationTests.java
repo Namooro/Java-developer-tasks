@@ -83,10 +83,16 @@ public class JdbcAdvancedApplicationTests {
         likeService.batchInsert(likeList);
         assertEquals(1000, userRepository.findAll().size());
         assertEquals(15000, postRepository.findAll().size());
-      //  assertEquals(9000, friendshipRepository.findAll().size());
+        //  assertEquals(9000, friendshipRepository.findAll().size());
         assertEquals(30000, likeRepository.findAll().size());
         // assertEquals(null, userRepository.findAll().stream().map(SUser::getName).collect(Collectors.toList()));
+        assertEquals(null, userRepository.distinctUsers(LocalDate.now(), LocalDate.now()));
 
+    }
+
+    @Test
+    public void distinctUser() {
+        assertEquals(null, userRepository.distinctUsers(LocalDate.now(), LocalDate.now()));
     }
 /*
     @After
