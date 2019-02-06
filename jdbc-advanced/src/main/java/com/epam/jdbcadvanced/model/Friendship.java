@@ -1,12 +1,9 @@
 package com.epam.jdbcadvanced.model;
 
-import org.springframework.transaction.annotation.Transactional;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Transactional
 @Table(name = "friendship")
 public class Friendship {
 
@@ -14,12 +11,12 @@ public class Friendship {
     @Column(name = "friendshipId")
     private Integer friendshipId;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "userId")
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(referencedColumnName = "userId")
     private SUser firstSUser;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "otherUserId")
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(referencedColumnName = "userId")
     private SUser otherSUser;
 
     @Column(name = "addTime")

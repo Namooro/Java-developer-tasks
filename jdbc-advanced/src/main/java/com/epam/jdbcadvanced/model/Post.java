@@ -2,6 +2,8 @@ package com.epam.jdbcadvanced.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "post")
@@ -10,9 +12,9 @@ public class Post {
     @Column(name = "postId")
     private Integer postId;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId")
-    private SUser SUser;
+    private SUser sUser;
 
     @Column(name = "text")
     private String text;
@@ -27,16 +29,28 @@ public class Post {
     public void setPostId(Integer postId) {
         this.postId = postId;
     }
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "post")
+    private List<Like> likes = new ArrayList<>();
 
-    public Post(Integer postId, SUser SUser, String text, LocalDate time) {
+    public Post(Integer postId, SUser sUser, String text, LocalDate time) {
         this.postId = postId;
-        this.SUser = SUser;
+        this.sUser = sUser;
         this.text = text;
         this.time = time;
     }
 
-    public SUser getSUser() {
-        return SUser;
+    public void addLike(Like like) {
+        likes.add(like);
+        like.setPost(this);
+    }
+
+    public void removeLike(Like like) {
+        likes.remove(like);
+        like.setPost(null);
+    }
+
+    public SUser getsUser() {
+        return sUser;
     }
 
     public String getText() {
@@ -47,8 +61,8 @@ public class Post {
         this.text = text;
     }
 
-    public void setSUser(SUser SUser) {
-        this.SUser = SUser;
+    public void setsUser(SUser sUser) {
+        this.sUser = sUser;
     }
 
     public LocalDate getTime() {
@@ -66,7 +80,6 @@ public class Post {
     public String toString() {
         return "Post{" +
                 "postId=" + postId +
-                ", SUser=" + SUser +
                 ", text='" + text + '\'' +
                 ", time=" + time +
                 '}';

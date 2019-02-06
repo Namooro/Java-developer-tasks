@@ -20,11 +20,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -56,51 +56,40 @@ public class JdbcAdvancedApplicationTests {
 
     @Test
     public void batchInsertTest() {
-        List<SUser> SUserList = new ArrayList<>();
+        List<SUser> sUsers = new ArrayList<>();
         List<Friendship> friendshipList = new ArrayList<>();
         List<Post> postList = new ArrayList<>();
         List<Like> likeList = new ArrayList<>();
 
         for (int i = 0; i < 1000; i++) {
-            SUserList.add(new SUser(i, String.format("firstname %s", i), String.format("secondName %S", i), LocalDate.now(), Collections.emptyList()));
+            sUsers.add(new SUser(i, String.format("firstname %s", i), String.format("secondName %S", i), LocalDate.now()));
         }
-        userService.batchInsert(SUserList);
-        for (int i = 0; i < 15000; i++) {
-            postList.add(new Post(i, SUserList.get(ThreadLocalRandom.current().nextInt(1, 1000)),
-                    String.format("i am post with id: {}", i), LocalDate.now()));
+        userService.batchInsert(sUsers);
+
+        for (int i = 0; i < 1500; i++) {
+            postList.add(new Post(i, userRepository.findById(ThreadLocalRandom.current().nextInt(0, 1000)).get(),
+                    String.format("i am post with id: %s", i), LocalDate.now()));
         }
         postService.batchInsert(postList);
-        for (int i = 0; i < 90000; i++) {
-            friendshipList.add(new Friendship(i, SUserList.get(ThreadLocalRandom.current().nextInt(0, 1000)),
-                    SUserList.get(ThreadLocalRandom.current().nextInt(0, 1000)), LocalDate.now()));
-        }
 
-        friendshipService.batchInsert(friendshipList);
-        for (int i = 0; i < 30000; i++) {
-            likeList.add(new Like(i, postList.get(ThreadLocalRandom.current().nextInt(0, 15000)),
-                    SUserList.get(ThreadLocalRandom.current().nextInt(0, 1000)), LocalDate.now()));
+        for (int i = 0; i < 3000; i++) {
+            likeList.add(new Like(i , postRepository.findById(ThreadLocalRandom.current().nextInt(0, 100)).get(),
+                    sUsers.get(ThreadLocalRandom.current().nextInt(0, 1000)), LocalDate.now()));
         }
         likeService.batchInsert(likeList);
+
+        for (int i = 0; i < 900; i++) {
+            friendshipList.add(new Friendship(i, sUsers.get(ThreadLocalRandom.current().nextInt(0, 1000)),
+                    sUsers.get(ThreadLocalRandom.current().nextInt(0, 1000)), LocalDate.now()));
+        }
+        friendshipService.batchInsert(friendshipList);
+
         assertEquals(1000, userRepository.findAll().size());
-        assertEquals(15000, postRepository.findAll().size());
-        //  assertEquals(9000, friendshipRepository.findAll().size());
-        assertEquals(30000, likeRepository.findAll().size());
-        // assertEquals(null, userRepository.findAll().stream().map(SUser::getName).collect(Collectors.toList()));
-        assertEquals(null, userRepository.distinctUsers(LocalDate.now(), LocalDate.now()));
-
+        assertEquals(1500, postRepository.findAll().size());
+        assertEquals(900, friendshipRepository.findAll().size());
+        assertEquals(3000, likeRepository.findAll().size());
+        assertNotNull(userRepository.distinctUsers(LocalDate.now().minusDays(10), LocalDate.now().plusDays(10)).stream().findAny().get());
     }
-
-    @Test
-    public void distinctUser() {
-        assertEquals(null, userRepository.distinctUsers(LocalDate.now(), LocalDate.now()));
-    }
-/*
-    @After
-    public void after() {
-        friendshipRepository.deleteAll();
-        postRepository.deleteAll();
-        userRepository.deleteAll();
-    }*/
 
 }
 

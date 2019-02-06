@@ -10,21 +10,21 @@ public class Like {
     @Column(name = "likeId")
     private Integer likeId;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "postId")
     private Post post;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId")
-    private SUser SUser;
+    private SUser sUser;
 
     @Column(name = "likeTime")
     private LocalDate likeTime;
 
-    public Like(Integer likeId, Post post, SUser SUser, LocalDate likeTime) {
+    public Like(Integer likeId, Post post, SUser sUser, LocalDate likeTime) {
         this.likeId = likeId;
         this.post = post;
-        this.SUser = SUser;
+        this.sUser = sUser;
         this.likeTime = likeTime;
     }
 
@@ -49,17 +49,16 @@ public class Like {
         return "Like{" +
                 "likeId=" + likeId +
                 ", post=" + post +
-                ", SUser=" + SUser +
                 ", likeTime=" + likeTime +
                 '}';
     }
 
-    public SUser getSUser() {
-        return SUser;
+    public SUser getsUser() {
+        return sUser;
     }
 
-    public void setSUser(SUser SUser) {
-        this.SUser = SUser;
+    public void setsUser(SUser sUser) {
+        this.sUser = sUser;
     }
 
     public LocalDate getLikeTime() {

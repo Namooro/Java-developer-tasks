@@ -2,13 +2,14 @@ package com.epam.jdbcadvanced.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Table(name = "suser")
 @Entity
 public class SUser {
     @Id
-    @Column(name="userId")
+    @Column(name = "userId")
     private Integer userId;
     @Column(name = "name")
     private String name;
@@ -17,21 +18,77 @@ public class SUser {
     @Column(name = "birthDate")
     private LocalDate birthDate;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "friendship",
-            joinColumns = @JoinColumn(name = "userId"),
-            inverseJoinColumns = @JoinColumn(name = "otherUserId"))
-    private List<SUser> friends;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "sUser")
+    private List<Post> posts = new ArrayList<>();
 
-    public SUser() {
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "sUser")
+    private List<Like> likes = new ArrayList<>();
+
+    public SUser(Integer userId, String name, String surname, LocalDate birthDate, List<Post> posts, List<Like> likes) {
+        this.userId = userId;
+        this.name = name;
+        this.surname = surname;
+        this.birthDate = birthDate;
+        this.posts = posts;
+        this.likes = likes;
     }
 
-    public SUser(Integer userid, String name, String surname, LocalDate birthDate, List<SUser> friends) {
+    public SUser(Integer userid, String name, String surname, LocalDate birthDate) {
         this.userId = userid;
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;
-        this.friends = friends;
+    }
+
+    public SUser() {
+    }
+
+    public void addPost(Post post) {
+        posts.add(post);
+        post.setsUser(this);
+    }
+
+    public void removePost(Post post) {
+        posts.remove(post);
+        post.setsUser(null);
+    }
+
+    public void addLike(Like like) {
+        likes.add(like);
+        like.setsUser(this);
+    }
+
+    public void removeLike(Like like) {
+        likes.remove(like);
+        like.setsUser(null);
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
+
+    public List<Like> getLikes() {
+        return likes;
+    }
+
+    public void setLikes(List<Like> likes) {
+        this.likes = likes;
+    }
+
+    @Override
+    public String toString() {
+        return "SUser{" +
+                "userId=" + userId +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", birthDate=" + birthDate +
+                ", post=" + posts +
+                ", like=" + likes +
+                '}';
     }
 
     public Integer getUserId() {
@@ -57,26 +114,6 @@ public class SUser {
     public void setSurname(String surname) {
         this.surname = surname;
     }
-
-    public List<SUser> getFriends() {
-        return friends;
-    }
-
-    public void setFriends(List<SUser> friends) {
-        this.friends = friends;
-    }
-
-    @Override
-    public String toString() {
-        return "SUser{" +
-                "userId=" + userId +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", birthDate=" + birthDate +
-                ", friends=" + friends +
-                '}';
-    }
-
 
     public LocalDate getBirthDate() {
         return birthDate;
