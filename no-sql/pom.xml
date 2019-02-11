@@ -40,8 +40,8 @@
             <version>2.1.2.RELEASE</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-cassandra</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
             <version>2.1.2.RELEASE</version>
         </dependency>
     </dependencies>
