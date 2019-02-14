@@ -17,10 +17,10 @@ import java.util.List;
 public class TaskServiceImpl implements TaskService {
 
     @Autowired
-    TaskRepository taskRepository;
+    private TaskRepository taskRepository;
 
     @Autowired
-    protected MongoTemplate mongoTemplate;
+    private MongoTemplate mongoTemplate;
 
     @Override
     public Task findTaskByName(String name) {
@@ -31,6 +31,7 @@ public class TaskServiceImpl implements TaskService {
     public void deleteTaskByName(String name) {
         taskRepository.delete(taskRepository.findByName(name));
     }
+
     @Override
     public void addSubTask(Task mainTask, String subTaskName) {
         if (mainTask != null) {
@@ -40,6 +41,7 @@ public class TaskServiceImpl implements TaskService {
             taskRepository.save(mainTask);
         }
     }
+
     @Override
     public void addTasks(List<String> taskList) {
         for (String taskName : taskList) {
@@ -49,6 +51,7 @@ public class TaskServiceImpl implements TaskService {
             }
         }
     }
+
     @Override
     public void removeSubTask(Task mainTask, Task subTask) {
         mainTask.getSubtasks().remove(subTask);
