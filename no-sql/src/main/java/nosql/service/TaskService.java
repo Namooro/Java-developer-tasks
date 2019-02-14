@@ -13,7 +13,7 @@ public interface TaskService {
 
     void removeSubTasks(Task mainTask);
 
-    List<Task> findOverDueTasks();
+    List<Task> findOverdueTasks();
 
     List<Task> findAllTasks();
 

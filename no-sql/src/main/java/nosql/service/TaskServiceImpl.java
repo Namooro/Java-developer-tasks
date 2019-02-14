@@ -66,7 +66,7 @@ public class TaskServiceImpl implements TaskService {
 
 
     @Override
-    public List<Task> findOverDueTasks() {
+    public List<Task> findOverdueTasks() {
         Query query = new Query();
         query.addCriteria(Criteria.where("due_date").lt(LocalDate.now()));
         return mongoTemplate.find(query, Task.class);
