@@ -14,7 +14,7 @@ public interface TaskRepository extends MongoRepository<Task, Integer> {
     @Query("{ description': {$regex: ?0, $options: 'i' }}")
     List<Task> findByDescription(final String description);
 
-    @Query("{ category': {?0 , $options: 'i' }}")
+    @Query("{ category': {$regex: ?0, $options: 'i' }}")
     List<Task> findByCategory(final String category);
 
 }
