@@ -28,6 +28,11 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
+    public List<Task> findTaskCategory(String category) {
+        return taskRepository.findByCategory(category);
+    }
+
+    @Override
     public void deleteTaskByName(String name) {
         taskRepository.delete(taskRepository.findByName(name));
     }

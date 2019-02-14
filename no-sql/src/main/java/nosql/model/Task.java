@@ -17,6 +17,8 @@ public class Task {
     private LocalDate createDate;
     @Field("due_date")
     private Date dueDate;
+    @Field("category")
+    private String category;
     @Indexed
     @Field("name")
     private String name;
@@ -25,13 +27,14 @@ public class Task {
     @Field("subtasks")
     private List<Task> subtasks;
 
-    public Task(Integer id, Date dueDate, String name, String description, List<Task> subtasks) {
+    public Task(Integer id, Date dueDate, String name, String description, List<Task> subtasks, String category) {
         this.id = id;
         this.createDate = LocalDate.now();
         this.dueDate = dueDate;
         this.name = name;
         this.description = description;
         this.subtasks = subtasks;
+        this.category = category;
     }
 
     public Task(String name) {
@@ -88,5 +91,21 @@ public class Task {
 
     public void addSubTask(Task subTask) {
         this.subtasks.add(subTask);
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
