@@ -22,14 +22,16 @@ public class TaskServiceImpl implements TaskService {
     @Autowired
     protected MongoTemplate mongoTemplate;
 
+    @Override
     public Task findTaskByName(String name) {
         return taskRepository.findByName(name);
     }
 
+    @Override
     public void deleteTaskByName(String name) {
         taskRepository.delete(taskRepository.findByName(name));
     }
-
+    @Override
     public void addSubTask(Task mainTask, String subTaskName) {
         if (mainTask != null) {
             Task subTask = new Task(subTaskName);
@@ -38,7 +40,7 @@ public class TaskServiceImpl implements TaskService {
             taskRepository.save(mainTask);
         }
     }
-
+    @Override
     public void addTasks(List<String> taskList) {
         for (String taskName : taskList) {
             if (taskRepository.findByName(taskName) == null) {
@@ -47,14 +49,14 @@ public class TaskServiceImpl implements TaskService {
             }
         }
     }
-
+    @Override
     public void removeSubTask(Task mainTask, Task subTask) {
         mainTask.getSubtasks().remove(subTask);
         taskRepository.save(mainTask);
         taskRepository.delete(subTask);
     }
 
-
+    @Override
     public void removeSubTasks(Task mainTask) {
         List<Task> subTasksForDelete = mainTask.getSubtasks();
         mainTask.setSubtasks(Collections.emptyList());
@@ -69,4 +71,10 @@ public class TaskServiceImpl implements TaskService {
         query.addCriteria(Criteria.where("due_date").lt(LocalDate.now()));
         return mongoTemplate.find(query, Task.class);
     }
+
+    @Override
+    public List<Task> findAllTasks() {
+        return taskRepository.findAll();
+    }
+
 }
