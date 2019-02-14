@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -38,10 +39,27 @@ public class TaskServiceImpl implements TaskService {
         }
     }
 
+    public void addTasks(List<String> taskList) {
+        for (String taskName : taskList) {
+            if (taskRepository.findByName(taskName) == null) {
+                Task task = new Task(taskName);
+                taskRepository.save(task);
+            }
+        }
+    }
+
     public void removeSubTask(Task mainTask, Task subTask) {
         mainTask.getSubtasks().remove(subTask);
         taskRepository.save(mainTask);
         taskRepository.delete(subTask);
+    }
+
+
+    public void removeSubTasks(Task mainTask) {
+        List<Task> subTasksForDelete = mainTask.getSubtasks();
+        mainTask.setSubtasks(Collections.emptyList());
+        taskRepository.save(mainTask);
+        taskRepository.deleteAll(subTasksForDelete);
     }
 
 
