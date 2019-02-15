@@ -16,6 +16,7 @@
         <module>infrastructure-build-java-application-with-maven-and-gradle</module>
         <module>spring-boot</module>
         <module>spring-core</module>
+        <module>jdbc-advanced</module>
     </modules>
     <name>${project.artifactId}</name>
     <description>Homework for java mentoring</description>
