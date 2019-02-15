@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group 'java-maven-gradle'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.10
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
+}
+
+
+subprojects {
+    apply plugin: 'checkstyle'
+    apply plugin: 'jacoco'
+
+    checkstyle {
+        configFile = rootProject.file('config/checkstyle/checkstyle.xml')
+        configProperties = [
+                'configDir': rootProject.file('config/checkstyle'),
+                'baseDir': rootDir,
+        ]
+        toolVersion = '7.3'
+    }
+
+}
+
+task runProject(type: GradleBuild) {
+    tasks = ['clean', 'build', ':web:tomcatRunWar']
+}
