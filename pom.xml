@@ -14,6 +14,7 @@
         <module>junit</module>
         <module>junit/src/main/petapp</module>
         <module>infrastructure-build-java-application-with-maven-and-gradle</module>
+        <module>spring-core</module>
     </modules>
     <name>${project.artifactId}</name>
     <description>Homework for java mentoring</description>
