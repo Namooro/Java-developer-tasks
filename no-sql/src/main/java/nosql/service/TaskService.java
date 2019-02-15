@@ -17,9 +17,9 @@ public interface TaskService {
 
     List<Task> findAllTasks();
 
-    Task findTaskByName(String name);
+    Task findTaskByName(String name) throws Exception;
 
     List<Task> findTasksByCategory(String category);
 
-    void deleteTaskByName(String name);
+    void deleteTaskByName(String name) throws Exception;
 }

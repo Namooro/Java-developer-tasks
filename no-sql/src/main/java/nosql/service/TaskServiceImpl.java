@@ -23,8 +23,8 @@ public class TaskServiceImpl implements TaskService {
     private MongoTemplate mongoTemplate;
 
     @Override
-    public Task findTaskByName(String name) {
-        return taskRepository.findByName(name);
+    public Task findTaskByName(String name) throws Exception {
+        return taskRepository.findByName(name).orElseThrow(() -> new Exception("Task not found"));
     }
 
     @Override
@@ -33,8 +33,8 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public void deleteTaskByName(String name) {
-        taskRepository.delete(taskRepository.findByName(name));
+    public void deleteTaskByName(String name) throws Exception {
+        taskRepository.delete(taskRepository.findByName(name).orElseThrow(() -> new Exception(String.format("Task with name: %s not found", name))));
     }
 
     @Override

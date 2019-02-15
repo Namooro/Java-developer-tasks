@@ -6,13 +6,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 
 @Document
 public class Task {
-    @Id
-    private Integer id;
+
+
     @Field("create_date")
     private LocalDate createDate;
     @Field("due_date")
@@ -20,6 +21,7 @@ public class Task {
     @Field("category")
     private String category;
     @Indexed
+    @Id
     @Field("name")
     private String name;
     @Field("description")
@@ -27,8 +29,7 @@ public class Task {
     @Field("subtasks")
     private List<Task> subtasks;
 
-    public Task(Integer id, Date dueDate, String name, String description, List<Task> subtasks, String category) {
-        this.id = id;
+    public Task(Date dueDate, String name, String description, List<Task> subtasks, String category) {
         this.createDate = LocalDate.now();
         this.dueDate = dueDate;
         this.name = name;
@@ -37,40 +38,44 @@ public class Task {
         this.category = category;
     }
 
+    public Task(Date dueDate, String name)  {
+        this.createDate = LocalDate.now();
+        this.dueDate = dueDate;
+        this.name = name;
+    }
     public Task() {
     }
 
-    public Task(Integer id, Date dueDate, String name, String category) {
-        this.id = id;
+
+    public Task(Date dueDate, String name, String category) {
         this.createDate = LocalDate.now();
         this.dueDate = dueDate;
         this.category = category;
         this.name = name;
     }
 
+    public Task(String name) {
+        this.name = name;
+        this.createDate = LocalDate.now();
+        this.dueDate = Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).plusDays(1).toInstant());
+    }
+
+    public Task(String name, String category, String description) {
+        this.category = category;
+        this.name = name;
+        this.dueDate = Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).plusDays(1).toInstant());
+    }
+
     @Override
     public String toString() {
         return "Task{" +
-                "id=" + id +
-                ", createDate=" + createDate +
+                "createDate=" + createDate +
                 ", dueDate=" + dueDate +
                 ", category='" + category + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", subtasks=" + subtasks +
-                '}';
-    }
-
-    public Task(String name) {
-        this.name = name;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+                '}' + "\n";
     }
 
     public LocalDate getCreateDate() {
