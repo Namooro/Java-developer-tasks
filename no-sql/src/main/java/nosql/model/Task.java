@@ -37,6 +37,30 @@ public class Task {
         this.category = category;
     }
 
+    public Task() {
+    }
+
+    public Task(Integer id, Date dueDate, String name, String category) {
+        this.id = id;
+        this.createDate = LocalDate.now();
+        this.dueDate = dueDate;
+        this.category = category;
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", createDate=" + createDate +
+                ", dueDate=" + dueDate +
+                ", category='" + category + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", subtasks=" + subtasks +
+                '}';
+    }
+
     public Task(String name) {
         this.name = name;
     }

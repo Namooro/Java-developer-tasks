@@ -28,7 +28,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<Task> findTaskCategory(String category) {
+    public List<Task> findTasksByCategory(String category) {
         return taskRepository.findByCategory(category);
     }
 

@@ -19,7 +19,7 @@ public interface TaskService {
 
     Task findTaskByName(String name);
 
-    List<Task> findTaskCategory(String category);
+    List<Task> findTasksByCategory(String category);
 
     void deleteTaskByName(String name);
 }
