@@ -29,7 +29,7 @@ public class TaskController {
     }
 
     @RequestMapping(value = "/{name}", method = RequestMethod.GET)
-    public Task getTaskByName(@PathVariable("name") String name) {
+    public Task getTaskByName(@PathVariable("name") String name) throws Exception {
         return taskService.findTaskByName(name);
     }
 
