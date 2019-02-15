@@ -10,6 +10,8 @@
         <module>homework-lambdas-and-streams</module>
         <module>jvm-memory</module>
         <module>jvm-basics</module>
+        <module>junit</module>
+        <module>junit/src/main/petapp</module>
         <module>infrastructure-build-java-application-with-maven-and-gradle</module>
     </modules>
     <name>${project.artifactId}</name>
