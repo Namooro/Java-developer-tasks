@@ -17,6 +17,7 @@
         <module>spring-boot</module>
         <module>spring-core</module>
         <module>jdbc-advanced</module>
+        <module>no-sql</module>
     </modules>
     <name>${project.artifactId}</name>
     <description>Homework for java mentoring</description>
