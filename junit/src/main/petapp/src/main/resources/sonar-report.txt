@@ -1,0 +1,113 @@
+D:\IdeaProjects\java-developer-homeworks\junit>mvn sonar:sonar -Dsonar.analysis.mode=preview
+[INFO] Scanning for projects...
+[WARNING]
+[WARNING] Some problems were encountered while building the effective model for com.epam:junit:jar:1.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ com.epam:junit:[unknown-version], D:\IdeaProjects\java-developer-homeworks\junit\pom.xml, line 53, column 21
+[WARNING]
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING]
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING]
+[INFO]
+[INFO] ---------------------------< com.epam:junit >---------------------------
+[INFO] Building junit 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- sonar-maven-plugin:3.5.0.1254:sonar (default-cli) @ junit ---
+[INFO] User cache: C:\Users\Roman_Selianko\.sonar\cache
+[INFO] SonarQube version: 7.4.0
+[INFO] Default locale: "en_US", source code encoding: "windows-1252" (analysis is platform dependent)
+[INFO] Issues mode
+[WARNING] The use of the issues mode (sonar.analysis.mode=issues) is deprecated. This mode will be dropped in the future.
+[INFO] Load global settings
+[INFO] Load global settings (done) | time=67ms
+[INFO] Server id: BF41A1F2-AWc2T2Ah0EIQY6QDZvVo
+[INFO] User cache: C:\Users\Roman_Selianko\.sonar\cache
+[INFO] Exclude plugins: devcockpit, ldap, authgithub, authbitbucket, pdfreport, authaad, googleanalytics, governance
+[INFO] Load/download plugins
+[INFO] Load plugins index
+[INFO] Load plugins index (done) | time=41ms
+[INFO] Load/download plugins (done) | time=112ms
+[INFO] Loaded core extensions: branch-scanner
+[INFO] Scanning only changed files
+[INFO] Process project properties
+[INFO] Load project branches
+[INFO] Load project branches (done) | time=7ms
+[INFO] Load project pull requests
+[INFO] Load project pull requests (done) | time=7ms
+[INFO] Load branch configuration
+[INFO] Load branch configuration (done) | time=3ms
+[INFO] Load project repositories
+[WARNING] Project doesn't exist on the server. All issues will be marked as 'new'.
+[INFO] Load project repositories (done) | time=13ms
+[INFO] Load quality profiles
+[INFO] Load quality profiles (done) | time=46ms
+[INFO] Load active rules
+[INFO] Load active rules (done) | time=1768ms
+[INFO] Project key: com.epam:junit
+[INFO] Project base dir: D:\IdeaProjects\java-developer-homeworks\junit
+[INFO] -------------  Scan junit
+[INFO] Base dir: D:\IdeaProjects\java-developer-homeworks\junit
+[INFO] Working dir: D:\IdeaProjects\java-developer-homeworks\junit\target\sonar
+[INFO] Source paths: pom.xml, src/main/java
+[INFO] Source encoding: windows-1252, default locale: en_US
+[INFO] Load metrics repository
+[INFO] Load metrics repository (done) | time=16ms
+[INFO] Load server rules
+[INFO] Load server rules (done) | time=357ms
+[WARNING] Property 'sonar.abap.file.suffixes' is not declared as multi-values/property set but was read using 'getStringArray' method. The SonarQube plugin declaring this property should be updated.
+[INFO] Index files
+[INFO] 2 files indexed
+[INFO] Quality profile for java: Sonar way
+[INFO] Quality profile for xml: Sonar way
+[INFO] Sensor JavaSquidSensor [java]
+[INFO] Configured Java source version (sonar.java.source): 10
+[INFO] JavaClasspath initialization
+[INFO] JavaClasspath initialization (done) | time=10ms
+[INFO] JavaTestClasspath initialization
+[INFO] JavaTestClasspath initialization (done) | time=1ms
+[INFO] Java Main Files AST scan
+[INFO] 1 source files to be analyzed
+[INFO] 1/1 source files have been analyzed
+[INFO] Java Main Files AST scan (done) | time=439ms
+[INFO] Java Test Files AST scan
+[INFO] 0 source files to be analyzed
+[INFO] 0/0 source files have been analyzed
+[INFO] Java Test Files AST scan (done) | time=4ms
+[INFO] Sensor JavaSquidSensor [java] (done) | time=855ms
+[INFO] Sensor SurefireSensor [java]
+[INFO] parsing [D:\IdeaProjects\java-developer-homeworks\junit\target\surefire-reports]
+[INFO] Sensor SurefireSensor [java] (done) | time=5ms
+[INFO] Sensor JaCoCoSensor [java]
+[INFO] Sensor JaCoCoSensor [java] (done) | time=2ms
+[INFO] Sensor SonarJavaXmlFileSensor [java]
+[INFO] 1 source files to be analyzed
+[INFO] Sensor SonarJavaXmlFileSensor [java] (done) | time=340ms
+[INFO] 1/1 source files have been analyzed
+[INFO] Sensor XML Sensor [xml]
+[WARNING] Metric 'comment_lines_data' is deprecated. Provided value is ignored.
+[INFO] Sensor XML Sensor [xml] (done) | time=81ms
+[INFO] Sensor JaCoCo XML Report Importer [jacoco]
+[INFO] Sensor JaCoCo XML Report Importer [jacoco] (done) | time=3ms
+[INFO] Sensor JavaSecuritySensor [security]
+[INFO] Reading UCFGs from: D:\IdeaProjects\java-developer-homeworks\junit\target\sonar\ucfg2\java
+[INFO] UCFGs: 3, excluded: 3, source entrypoints: 0
+[INFO] No UCFGs have been included for analysis.
+[INFO] Sensor JavaSecuritySensor [security] (done) | time=45ms
+[INFO] Sensor CSharpSecuritySensor [security]
+[INFO] Reading UCFGs from: D:\IdeaProjects\java-developer-homeworks\junit\target\ucfg_cs2
+[INFO] UCFGs: 0, excluded: 0, source entrypoints: 0
+[INFO] No UCFGs have been included for analysis.
+[INFO] Sensor CSharpSecuritySensor [security] (done) | time=5ms
+[INFO] Sensor Java CPD Block Indexer
+[INFO] Sensor Java CPD Block Indexer (done) | time=11ms
+[INFO] Performing issue tracking
+[INFO] 5/5 components tracked
+[INFO] ANALYSIS SUCCESSFUL
+[INFO] Task total time: 6.388 s
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.458 s
+[INFO] Finished at: 2018-11-30T19:00:07+04:00
+[INFO] ------------------------------------------------------------------------

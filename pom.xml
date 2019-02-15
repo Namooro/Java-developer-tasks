@@ -10,7 +10,12 @@
         <module>homework-lambdas-and-streams</module>
         <module>jvm-memory</module>
         <module>jvm-basics</module>
+        <module>concurrency</module>
+        <module>junit</module>
+        <module>junit/src/main/petapp</module>
         <module>infrastructure-build-java-application-with-maven-and-gradle</module>
+        <module>spring-boot</module>
+        <module>spring-core</module>
         <module>jdbc-advanced</module>
     </modules>
     <name>${project.artifactId}</name>
