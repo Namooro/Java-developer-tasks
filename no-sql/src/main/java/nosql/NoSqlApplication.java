@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Arrays;
 
-@SpringBootApplication()
+@SpringBootApplication
 public class NoSqlApplication implements CommandLineRunner {
 
     @Autowired
@@ -27,18 +27,32 @@ public class NoSqlApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        taskRepository.deleteAll();
-        Task overdueTask = new Task(1, Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).minusDays(1).toInstant()), "overDueTask", "1");
-        Task normalTask = new Task(2, Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()), "normalTask", "normalCategory");
-        Task oneCategoryTask = new Task(3, Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()), "oneCategory", "1");
-        taskRepository.saveAll(Arrays.asList(normalTask, overdueTask, oneCategoryTask));
-        System.out.println("Display one overdue task");
-        System.out.println(taskService.findOverdueTasks());
-        System.out.println("Display all tasks");
-        System.out.println(taskService.findAllTasks());
-        System.out.println("OneCategory task");
-        System.out.println(taskService.findTasksByCategory("1"));
-
+        if (args.length < 1) {
+            throw new IllegalArgumentException("no args provided");
+        } else {
+            taskRepository.deleteAll();
+            Task overdueTask = new Task(1, Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).minusDays(1).toInstant()), "overDueTask", "1");
+            Task normalTask = new Task(2, Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()), "normalTask", "normalCategory");
+            Task oneCategoryTask = new Task(3, Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()), "oneCategory", "1");
+            taskRepository.saveAll(Arrays.asList(normalTask, overdueTask, oneCategoryTask));
+            switch (args[0]) {
+                case "display_all":
+                    System.out.println("Display all tasks");
+                    System.out.println(taskService.findAllTasks());
+                    break;
+                case "overdue":
+                    System.out.println("Display one overdue task");
+                    System.out.println(taskService.findOverdueTasks());
+                    break;
+                case "category":
+                    System.out.println("OneCategory task");
+                    System.out.println(taskService.findTasksByCategory("1"));
+                    break;
+                default:
+                    System.out.println("Error in arguments; Displaying all tasks");
+                    System.out.println(taskService.findAllTasks());
+            }
+        }
     }
 }
 
