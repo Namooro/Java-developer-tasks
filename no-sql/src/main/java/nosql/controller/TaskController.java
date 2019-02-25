@@ -4,9 +4,12 @@ import nosql.dao.TaskRepository;
 import nosql.model.Task;
 import nosql.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -34,13 +37,13 @@ public class TaskController {
     }
 
     @RequestMapping(value = "/{name}", method = RequestMethod.PUT)
-    public void modifyTaskByName(@PathVariable("name") String name, @Valid @RequestBody Task task) {
+    public void modifyTaskByName(@PathVariable("name") String name, @RequestBody Task task) {
         task.setName(name);
         taskRepository.save(task);
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public Task createTask(@Valid @RequestBody Task task) {
+    public Task createTask(@RequestBody Task task) {
         taskRepository.save(task);
         return task;
     }
@@ -56,7 +59,7 @@ public class TaskController {
     }
 
     @RequestMapping(value = "{id}/addSubTask", method = RequestMethod.POST)
-    public void addSubTask(@PathVariable("id") Integer id, @Valid @RequestBody Task subTask) throws Exception {
+    public void addSubTask(@PathVariable("id") Integer id, @RequestBody Task subTask) throws Exception {
         Task mainTask = taskRepository.findById(id).orElseThrow(() -> new Exception("Task not found"));
         mainTask.addSubTask(subTask);
         taskRepository.save(mainTask);
