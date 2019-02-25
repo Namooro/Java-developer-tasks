@@ -40,7 +40,7 @@ public class CompanyServiceFactory {
     }
 
     @PreDestroy
-    public void destroy(){
+    public void destroy() {
         for (CompanyService service : companyServices) {
             log.info(format("Bean %s is being removed from service cache", service.getName()));
         }
