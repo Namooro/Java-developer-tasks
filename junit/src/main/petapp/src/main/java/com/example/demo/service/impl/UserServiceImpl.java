@@ -21,10 +21,6 @@ public class UserServiceImpl implements UserService {
 
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
-    public void save(User user) {
-        userRepository.save(user);
-    }
-
     public User findByUsername(String username) {
         return userRepository.findByName(username);
     }
