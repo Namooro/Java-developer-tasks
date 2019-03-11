@@ -4,7 +4,8 @@ import com.example.demo.model.Account;
 import com.example.demo.model.Transaction;
 import com.example.demo.model.User;
 import com.example.demo.repository.AccountRepository;
-import  com.example.demo.service.AccountService;
+import com.example.demo.repository.TransactionRepository;
+import com.example.demo.service.AccountService;
 import com.example.demo.service.TransactionService;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,9 @@ public class AccountServiceImpl implements AccountService {
     @Autowired
     private TransactionService transactionService;
 
+    @Autowired
+    private TransactionRepository transactionRepository;
+
     @Override
     public Account createAccount() {
         Account account = new Account();
@@ -41,7 +45,7 @@ public class AccountServiceImpl implements AccountService {
         account.setBalance(account.getBalance() + amount);
         accountRepository.save(account);
         Transaction depositTransaction = new Transaction(LocalDate.now(), "Deposit to account", amount, account);
-        transactionService.saveTransaction(depositTransaction);
+        transactionRepository.save(depositTransaction);
     }
 
     @Override
@@ -50,6 +54,6 @@ public class AccountServiceImpl implements AccountService {
         account.setBalance(account.getBalance() - (amount));
         accountRepository.save(account);
         Transaction withDrawTransaction = new Transaction(LocalDate.now(), "Withdraw from account", amount, account);
-        transactionService.saveTransaction(withDrawTransaction);
+        transactionRepository.save(withDrawTransaction);
     }
 }

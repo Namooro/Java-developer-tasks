@@ -25,8 +25,4 @@ public class TransactionServiceImpl implements TransactionService {
         return user.getAccount().getTransactionList();
     }
 
-    public void saveTransaction(Transaction transaction) {
-        transactionRepository.save(transaction);
-    }
-
 }
