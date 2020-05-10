@@ -1,8 +1,5 @@
-# Домашние задания Java D2 mentoring
-Ссылка на актуальные задания:
-```
-https://kb.epam.com/display/EPMCDPSITE/Java+Mentoring+for+D2+Developers+2018
-```
+# Домашние задания Java Developer mentoring
+
 В данном проекте сделаны следующие задания 
 
 | Название | Задания | Ссылка  |
